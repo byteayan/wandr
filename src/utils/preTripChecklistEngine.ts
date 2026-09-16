@@ -1,12 +1,7 @@
-import { TripPlan, Destination, ActivityItem, PremiumExperience } from '../types/travel';
+import { TripPlan } from '../types/travel';
 
 export type ChecklistCategory =
-  | 'documents'
-  | 'clothing'
-  | 'activity_gear'
-  | 'electronics'
-  | 'health_toiletries'
-  | 'custom';
+  'documents' | 'clothing' | 'activity_gear' | 'electronics' | 'health_toiletries' | 'custom';
 
 export interface ChecklistItem {
   id: string;
@@ -168,9 +163,7 @@ export function generatePreTripChecklist(tripPlan: TripPlan): PreTripChecklistDa
     country.includes('uae');
 
   const isJapanOrEastAsia =
-    destId.includes('kyoto') ||
-    destId.includes('tokyo') ||
-    country.includes('japan');
+    destId.includes('kyoto') || destId.includes('tokyo') || country.includes('japan');
 
   if (isTropical) {
     addItem(
@@ -457,7 +450,12 @@ export function generatePreTripChecklist(tripPlan: TripPlan): PreTripChecklistDa
     );
   }
 
-  if (hasTempleOrReligiousSite || destId.includes('bali') || destId.includes('kyoto') || destId.includes('jaipur')) {
+  if (
+    hasTempleOrReligiousSite ||
+    destId.includes('bali') ||
+    destId.includes('kyoto') ||
+    destId.includes('jaipur')
+  ) {
     addItem(
       'gear-temple-sarong',
       'Modest Sarong / Scarf Covering Shoulders & Knees',
@@ -594,8 +592,10 @@ export function generatePreTripChecklist(tripPlan: TripPlan): PreTripChecklistDa
     packedItemsCount,
     items,
     luggageAdvice: {
-      carryOnLimits: 'Cabin Bag: 7kg limit (Max 55 x 40 x 20 cm) + 1 small personal laptop/tote item.',
-      checkedBagAdvice: 'Checked Luggage: 15kg to 20kg included depending on airline. Use TSA-approved cable locks.',
+      carryOnLimits:
+        'Cabin Bag: 7kg limit (Max 55 x 40 x 20 cm) + 1 small personal laptop/tote item.',
+      checkedBagAdvice:
+        'Checked Luggage: 15kg to 20kg included depending on airline. Use TSA-approved cable locks.',
       prohibitedInChecked: [
         'Lithium-ion Power Banks (Cabin only)',
         'Loose Spare Batteries & E-Cigarettes',

@@ -1,14 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Heart,
-  Sparkles,
-  ArrowRight,
-  Compass,
-  Calendar,
-  Wallet,
-  Star,
-  Check,
-} from 'lucide-react';
+import { Heart, Sparkles, ArrowRight } from 'lucide-react';
 import { Destination, VibeType } from '../types/travel';
 import { DESTINATIONS } from '../data/travelData';
 
@@ -55,7 +46,8 @@ export const VibeDestinations: React.FC<VibeDestinationsProps> = ({
               Made for your vibe
             </h2>
             <p className="text-sm sm:text-base text-stone-500 font-light mt-2 max-w-xl">
-              Immersive destinations scored by energy, romance, cuisine, and adventure. Zero generic tourist traps.
+              Immersive destinations scored by energy, romance, cuisine, and adventure. Zero generic
+              tourist traps.
             </p>
           </div>
 
@@ -127,9 +119,7 @@ export const VibeDestinations: React.FC<VibeDestinationsProps> = ({
                     <h3 className="text-2xl font-serif font-bold tracking-tight drop-shadow-sm">
                       {dest.name}
                     </h3>
-                    <p className="text-xs text-stone-200 font-light line-clamp-1">
-                      {dest.tagline}
-                    </p>
+                    <p className="text-xs text-stone-200 font-light line-clamp-1">{dest.tagline}</p>
                   </div>
                 </div>
 
@@ -145,16 +135,12 @@ export const VibeDestinations: React.FC<VibeDestinationsProps> = ({
                             <span className="text-[10px] uppercase tracking-wider font-semibold text-stone-500 block">
                               {vs.label}
                             </span>
-                            <span className="text-xs font-bold text-stone-900">
-                              {vs.score}/10
-                            </span>
+                            <span className="text-xs font-bold text-stone-900">{vs.score}/10</span>
                           </div>
                         </div>
                       ))}
                       <div className="col-span-2 pt-2 mt-1 border-t border-stone-200/60 flex items-center justify-between">
-                        <span className="text-[11px] font-medium text-stone-500">
-                          Budget Vibe:
-                        </span>
+                        <span className="text-[11px] font-medium text-stone-500">Budget Vibe:</span>
                         <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200/80">
                           {dest.budgetFit}
                         </span>

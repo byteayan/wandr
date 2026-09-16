@@ -1,9 +1,4 @@
-import {
-  TripPlan,
-  CompanionType,
-  VibeType,
-  ItineraryDay,
-} from '../types/travel';
+import { TripPlan, CompanionType, VibeType, ItineraryDay } from '../types/travel';
 import {
   DESTINATIONS,
   STAYS_DATA,
@@ -15,7 +10,6 @@ import {
   PREMIUM_EXPERIENCES,
 } from '../data/travelData';
 import { calculateTripTotal, generateCustomTripPlan } from './tripPlannerEngine';
-import QRCode from 'qrcode';
 
 export interface SerializedTripPayload {
   v: number; // schema version
@@ -95,9 +89,8 @@ export function serializeTripPlan(
   try {
     const jsonStr = JSON.stringify(payload);
     // UTF-8 safe base64 encoding
-    const utf8Bytes = encodeURIComponent(jsonStr).replace(
-      /%([0-9A-F]{2})/g,
-      (_, p1) => String.fromCharCode(parseInt(p1, 16))
+    const utf8Bytes = encodeURIComponent(jsonStr).replace(/%([0-9A-F]{2})/g, (_, p1) =>
+      String.fromCharCode(parseInt(p1, 16))
     );
     const base64 = btoa(utf8Bytes);
     return encodeURIComponent(base64);
@@ -105,7 +98,11 @@ export function serializeTripPlan(
     console.error('Failed to serialize trip plan:', error);
     // Fallback to minimal query params
     return encodeURIComponent(
-      JSON.stringify({ destId: tripPlan.destination.id, days: tripPlan.durationDays, curator: curatorName })
+      JSON.stringify({
+        destId: tripPlan.destination.id,
+        days: tripPlan.durationDays,
+        curator: curatorName,
+      })
     );
   }
 }
@@ -142,37 +139,31 @@ export function deserializeTripPlan(encodedStr: string): SharedTripResolution | 
       DESTINATIONS[0];
 
     // 2. Resolve stay
-    let selectedStay =
+    const selectedStay =
       STAYS_DATA.find((s) => s.id === payload.stayId) ||
       STAYS_DATA.find((s) => s.destinationId === destination.id) ||
       STAYS_DATA[0];
 
     // 3. Resolve transit
-    const selectedFlight =
-      FLIGHTS_DATA.find((f) => f.id === payload.flId) || FLIGHTS_DATA[0];
-    const selectedTrain = payload.trId
-      ? TRAINS_DATA.find((t) => t.id === payload.trId)
-      : undefined;
-    const selectedBus = payload.busId
-      ? BUSES_DATA.find((b) => b.id === payload.busId)
-      : undefined;
-    const selectedCab = payload.cabId
-      ? CABS_DATA.find((c) => c.id === payload.cabId)
-      : undefined;
+    const selectedFlight = FLIGHTS_DATA.find((f) => f.id === payload.flId) || FLIGHTS_DATA[0];
+    const selectedTrain = payload.trId ? TRAINS_DATA.find((t) => t.id === payload.trId) : undefined;
+    const selectedBus = payload.busId ? BUSES_DATA.find((b) => b.id === payload.busId) : undefined;
+    const selectedCab = payload.cabId ? CABS_DATA.find((c) => c.id === payload.cabId) : undefined;
 
     // 4. Resolve activities
     const selectedActivities = (payload.actIds || [])
       .map((id) => ACTIVITIES_DATA.find((a) => a.id === id))
-      .filter((a): a is typeof ACTIVITIES_DATA[0] => Boolean(a));
+      .filter((a): a is (typeof ACTIVITIES_DATA)[0] => Boolean(a));
 
     // 5. Resolve premium experiences
     const selectedPremium = (payload.premIds || [])
       .map((id) => PREMIUM_EXPERIENCES.find((p) => p.id === id))
-      .filter((p): p is typeof PREMIUM_EXPERIENCES[0] => Boolean(p));
+      .filter((p): p is (typeof PREMIUM_EXPERIENCES)[0] => Boolean(p));
 
     const durationDays = payload.days || destination.idealDays || 7;
     const companion: CompanionType = payload.comp || 'friends';
-    const vibes: VibeType[] = payload.vibes && payload.vibes.length > 0 ? payload.vibes : destination.vibeTags;
+    const vibes: VibeType[] =
+      payload.vibes && payload.vibes.length > 0 ? payload.vibes : destination.vibeTags;
     const originCity = payload.orig || 'Delhi (DEL)';
 
     // 6. Generate base itinerary days and override with custom summaries if provided
@@ -256,7 +247,8 @@ export function generateShareableTripLink(
   curatorEmail?: string
 ): string {
   const serialized = serializeTripPlan(tripPlan, curatorName, curatorEmail);
-  const baseUrl = typeof window !== 'undefined' ? `${window.location.origin}${window.location.pathname}` : '';
+  const baseUrl =
+    typeof window !== 'undefined' ? `${window.location.origin}${window.location.pathname}` : '';
   return `${baseUrl}?trip=${serialized}#personalized-trip`;
 }
 
@@ -265,6 +257,7 @@ export function generateShareableTripLink(
  */
 export async function generateTripQrCode(shareUrl: string): Promise<string> {
   try {
+    const { default: QRCode } = await import('qrcode');
     const dataUrl = await QRCode.toDataURL(shareUrl, {
       width: 400,
       margin: 2,
@@ -284,7 +277,10 @@ export async function generateTripQrCode(shareUrl: string): Promise<string> {
 /**
  * Helper to calculate split cost per person based on companion group type.
  */
-export function getCompanionSplit(totalPrice: number, companion: CompanionType): { count: number; perPerson: number; label: string } {
+export function getCompanionSplit(
+  totalPrice: number,
+  companion: CompanionType
+): { count: number; perPerson: number; label: string } {
   let count = 1;
   let label = 'Solo Traveller';
 
@@ -314,7 +310,10 @@ export function getCompanionSplit(totalPrice: number, companion: CompanionType):
 /**
  * Formats a clean, readable text breakdown optimized for WhatsApp, Slack, iMessage & notes.
  */
-export function generateFormattedTripSummary(tripPlan: TripPlan, curatorName: string = 'Ayan Alam'): string {
+export function generateFormattedTripSummary(
+  tripPlan: TripPlan,
+  curatorName: string = 'Ayan Alam'
+): string {
   const shareUrl = generateShareableTripLink(tripPlan, curatorName);
   const split = getCompanionSplit(tripPlan.totalPrice, tripPlan.companion);
 
@@ -322,10 +321,10 @@ export function generateFormattedTripSummary(tripPlan: TripPlan, curatorName: st
     tripPlan.selectedTransitMode === 'train' && tripPlan.selectedTrain
       ? `🚆 ${tripPlan.selectedTrain.trainName} (${tripPlan.selectedTrain.trainNumber})`
       : tripPlan.selectedTransitMode === 'bus' && tripPlan.selectedBus
-      ? `🚌 ${tripPlan.selectedBus.operator} (${tripPlan.selectedBus.busType})`
-      : tripPlan.selectedTransitMode === 'cab' && tripPlan.selectedCab
-      ? `🚖 ${tripPlan.selectedCab.vehicleName} Private Chauffeur`
-      : `✈️ ${tripPlan.selectedFlight.airline} (${tripPlan.selectedFlight.flightNumber})`;
+        ? `🚌 ${tripPlan.selectedBus.operator} (${tripPlan.selectedBus.busType})`
+        : tripPlan.selectedTransitMode === 'cab' && tripPlan.selectedCab
+          ? `🚖 ${tripPlan.selectedCab.vehicleName} Private Chauffeur`
+          : `✈️ ${tripPlan.selectedFlight.airline} (${tripPlan.selectedFlight.flightNumber})`;
 
   const highlights = tripPlan.days
     .slice(0, 4)
@@ -352,7 +351,10 @@ ${shareUrl}`;
 /**
  * Generates WhatsApp Share Link.
  */
-export function generateWhatsAppShareUrl(tripPlan: TripPlan, curatorName: string = 'Ayan Alam'): string {
+export function generateWhatsAppShareUrl(
+  tripPlan: TripPlan,
+  curatorName: string = 'Ayan Alam'
+): string {
   const text = generateFormattedTripSummary(tripPlan, curatorName);
   return `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
 }
@@ -360,7 +362,10 @@ export function generateWhatsAppShareUrl(tripPlan: TripPlan, curatorName: string
 /**
  * Generates Telegram Share Link.
  */
-export function generateTelegramShareUrl(tripPlan: TripPlan, curatorName: string = 'Ayan Alam'): string {
+export function generateTelegramShareUrl(
+  tripPlan: TripPlan,
+  curatorName: string = 'Ayan Alam'
+): string {
   const shareUrl = generateShareableTripLink(tripPlan, curatorName);
   const text = `🌍 Check out this ${tripPlan.durationDays}-day curated trip to ${tripPlan.destination.name} on Wandr!`;
   return `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(text)}`;
@@ -369,7 +374,10 @@ export function generateTelegramShareUrl(tripPlan: TripPlan, curatorName: string
 /**
  * Generates Email Share Link with subject and preformatted body.
  */
-export function generateEmailShareUrl(tripPlan: TripPlan, curatorName: string = 'Ayan Alam'): string {
+export function generateEmailShareUrl(
+  tripPlan: TripPlan,
+  curatorName: string = 'Ayan Alam'
+): string {
   const subject = `Curated Journey to ${tripPlan.destination.name} (${tripPlan.durationDays} Days) — Wandr Itinerary`;
   const body = generateFormattedTripSummary(tripPlan, curatorName);
   return `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -378,7 +386,10 @@ export function generateEmailShareUrl(tripPlan: TripPlan, curatorName: string = 
 /**
  * Generates X (Twitter) Share Link.
  */
-export function generateTwitterShareUrl(tripPlan: TripPlan, curatorName: string = 'Ayan Alam'): string {
+export function generateTwitterShareUrl(
+  tripPlan: TripPlan,
+  curatorName: string = 'Ayan Alam'
+): string {
   const shareUrl = generateShareableTripLink(tripPlan, curatorName);
   const text = `Just designed an incredible ${tripPlan.durationDays}-day trip to ${tripPlan.destination.name} on @WandrTravel! Check out our itinerary:`;
   return `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}`;
@@ -403,8 +414,8 @@ export async function triggerNativeShare(
         url: shareUrl,
       });
       return { success: true, method: 'native' };
-    } catch (err: any) {
-      if (err.name === 'AbortError') {
+    } catch (err) {
+      if (err instanceof Error && err.name === 'AbortError') {
         return { success: false, method: 'native' };
       }
     }
@@ -430,7 +441,7 @@ export function generateTripIcsCalendar(tripPlan: TripPlan): string {
   };
 
   const stamp = formatIcsDate(now);
-  let icsContent = [
+  const icsContent = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
     'PRODID:-//Wandr//AI Travel Curator//EN',
@@ -477,7 +488,10 @@ export function downloadTripIcsCalendar(tripPlan: TripPlan): void {
   const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8;' });
   const link = document.createElement('a');
   link.href = URL.createObjectURL(blob);
-  link.setAttribute('download', `Wandr_${tripPlan.destination.name}_${tripPlan.durationDays}Days.ics`);
+  link.setAttribute(
+    'download',
+    `Wandr_${tripPlan.destination.name}_${tripPlan.durationDays}Days.ics`
+  );
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

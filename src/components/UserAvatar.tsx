@@ -32,12 +32,14 @@ export const UserAvatar: React.FC<UserAvatarProps> = ({
   onClick,
   title,
 }) => {
-  const initialSrc = src && src !== '/user_avatar.jpg' && src.trim() !== '' ? src : DEFAULT_AVATAR_URL;
+  const initialSrc =
+    src && src !== '/user_avatar.jpg' && src.trim() !== '' ? src : DEFAULT_AVATAR_URL;
   const [currentSrc, setCurrentSrc] = useState<string>(initialSrc);
   const [hasError, setHasError] = useState<boolean>(false);
 
   useEffect(() => {
-    const validSrc = src && src !== '/user_avatar.jpg' && src.trim() !== '' ? src : DEFAULT_AVATAR_URL;
+    const validSrc =
+      src && src !== '/user_avatar.jpg' && src.trim() !== '' ? src : DEFAULT_AVATAR_URL;
     setCurrentSrc(validSrc);
     setHasError(false);
   }, [src]);

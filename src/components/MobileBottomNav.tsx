@@ -1,15 +1,5 @@
 import React from 'react';
-import {
-  Compass,
-  MapPin,
-  Calendar,
-  Heart,
-  User,
-  Radio,
-  Sparkles,
-  Plane,
-  Crown,
-} from 'lucide-react';
+import { Compass, MapPin, Calendar, Plane, Crown } from 'lucide-react';
 import { UserProfile } from '../types/travel';
 import { UserAvatar } from './UserAvatar';
 
@@ -27,16 +17,8 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
   activeTab,
   setActiveTab,
   onOpenProfile,
-  onOpenSaved,
   userProfile,
-  liveModeActive,
-  setLiveModeActive,
 }) => {
-  const totalSaved =
-    userProfile.savedStayIds.length +
-    userProfile.savedDestinationIds.length +
-    userProfile.savedActivityIds.length;
-
   const isPremium = !!userProfile.isPremium;
 
   return (

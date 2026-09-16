@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import {
   Sun,
   CloudSun,
@@ -7,21 +6,13 @@ import {
   Wind,
   Droplets,
   Thermometer,
-  Compass,
   Sunrise,
   Sunset,
-  CheckCircle2,
   Sparkles,
-  ShieldCheck,
-  Calendar,
   Luggage,
   Clock,
   RefreshCw,
-  Info,
-  ChevronRight,
   Check,
-  Umbrella,
-  Eye,
   Shirt,
 } from 'lucide-react';
 import {
@@ -50,7 +41,6 @@ export const WeatherForecastCard: React.FC<WeatherForecastCardProps> = ({
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isRefreshing, setIsRefreshing] = useState<boolean>(false);
   const [packedItems, setPackedItems] = useState<string[]>([]);
-  const [showPackingModal, setShowPackingModal] = useState<boolean>(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -230,7 +220,9 @@ export const WeatherForecastCard: React.FC<WeatherForecastCardProps> = ({
                     >
                       Day 0{day.dayNumber}
                     </span>
-                    <span className={`text-[10px] font-light ${isSelected ? 'text-stone-400' : 'text-stone-400'}`}>
+                    <span
+                      className={`text-[10px] font-light ${isSelected ? 'text-stone-400' : 'text-stone-400'}`}
+                    >
                       {day.dateStr}
                     </span>
                   </div>
@@ -244,9 +236,7 @@ export const WeatherForecastCard: React.FC<WeatherForecastCardProps> = ({
                       {getWeatherIcon(day.conditionCategory)}
                     </div>
                     <div>
-                      <div className="text-sm font-serif font-bold leading-tight">
-                        {maxTemp}
-                      </div>
+                      <div className="text-sm font-serif font-bold leading-tight">{maxTemp}</div>
                       <div
                         className={`text-[10px] font-light ${
                           isSelected ? 'text-stone-400' : 'text-stone-500'
@@ -264,8 +254,8 @@ export const WeatherForecastCard: React.FC<WeatherForecastCardProps> = ({
                         day.precipitationPercent > 20
                           ? 'text-blue-500 font-semibold'
                           : isSelected
-                          ? 'text-stone-400'
-                          : 'text-stone-400'
+                            ? 'text-stone-400'
+                            : 'text-stone-400'
                       }`}
                     >
                       <Droplets className="w-2.5 h-2.5" />
@@ -290,7 +280,8 @@ export const WeatherForecastCard: React.FC<WeatherForecastCardProps> = ({
                 <div>
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-semibold text-[#E05A47] uppercase tracking-wider">
-                      Day 0{selectedDay.dayNumber} Focus ({selectedDay.dayOfWeek}, {selectedDay.dateStr})
+                      Day 0{selectedDay.dayNumber} Focus ({selectedDay.dayOfWeek},{' '}
+                      {selectedDay.dateStr})
                     </span>
                   </div>
                   <h4 className="text-base sm:text-lg font-serif font-bold text-stone-900">
@@ -304,7 +295,8 @@ export const WeatherForecastCard: React.FC<WeatherForecastCardProps> = ({
                   {tempUnit === 'C' ? `${selectedDay.tempMaxC}°C` : `${selectedDay.tempMaxF}°F`}
                 </span>
                 <span className="text-xs text-stone-400 block">
-                  Night Low {tempUnit === 'C' ? `${selectedDay.tempMinC}°C` : `${selectedDay.tempMinF}°F`}
+                  Night Low{' '}
+                  {tempUnit === 'C' ? `${selectedDay.tempMinC}°C` : `${selectedDay.tempMinF}°F`}
                 </span>
               </div>
             </div>

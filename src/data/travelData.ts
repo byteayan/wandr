@@ -54,8 +54,10 @@ export const DESTINATIONS: Destination[] = [
     country: 'Indonesia',
     region: 'Southeast Asia',
     tagline: 'Lush terraced hills, private cliffside villas & magical sunsets',
-    description: 'An island paradise where emerald rainforests meet sacred ocean temples and secluded beaches.',
-    coverImage: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=80',
+    description:
+      'An island paradise where emerald rainforests meet sacred ocean temples and secluded beaches.',
+    coverImage:
+      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=80',
     gallery: [
       'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1200&q=80',
@@ -74,7 +76,12 @@ export const DESTINATIONS: Destination[] = [
     idealDays: 7,
     budgetFit: 'Great fit',
     recommendedFor: ['couple', 'solo', 'friends'],
-    highlights: ['Private Jungle Infinity Pools', 'Nusa Penida Manta Snorkeling', 'Uluwatu Sunset Amphitheatre', 'Mount Batur Sunrise'],
+    highlights: [
+      'Private Jungle Infinity Pools',
+      'Nusa Penida Manta Snorkeling',
+      'Uluwatu Sunset Amphitheatre',
+      'Mount Batur Sunrise',
+    ],
     weather: { temp: '28°C', condition: 'Sunny & Warm', icon: '☀️' },
   },
   {
@@ -83,8 +90,10 @@ export const DESTINATIONS: Destination[] = [
     country: 'Vietnam',
     region: 'Southeast Asia',
     tagline: 'Emerald limestone bays, lantern-lit alleys & street food heaven',
-    description: 'From Hanoi’s buzzing coffee culture to overnight cruises on Ha Long Bay and tailored linen suits in Hoi An.',
-    coverImage: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1600&q=80',
+    description:
+      'From Hanoi’s buzzing coffee culture to overnight cruises on Ha Long Bay and tailored linen suits in Hoi An.',
+    coverImage:
+      'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1600&q=80',
     gallery: [
       'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=80',
@@ -103,7 +112,12 @@ export const DESTINATIONS: Destination[] = [
     idealDays: 8,
     budgetFit: 'Excellent fit',
     recommendedFor: ['friends', 'couple', 'solo', 'family'],
-    highlights: ['Ha Long Bay Luxury Junk Cruise', 'Hoi An Lantern River Walk', 'Egg Coffee Tasting Hanoi', 'Trang An River Caves'],
+    highlights: [
+      'Ha Long Bay Luxury Junk Cruise',
+      'Hoi An Lantern River Walk',
+      'Egg Coffee Tasting Hanoi',
+      'Trang An River Caves',
+    ],
     weather: { temp: '25°C', condition: 'Clear Sky', icon: '🌤️' },
   },
   {
@@ -112,8 +126,10 @@ export const DESTINATIONS: Destination[] = [
     country: 'India',
     region: 'North India',
     tagline: 'Snow-capped pines, tranquil houseboats & alpine meadows',
-    description: 'Paradise on earth. Wake up to misty Dal Lake waters, sip saffron Kahwa, and glide above pine forests in Gulmarg.',
-    coverImage: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1600&q=80',
+    description:
+      'Paradise on earth. Wake up to misty Dal Lake waters, sip saffron Kahwa, and glide above pine forests in Gulmarg.',
+    coverImage:
+      'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1600&q=80',
     gallery: [
       'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1566837945700-30057527ade0?auto=format&fit=crop&w=1200&q=80',
@@ -131,7 +147,12 @@ export const DESTINATIONS: Destination[] = [
     idealDays: 6,
     budgetFit: 'Great fit',
     recommendedFor: ['couple', 'family', 'solo'],
-    highlights: ['Private Shikara Ride at Sunrise', 'Pahalgam Pine Valley Picnic', 'Gulmarg Gondola to Phase II', 'Heritage Wooden Houseboat'],
+    highlights: [
+      'Private Shikara Ride at Sunrise',
+      'Pahalgam Pine Valley Picnic',
+      'Gulmarg Gondola to Phase II',
+      'Heritage Wooden Houseboat',
+    ],
     weather: { temp: '16°C', condition: 'Crisp & Mountain Air', icon: '⛅' },
   },
   {
@@ -140,8 +161,10 @@ export const DESTINATIONS: Destination[] = [
     country: 'Japan',
     region: 'East Asia',
     tagline: 'Ancient cedar shrines, neon alleyways & Michelin culinary art',
-    description: 'A sublime blend of tranquil Zen rock gardens, bullet trains rushing past Mt Fuji, and subterranean cocktail bars.',
-    coverImage: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=80',
+    description:
+      'A sublime blend of tranquil Zen rock gardens, bullet trains rushing past Mt Fuji, and subterranean cocktail bars.',
+    coverImage:
+      'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1600&q=80',
     gallery: [
       'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1200&q=80',
@@ -159,7 +182,12 @@ export const DESTINATIONS: Destination[] = [
     idealDays: 8,
     budgetFit: 'Luxury tier',
     recommendedFor: ['couple', 'solo', 'friends'],
-    highlights: ['Private Tea Ceremony in Gion', 'Shinkansen Bullet Train Passes', 'Arashiyama Bamboo Forest at Dawn', 'Tsukiji Market Chef Tour'],
+    highlights: [
+      'Private Tea Ceremony in Gion',
+      'Shinkansen Bullet Train Passes',
+      'Arashiyama Bamboo Forest at Dawn',
+      'Tsukiji Market Chef Tour',
+    ],
     weather: { temp: '19°C', condition: 'Mild & Crisp', icon: '🌸' },
   },
   {
@@ -168,8 +196,10 @@ export const DESTINATIONS: Destination[] = [
     country: 'Italy',
     region: 'Southern Europe',
     tagline: 'Pastel cliffside villages, lemon groves & vintage boat charters',
-    description: 'Sun-drenched terraces overlooking the Tyrrhenian Sea, handmade pasta, and cruising around Capri on a Riva boat.',
-    coverImage: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1600&q=80',
+    description:
+      'Sun-drenched terraces overlooking the Tyrrhenian Sea, handmade pasta, and cruising around Capri on a Riva boat.',
+    coverImage:
+      'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1600&q=80',
     gallery: [
       'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80',
@@ -187,7 +217,12 @@ export const DESTINATIONS: Destination[] = [
     idealDays: 7,
     budgetFit: 'Luxury tier',
     recommendedFor: ['couple', 'friends'],
-    highlights: ['Capri Island Private Wooden Boat', 'Positano Sunset Spritz Bar', 'Ravello Cliffside Garden Villa', 'Lemon Grove Pasta Masterclass'],
+    highlights: [
+      'Capri Island Private Wooden Boat',
+      'Positano Sunset Spritz Bar',
+      'Ravello Cliffside Garden Villa',
+      'Lemon Grove Pasta Masterclass',
+    ],
     weather: { temp: '26°C', condition: 'Sunny & Coastal Breeze', icon: '☀️' },
   },
   {
@@ -196,8 +231,10 @@ export const DESTINATIONS: Destination[] = [
     country: 'Sri Lanka',
     region: 'South Asia',
     tagline: 'Colonial tea trains, golden surf breaks & wild leopard safaris',
-    description: 'An emerald jewel in the Indian Ocean packed with world-class surf, misty tea estates, and UNESCO fortress towns.',
-    coverImage: 'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=1600&q=80',
+    description:
+      'An emerald jewel in the Indian Ocean packed with world-class surf, misty tea estates, and UNESCO fortress towns.',
+    coverImage:
+      'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=1600&q=80',
     gallery: [
       'https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1546708973-b339540b5162?auto=format&fit=crop&w=1200&q=80',
@@ -215,7 +252,12 @@ export const DESTINATIONS: Destination[] = [
     idealDays: 7,
     budgetFit: 'Excellent fit',
     recommendedFor: ['couple', 'friends', 'solo', 'family'],
-    highlights: ['Ella Blue Train Over Nine Arches', 'Yala National Park Safari', 'Galle Fort Heritage Walk', 'Mirissa Whale Watching'],
+    highlights: [
+      'Ella Blue Train Over Nine Arches',
+      'Yala National Park Safari',
+      'Galle Fort Heritage Walk',
+      'Mirissa Whale Watching',
+    ],
     weather: { temp: '29°C', condition: 'Warm & Tropical', icon: '🌴' },
   },
   {
@@ -224,8 +266,10 @@ export const DESTINATIONS: Destination[] = [
     country: 'Turkey',
     region: 'Eurasia',
     tagline: 'Fairy chimneys, hot air balloon sunrises & carved cave suites',
-    description: 'Surreal moonscapes dotted with volcanic valleys, underground cities, and morning skies filled with hundreds of hot air balloons.',
-    coverImage: 'https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?auto=format&fit=crop&w=1600&q=80',
+    description:
+      'Surreal moonscapes dotted with volcanic valleys, underground cities, and morning skies filled with hundreds of hot air balloons.',
+    coverImage:
+      'https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?auto=format&fit=crop&w=1600&q=80',
     gallery: [
       'https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1570939274717-7eda259b50ed?auto=format&fit=crop&w=1200&q=80',
@@ -242,7 +286,12 @@ export const DESTINATIONS: Destination[] = [
     idealDays: 5,
     budgetFit: 'Great fit',
     recommendedFor: ['couple', 'friends', 'solo'],
-    highlights: ['Sunrise Hot Air Balloon Flight', 'Boutique Cave Suite Stay', 'ATV Quad Safari in Rose Valley', 'Traditional Turkish Hammam & Pottery'],
+    highlights: [
+      'Sunrise Hot Air Balloon Flight',
+      'Boutique Cave Suite Stay',
+      'ATV Quad Safari in Rose Valley',
+      'Traditional Turkish Hammam & Pottery',
+    ],
     weather: { temp: '22°C', condition: 'Sunny & Clear', icon: '☀️' },
   },
   {
@@ -251,8 +300,10 @@ export const DESTINATIONS: Destination[] = [
     country: 'India',
     region: 'West Coast',
     tagline: 'Secluded cove beaches, Portuguese villas & bohemian sunsets',
-    description: 'Quiet coconut groves, artisanal sourdough bakeries, heritage Latin quarters in Fontainhas, and slow ocean waves.',
-    coverImage: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1600&q=80',
+    description:
+      'Quiet coconut groves, artisanal sourdough bakeries, heritage Latin quarters in Fontainhas, and slow ocean waves.',
+    coverImage:
+      'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1600&q=80',
     gallery: [
       'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1587922546307-776227941871?auto=format&fit=crop&w=1200&q=80',
@@ -269,7 +320,12 @@ export const DESTINATIONS: Destination[] = [
     idealDays: 5,
     budgetFit: 'Excellent fit',
     recommendedFor: ['couple', 'friends', 'solo'],
-    highlights: ['Kayak through Cola Lagoon', 'Fontainhas Heritage Walk', 'Sunset Cocktails at Cabo de Rama', 'Private Beachfront Cottage'],
+    highlights: [
+      'Kayak through Cola Lagoon',
+      'Fontainhas Heritage Walk',
+      'Sunset Cocktails at Cabo de Rama',
+      'Private Beachfront Cottage',
+    ],
     weather: { temp: '30°C', condition: 'Sunny & Gentle Breeze', icon: '🌴' },
   },
 ];
@@ -291,14 +347,22 @@ export const STAYS_DATA: StayItem[] = [
     ],
     pricePerNight: 5400,
     roomType: 'One-Bedroom Private Pool Villa',
-    amenities: ['Private Infinity Pool', 'Floating Breakfast Included', 'Forest View Bath', 'High-Speed Wi-Fi', 'Complimentary Afternoon Tea', 'Spa on-site'],
+    amenities: [
+      'Private Infinity Pool',
+      'Floating Breakfast Included',
+      'Forest View Bath',
+      'High-Speed Wi-Fi',
+      'Complimentary Afternoon Tea',
+      'Spa on-site',
+    ],
     cancellationPolicy: 'Free cancellation until 48 hours before check-in',
     coupleFriendly: true,
     pool: true,
     breakfastIncluded: true,
     luxuryTier: false,
     distanceToCenter: '1.2 km from Ubud Palace',
-    description: 'Nestled on the slope of Campuhan River valley, offering total privacy with open-air teak wood interiors and an unblocked view of the sacred jungle ravine.',
+    description:
+      'Nestled on the slope of Campuhan River valley, offering total privacy with open-air teak wood interiors and an unblocked view of the sacred jungle ravine.',
   },
   {
     id: 'stay-bali-2',
@@ -315,14 +379,21 @@ export const STAYS_DATA: StayItem[] = [
     ],
     pricePerNight: 12500,
     roomType: 'Ocean Cliffview Pavilion with Plunge Pool',
-    amenities: ['Private Incline Funicular to Beach', 'Butler Service 24/7', 'Sunset Cliff Bar', 'Marble Bath', 'Michelin-star Dining'],
+    amenities: [
+      'Private Incline Funicular to Beach',
+      'Butler Service 24/7',
+      'Sunset Cliff Bar',
+      'Marble Bath',
+      'Michelin-star Dining',
+    ],
     cancellationPolicy: 'Free cancellation up to 7 days prior',
     coupleFriendly: true,
     pool: true,
     breakfastIncluded: true,
     luxuryTier: true,
     distanceToCenter: '0.5 km from Uluwatu Temple',
-    description: 'Perched 150 meters above the Indian Ocean, blending traditional Balinese design with high Italian elegance.',
+    description:
+      'Perched 150 meters above the Indian Ocean, blending traditional Balinese design with high Italian elegance.',
   },
   {
     id: 'stay-vietnam-1',
@@ -339,14 +410,21 @@ export const STAYS_DATA: StayItem[] = [
     ],
     pricePerNight: 4200,
     roomType: 'Veranda Suite with Rice Field View',
-    amenities: ['Saltwater Pool', 'Complimentary Vintage Bicycles', 'Organic Herb Garden Dining', 'Free Buffet Breakfast', 'Deep Herbal Spa'],
+    amenities: [
+      'Saltwater Pool',
+      'Complimentary Vintage Bicycles',
+      'Organic Herb Garden Dining',
+      'Free Buffet Breakfast',
+      'Deep Herbal Spa',
+    ],
     cancellationPolicy: 'Free cancellation until 24 hours before check-in',
     coupleFriendly: true,
     pool: true,
     breakfastIncluded: true,
     luxuryTier: false,
     distanceToCenter: '800m to Japanese Covered Bridge',
-    description: 'Classic Indochine architecture set beside tranquil lotus ponds and lush rice paddies.',
+    description:
+      'Classic Indochine architecture set beside tranquil lotus ponds and lush rice paddies.',
   },
   {
     id: 'stay-kashmir-1',
@@ -363,14 +441,21 @@ export const STAYS_DATA: StayItem[] = [
     ],
     pricePerNight: 6800,
     roomType: 'Royal Cedar Suite with Rooftop Deck',
-    amenities: ['Traditional Wood Fireplace (Bukhari)', 'Hand-Carved Walnut Wood Paneling', 'Dedicated Butler & Shikara', 'Wazwan Dining', 'Kahwa on Arrival'],
+    amenities: [
+      'Traditional Wood Fireplace (Bukhari)',
+      'Hand-Carved Walnut Wood Paneling',
+      'Dedicated Butler & Shikara',
+      'Wazwan Dining',
+      'Kahwa on Arrival',
+    ],
     cancellationPolicy: 'Free cancellation up to 48 hours prior',
     coupleFriendly: true,
     pool: false,
     breakfastIncluded: true,
     luxuryTier: false,
     distanceToCenter: 'On serene calm waters of Dal Lake',
-    description: 'The premier eco-heritage houseboat on Dal Lake, handcrafted from aromatic cedar wood with panoramic snow peaks view.',
+    description:
+      'The premier eco-heritage houseboat on Dal Lake, handcrafted from aromatic cedar wood with panoramic snow peaks view.',
   },
   {
     id: 'stay-kyoto-1',
@@ -387,14 +472,20 @@ export const STAYS_DATA: StayItem[] = [
     ],
     pricePerNight: 16500,
     roomType: 'Tsukimi Traditional Ryokan Suite',
-    amenities: ['Arrival by Wooden Boat', 'Tatami Living Room & Hinoki Cypress Bath', 'Kaiseki Breakfast', 'Morning Zen Meditation with Monk'],
+    amenities: [
+      'Arrival by Wooden Boat',
+      'Tatami Living Room & Hinoki Cypress Bath',
+      'Kaiseki Breakfast',
+      'Morning Zen Meditation with Monk',
+    ],
     cancellationPolicy: 'Flexible reschedule up to 5 days prior',
     coupleFriendly: true,
     pool: false,
     breakfastIncluded: true,
     luxuryTier: true,
     distanceToCenter: '15 min boat transfer from Togetsukyo Bridge',
-    description: 'A riverside sanctuary accessible only by traditional wooden boat, nestled among century-old maple trees.',
+    description:
+      'A riverside sanctuary accessible only by traditional wooden boat, nestled among century-old maple trees.',
   },
   {
     id: 'stay-amalfi-1',
@@ -411,14 +502,20 @@ export const STAYS_DATA: StayItem[] = [
     ],
     pricePerNight: 24000,
     roomType: 'Maestro Panoramic Ocean Suite',
-    amenities: ['Private Beach Elevator', 'Complimentary Sunset Prosecco Club', 'Hydrotherapy Plunge', 'Farm-to-Table Terrace'],
+    amenities: [
+      'Private Beach Elevator',
+      'Complimentary Sunset Prosecco Club',
+      'Hydrotherapy Plunge',
+      'Farm-to-Table Terrace',
+    ],
     cancellationPolicy: 'Free cancellation up to 14 days prior',
     coupleFriendly: true,
     pool: true,
     breakfastIncluded: true,
     luxuryTier: true,
     distanceToCenter: '1.5 km to Positano Marina',
-    description: 'Former home of film director Franco Zeffirelli, cascading down terraced cliffs with private cove access.',
+    description:
+      'Former home of film director Franco Zeffirelli, cascading down terraced cliffs with private cove access.',
   },
 ];
 
@@ -516,9 +613,16 @@ export const ACTIVITIES_DATA: ActivityItem[] = [
     rating: 4.96,
     reviewCount: 340,
     price: 4200,
-    image: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80',
-    shortDescription: 'Swim with giant gentle Manta Rays in crystal-clear waters, visit Kelingking T-Rex cliff, and relax on secluded Diamond Beach.',
-    included: ['Private Speedboat Transfer', 'Snorkel Equipment & GoPro Footage', 'Local Seafood Lunch', 'Island Air-Conditioned Driver'],
+    image:
+      'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80',
+    shortDescription:
+      'Swim with giant gentle Manta Rays in crystal-clear waters, visit Kelingking T-Rex cliff, and relax on secluded Diamond Beach.',
+    included: [
+      'Private Speedboat Transfer',
+      'Snorkel Equipment & GoPro Footage',
+      'Local Seafood Lunch',
+      'Island Air-Conditioned Driver',
+    ],
     badge: 'Top Pick',
     timeSlot: '07:30 AM – 04:30 PM',
   },
@@ -532,9 +636,15 @@ export const ACTIVITIES_DATA: ActivityItem[] = [
     rating: 4.94,
     reviewCount: 280,
     price: 3100,
-    image: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80',
-    shortDescription: 'Drive up volcanic black lava fields in an open-top 4x4 classic 1970s Jeep to catch the golden sun rising above clouds.',
-    included: ['4x4 Custom Jeep Tour', 'Hot Lava Mineral Spring Admission', 'Breakfast & French Press Coffee at Peak'],
+    image:
+      'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80',
+    shortDescription:
+      'Drive up volcanic black lava fields in an open-top 4x4 classic 1970s Jeep to catch the golden sun rising above clouds.',
+    included: [
+      '4x4 Custom Jeep Tour',
+      'Hot Lava Mineral Spring Admission',
+      'Breakfast & French Press Coffee at Peak',
+    ],
     badge: 'Trending',
     timeSlot: '04:00 AM – 10:30 AM',
   },
@@ -548,8 +658,10 @@ export const ACTIVITIES_DATA: ActivityItem[] = [
     rating: 4.88,
     reviewCount: 410,
     price: 1800,
-    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80',
-    shortDescription: 'Hypnotic vocal chanting overlooking sheer 70-meter ocean cliffs as the orange sun sinks into the sea.',
+    image:
+      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80',
+    shortDescription:
+      'Hypnotic vocal chanting overlooking sheer 70-meter ocean cliffs as the orange sun sinks into the sea.',
     included: ['VIP Reserved Front Rows', 'Temple Entrance Pass', 'Cultural Sarong Attire'],
     timeSlot: '05:00 PM – 08:30 PM',
   },
@@ -563,9 +675,16 @@ export const ACTIVITIES_DATA: ActivityItem[] = [
     rating: 4.98,
     reviewCount: 195,
     price: 2400,
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
-    shortDescription: 'Harvest fresh turmeric, galangal and lemongrass at an organic farm before preparing a 6-course lunch inside a bamboo kitchen.',
-    included: ['Organic Farm Harvest Tour', '6-Course Lunch', 'Printed Recipe Handbook', 'Waterfall Entry'],
+    image:
+      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
+    shortDescription:
+      'Harvest fresh turmeric, galangal and lemongrass at an organic farm before preparing a 6-course lunch inside a bamboo kitchen.',
+    included: [
+      'Organic Farm Harvest Tour',
+      '6-Course Lunch',
+      'Printed Recipe Handbook',
+      'Waterfall Entry',
+    ],
     timeSlot: '09:00 AM – 02:00 PM',
   },
   {
@@ -578,9 +697,16 @@ export const ACTIVITIES_DATA: ActivityItem[] = [
     rating: 4.93,
     reviewCount: 312,
     price: 6500,
-    image: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=800&q=80',
-    shortDescription: 'Sail between 2,000 limestone islets, kayak into luminous sea caves, and practice sunrise Tai Chi on the teak sundeck.',
-    included: ['Private Oceanview Cabin', 'All 4 Meals (Seafood & Veg)', 'Kayaking & Cave Guides', 'Sunset Happy Hour'],
+    image:
+      'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=800&q=80',
+    shortDescription:
+      'Sail between 2,000 limestone islets, kayak into luminous sea caves, and practice sunrise Tai Chi on the teak sundeck.',
+    included: [
+      'Private Oceanview Cabin',
+      'All 4 Meals (Seafood & Veg)',
+      'Kayaking & Cave Guides',
+      'Sunset Happy Hour',
+    ],
     timeSlot: '11:30 AM Day 1 – 11:00 AM Day 2',
   },
   {
@@ -593,9 +719,15 @@ export const ACTIVITIES_DATA: ActivityItem[] = [
     rating: 4.97,
     reviewCount: 450,
     price: 1600,
-    image: 'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=800&q=80',
-    shortDescription: 'Sample Cao Lau noodles, white rose dumplings, crispy Banh Xeo pancakes and float paper candle lanterns on Thu Bon river.',
-    included: ['Food Tastings at 7 Secret Stalls', 'Traditional Wooden Boat Ride', 'Custom Floating Lanterns'],
+    image:
+      'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=800&q=80',
+    shortDescription:
+      'Sample Cao Lau noodles, white rose dumplings, crispy Banh Xeo pancakes and float paper candle lanterns on Thu Bon river.',
+    included: [
+      'Food Tastings at 7 Secret Stalls',
+      'Traditional Wooden Boat Ride',
+      'Custom Floating Lanterns',
+    ],
     timeSlot: '06:00 PM – 09:30 PM',
   },
   {
@@ -608,9 +740,15 @@ export const ACTIVITIES_DATA: ActivityItem[] = [
     rating: 4.99,
     reviewCount: 220,
     price: 1500,
-    image: 'https://images.unsplash.com/photo-1566837945700-30057527ade0?auto=format&fit=crop&w=800&q=80',
-    shortDescription: 'Drift through serene lotus waterways cushioned with velvet Kashmiri carpets while warm saffron kahwa is brewed on-board.',
-    included: ['Private Decorated Shikara', 'Fresh Kashmiri Saffron Kahwa & Bakarkhani', 'Floating Flower Market Stop'],
+    image:
+      'https://images.unsplash.com/photo-1566837945700-30057527ade0?auto=format&fit=crop&w=800&q=80',
+    shortDescription:
+      'Drift through serene lotus waterways cushioned with velvet Kashmiri carpets while warm saffron kahwa is brewed on-board.',
+    included: [
+      'Private Decorated Shikara',
+      'Fresh Kashmiri Saffron Kahwa & Bakarkhani',
+      'Floating Flower Market Stop',
+    ],
     timeSlot: '06:00 AM – 08:30 AM or 05:00 PM – 07:30 PM',
   },
   {
@@ -623,9 +761,15 @@ export const ACTIVITIES_DATA: ActivityItem[] = [
     rating: 4.96,
     reviewCount: 290,
     price: 4800,
-    image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80',
-    shortDescription: 'An authentic exploration of Kyoto’s historic wooden machiya lanes, tea houses, and ancient performing arts etiquette.',
-    included: ['Licensed Local Historian Guide', 'Matcha & Seasonal Wagashi Sweet', 'Access to Historic Preservation Alleys'],
+    image:
+      'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80',
+    shortDescription:
+      'An authentic exploration of Kyoto’s historic wooden machiya lanes, tea houses, and ancient performing arts etiquette.',
+    included: [
+      'Licensed Local Historian Guide',
+      'Matcha & Seasonal Wagashi Sweet',
+      'Access to Historic Preservation Alleys',
+    ],
     timeSlot: '05:30 PM – 08:30 PM',
   },
 ];
@@ -638,9 +782,16 @@ export const PREMIUM_EXPERIENCES: PremiumExperience[] = [
     category: 'Romantic',
     destinationId: 'bali',
     price: 4500,
-    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
-    description: 'An exclusive table for two on a limestone cliff terrace surrounded by 500 flickering candles and crashing ocean waves.',
-    includes: ['5-Course Degustation Menu', 'Bottle of Chilled Sparkling Wine', 'Acoustic Violinist / Guitarist for 1 Hour', 'Dedicated Personal Butler'],
+    image:
+      'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
+    description:
+      'An exclusive table for two on a limestone cliff terrace surrounded by 500 flickering candles and crashing ocean waves.',
+    includes: [
+      '5-Course Degustation Menu',
+      'Bottle of Chilled Sparkling Wine',
+      'Acoustic Violinist / Guitarist for 1 Hour',
+      'Dedicated Personal Butler',
+    ],
     recommendedFor: ['couple'],
   },
   {
@@ -650,9 +801,15 @@ export const PREMIUM_EXPERIENCES: PremiumExperience[] = [
     category: 'Romantic',
     destinationId: 'bali',
     price: 2800,
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
-    description: 'Wake up to thousands of freshly cut frangipani and rose petals spelling a custom message in your private pool with a gourmet floating tray.',
-    includes: ['5,000+ Fresh Petal Art Setup', 'Floating Bamboo Basket with Smoothie Bowls & Pastries', 'Freshly Squeezed Dragonfruit & Coconut Juices'],
+    image:
+      'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
+    description:
+      'Wake up to thousands of freshly cut frangipani and rose petals spelling a custom message in your private pool with a gourmet floating tray.',
+    includes: [
+      '5,000+ Fresh Petal Art Setup',
+      'Floating Bamboo Basket with Smoothie Bowls & Pastries',
+      'Freshly Squeezed Dragonfruit & Coconut Juices',
+    ],
     recommendedFor: ['couple', 'friends'],
   },
   {
@@ -662,9 +819,16 @@ export const PREMIUM_EXPERIENCES: PremiumExperience[] = [
     category: 'Personalized',
     destinationId: 'bali',
     price: 5200,
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
-    description: 'A professional editorial photographer joins you at scenic hidden spots (waterfalls, rice terraces or beaches) so you never worry about phone photos.',
-    includes: ['2-Hour Shoot at 2 Selected Locations', '50+ High-Res Edited Color-Graded Photos', 'Same-Day Preview Teaser for Socials', 'Drone Aerial Shots Included'],
+    image:
+      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
+    description:
+      'A professional editorial photographer joins you at scenic hidden spots (waterfalls, rice terraces or beaches) so you never worry about phone photos.',
+    includes: [
+      '2-Hour Shoot at 2 Selected Locations',
+      '50+ High-Res Edited Color-Graded Photos',
+      'Same-Day Preview Teaser for Socials',
+      'Drone Aerial Shots Included',
+    ],
     recommendedFor: ['couple', 'solo', 'friends', 'family'],
   },
   {
@@ -674,9 +838,16 @@ export const PREMIUM_EXPERIENCES: PremiumExperience[] = [
     category: 'Wellness',
     destinationId: 'bali',
     price: 3600,
-    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80',
-    description: 'Traditional Balinese rhythmic massage using warm volcanic river stones, aromatic coconut oil, and a floral petal jacuzzi bath.',
-    includes: ['Foot Reflexology Ritual', 'Full Body Balinese Massage (90m)', 'Boreh Herbal Warm Body Scrub', 'Floral Jacuzzi with Herbal Tea'],
+    image:
+      'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80',
+    description:
+      'Traditional Balinese rhythmic massage using warm volcanic river stones, aromatic coconut oil, and a floral petal jacuzzi bath.',
+    includes: [
+      'Foot Reflexology Ritual',
+      'Full Body Balinese Massage (90m)',
+      'Boreh Herbal Warm Body Scrub',
+      'Floral Jacuzzi with Herbal Tea',
+    ],
     recommendedFor: ['couple', 'solo', 'friends'],
   },
   {
@@ -686,9 +857,16 @@ export const PREMIUM_EXPERIENCES: PremiumExperience[] = [
     category: 'Comfort',
     destinationId: 'bali',
     price: 8000,
-    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80',
-    description: 'Your own private English-speaking driver and clean luxury SUV at your disposal whenever you need to explore, with zero waiting or haggling.',
-    includes: ['Unlimited Daily Kilometres on Island', 'Chilled Bottled Water & Cold Towels in Car', 'Gas, Tolls & Parking fully covered', 'Driver acts as local spotter'],
+    image:
+      'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80',
+    description:
+      'Your own private English-speaking driver and clean luxury SUV at your disposal whenever you need to explore, with zero waiting or haggling.',
+    includes: [
+      'Unlimited Daily Kilometres on Island',
+      'Chilled Bottled Water & Cold Towels in Car',
+      'Gas, Tolls & Parking fully covered',
+      'Driver acts as local spotter',
+    ],
     recommendedFor: ['couple', 'friends', 'family', 'solo'],
   },
   {
@@ -698,9 +876,15 @@ export const PREMIUM_EXPERIENCES: PremiumExperience[] = [
     category: 'VIP',
     destinationId: 'bali',
     price: 3000,
-    image: 'https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=800&q=80',
-    description: 'Skip tourist traps with an educated local friend who unlocks private family temples, hidden warungs, and artisan workshops.',
-    includes: ['Private Tailored Walking Routes', 'Skip-the-line Heritage Passes', 'WhatsApp Concierge during your stay'],
+    image:
+      'https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=800&q=80',
+    description:
+      'Skip tourist traps with an educated local friend who unlocks private family temples, hidden warungs, and artisan workshops.',
+    includes: [
+      'Private Tailored Walking Routes',
+      'Skip-the-line Heritage Passes',
+      'WhatsApp Concierge during your stay',
+    ],
     recommendedFor: ['couple', 'solo', 'friends', 'family'],
   },
 ];
@@ -708,13 +892,15 @@ export const PREMIUM_EXPERIENCES: PremiumExperience[] = [
 export const DEFAULT_USER_PROFILE: UserProfile = {
   name: 'Ayan',
   email: 'ayanalamxnaruto@gmail.com',
-  avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
+  avatar:
+    'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
   upcomingTrips: [
     {
       id: 'trip-bali-upcoming',
       destinationName: 'Bali',
       country: 'Indonesia',
-      coverImage: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80',
+      coverImage:
+        'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80',
       dates: 'Oct 12 – Oct 18, 2026',
       days: 7,
       companion: 'Couple',
@@ -727,7 +913,8 @@ export const DEFAULT_USER_PROFILE: UserProfile = {
       id: 'trip-goa-past',
       destinationName: 'South Goa & Palolem',
       country: 'India',
-      coverImage: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80',
+      coverImage:
+        'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80',
       dates: 'Jan 14 – Jan 19, 2026',
       year: '2026',
       rating: 5,
@@ -736,7 +923,8 @@ export const DEFAULT_USER_PROFILE: UserProfile = {
       id: 'trip-vietnam-past',
       destinationName: 'Hoi An & Ha Long',
       country: 'Vietnam',
-      coverImage: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=800&q=80',
+      coverImage:
+        'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=800&q=80',
       dates: 'Nov 04 – Nov 12, 2025',
       year: '2025',
       rating: 5,
@@ -745,7 +933,8 @@ export const DEFAULT_USER_PROFILE: UserProfile = {
       id: 'trip-kashmir-past',
       destinationName: 'Srinagar & Gulmarg',
       country: 'India',
-      coverImage: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80',
+      coverImage:
+        'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=800&q=80',
       dates: 'May 10 – May 16, 2025',
       year: '2025',
       rating: 5,
@@ -778,7 +967,8 @@ export const INITIAL_TRIP_PLAN: TripPlan = {
       dayNumber: 1,
       dayTitle: 'Arrival & Rainforest Transition',
       dateStr: 'Mon, Oct 12',
-      summary: 'Touchdown in paradise, private transfer to your jungle villa in Ubud, unwind with complimentary afternoon tea and a relaxed sunset dinner.',
+      summary:
+        'Touchdown in paradise, private transfer to your jungle villa in Ubud, unwind with complimentary afternoon tea and a relaxed sunset dinner.',
       activities: [
         {
           id: 'act-d1-1',
@@ -823,7 +1013,8 @@ export const INITIAL_TRIP_PLAN: TripPlan = {
       dayNumber: 2,
       dayTitle: 'Island Wonder & Manta Snorkeling',
       dateStr: 'Tue, Oct 13',
-      summary: 'Speedboat cruise across the Badung Strait to Nusa Penida, swimming alongside giant Manta Rays and photographing the iconic T-Rex cliff.',
+      summary:
+        'Speedboat cruise across the Badung Strait to Nusa Penida, swimming alongside giant Manta Rays and photographing the iconic T-Rex cliff.',
       activities: [
         {
           id: 'act-d2-1',
@@ -859,7 +1050,8 @@ export const INITIAL_TRIP_PLAN: TripPlan = {
       dayNumber: 3,
       dayTitle: 'Highland Sunrise & Rejuvenation',
       dateStr: 'Wed, Oct 14',
-      summary: 'Scenic 4x4 Jeep ride to Mount Batur black lava fields at dawn, followed by thermal hot spring soak and a 120-minute couple herbal spa.',
+      summary:
+        'Scenic 4x4 Jeep ride to Mount Batur black lava fields at dawn, followed by thermal hot spring soak and a 120-minute couple herbal spa.',
       activities: [
         {
           id: 'act-d3-1',
@@ -906,7 +1098,8 @@ export const INITIAL_TRIP_PLAN: TripPlan = {
       dayNumber: 4,
       dayTitle: 'Waterfalls, Spice Farms & Sacred Temples',
       dateStr: 'Thu, Oct 15',
-      summary: 'Explore hidden Tukad Cepung waterfall where sun rays filter through cave ceilings, followed by organic farm lunch and Tirta Empul water blessing.',
+      summary:
+        'Explore hidden Tukad Cepung waterfall where sun rays filter through cave ceilings, followed by organic farm lunch and Tirta Empul water blessing.',
       activities: [
         {
           id: 'act-d4-1',
@@ -941,7 +1134,8 @@ export const INITIAL_TRIP_PLAN: TripPlan = {
       dayNumber: 5,
       dayTitle: 'Coastal Shift to Uluwatu & Cliff Beach Clubs',
       dateStr: 'Fri, Oct 16',
-      summary: 'Transfer south to coastal limestone cliffs, check into ocean pavilion, afternoon swim at Sundays Beach Club, and cliffside cocktail sunset.',
+      summary:
+        'Transfer south to coastal limestone cliffs, check into ocean pavilion, afternoon swim at Sundays Beach Club, and cliffside cocktail sunset.',
       activities: [
         {
           id: 'act-d5-1',
@@ -977,7 +1171,8 @@ export const INITIAL_TRIP_PLAN: TripPlan = {
       dayNumber: 6,
       dayTitle: 'Private Catamaran & Ocean Sunset Picnic',
       dateStr: 'Sat, Oct 17',
-      summary: 'Lazy morning floating breakfast in your private pool, leisurely afternoon boutique browsing in Seminyak, and sunset dinner on the sand.',
+      summary:
+        'Lazy morning floating breakfast in your private pool, leisurely afternoon boutique browsing in Seminyak, and sunset dinner on the sand.',
       activities: [
         {
           id: 'act-d6-1',
@@ -1013,7 +1208,8 @@ export const INITIAL_TRIP_PLAN: TripPlan = {
       dayNumber: 7,
       dayTitle: 'Souvenirs, Slow Coffee & Flight Home',
       dateStr: 'Sun, Oct 18',
-      summary: 'Late check-out, final specialty coffee at an ocean roastery, private airport drop-off, and flight back home filled with lifelong memories.',
+      summary:
+        'Late check-out, final specialty coffee at an ocean roastery, private airport drop-off, and flight back home filled with lifelong memories.',
       activities: [
         {
           id: 'act-d7-1',
@@ -1065,10 +1261,30 @@ export const TRAINS_DATA: TrainOption[] = [
     badge: 'Fastest',
     runsOnDays: ['Mon', 'Tue', 'Wed', 'Fri', 'Sat', 'Sun'],
     classes: [
-      { classType: 'EC', className: 'Executive Chair Car', price: 3350, status: 'Available - 28', statusType: 'available', freeCancellation: true },
-      { classType: 'CC', className: 'AC Chair Car', price: 1750, status: 'Available - 114', statusType: 'available', freeCancellation: true },
+      {
+        classType: 'EC',
+        className: 'Executive Chair Car',
+        price: 3350,
+        status: 'Available - 28',
+        statusType: 'available',
+        freeCancellation: true,
+      },
+      {
+        classType: 'CC',
+        className: 'AC Chair Car',
+        price: 1750,
+        status: 'Available - 114',
+        statusType: 'available',
+        freeCancellation: true,
+      },
     ],
-    amenities: ['180° Rotating Plush Seats', 'Gourmet Hot Meals & Tea', 'CCTV & Bio-Vacuum Toilets', 'High-Speed Wi-Fi', 'Individual Reading Lights'],
+    amenities: [
+      '180° Rotating Plush Seats',
+      'Gourmet Hot Meals & Tea',
+      'CCTV & Bio-Vacuum Toilets',
+      'High-Speed Wi-Fi',
+      'Individual Reading Lights',
+    ],
     foodIncluded: true,
     carbonSavings: '78% lower CO₂ than flying',
   },
@@ -1089,11 +1305,37 @@ export const TRAINS_DATA: TrainOption[] = [
     badge: 'Top Rated',
     runsOnDays: ['Daily'],
     classes: [
-      { classType: '1A', className: 'AC First Class (Coupe/Cabin)', price: 4890, status: 'Available - 08', statusType: 'available', freeCancellation: true },
-      { classType: '2A', className: 'AC 2-Tier Sleeper', price: 2980, status: 'Available - 46', statusType: 'available', freeCancellation: true },
-      { classType: '3A', className: 'AC 3-Tier Sleeper', price: 2150, status: 'RAC 4 (High Confirm %)', statusType: 'rac', freeCancellation: false },
+      {
+        classType: '1A',
+        className: 'AC First Class (Coupe/Cabin)',
+        price: 4890,
+        status: 'Available - 08',
+        statusType: 'available',
+        freeCancellation: true,
+      },
+      {
+        classType: '2A',
+        className: 'AC 2-Tier Sleeper',
+        price: 2980,
+        status: 'Available - 46',
+        statusType: 'available',
+        freeCancellation: true,
+      },
+      {
+        classType: '3A',
+        className: 'AC 3-Tier Sleeper',
+        price: 2150,
+        status: 'RAC 4 (High Confirm %)',
+        statusType: 'rac',
+        freeCancellation: false,
+      },
     ],
-    amenities: ['Fresh Sanitized Linen & Duvet', '4-Course Chef Dinner & Breakfast', 'Silent Coupes', 'Charging Ports at Every Berth'],
+    amenities: [
+      'Fresh Sanitized Linen & Duvet',
+      '4-Course Chef Dinner & Breakfast',
+      'Silent Coupes',
+      'Charging Ports at Every Berth',
+    ],
     foodIncluded: true,
     carbonSavings: '65% lower CO₂ than road',
   },
@@ -1114,10 +1356,29 @@ export const TRAINS_DATA: TrainOption[] = [
     badge: 'Wandr Favorite',
     runsOnDays: ['Mon', 'Tue', 'Wed', 'Fri', 'Sat', 'Sun'],
     classes: [
-      { classType: 'EC', className: 'Executive Chair Car', price: 1880, status: 'Available - 18', statusType: 'available', freeCancellation: true },
-      { classType: 'CC', className: 'AC Chair Car', price: 995, status: 'Available - 82', statusType: 'available', freeCancellation: true },
+      {
+        classType: 'EC',
+        className: 'Executive Chair Car',
+        price: 1880,
+        status: 'Available - 18',
+        statusType: 'available',
+        freeCancellation: true,
+      },
+      {
+        classType: 'CC',
+        className: 'AC Chair Car',
+        price: 995,
+        status: 'Available - 82',
+        statusType: 'available',
+        freeCancellation: true,
+      },
     ],
-    amenities: ['Ergonomic Recliners', 'South Indian Breakfast & Filter Coffee', 'Panoramic Windows', 'Zero-Jerk Suspension'],
+    amenities: [
+      'Ergonomic Recliners',
+      'South Indian Breakfast & Filter Coffee',
+      'Panoramic Windows',
+      'Zero-Jerk Suspension',
+    ],
     foodIncluded: true,
     carbonSavings: '85% lower CO₂ footprint',
   },
@@ -1138,10 +1399,29 @@ export const TRAINS_DATA: TrainOption[] = [
     badge: 'Best Value',
     runsOnDays: ['Daily'],
     classes: [
-      { classType: 'EC', className: 'Executive Class', price: 2150, status: 'Available - 12', statusType: 'available', freeCancellation: true },
-      { classType: 'CC', className: 'Chair Car (AC)', price: 1165, status: 'Available - 94', statusType: 'available', freeCancellation: true },
+      {
+        classType: 'EC',
+        className: 'Executive Class',
+        price: 2150,
+        status: 'Available - 12',
+        statusType: 'available',
+        freeCancellation: true,
+      },
+      {
+        classType: 'CC',
+        className: 'Chair Car (AC)',
+        price: 1165,
+        status: 'Available - 94',
+        statusType: 'available',
+        freeCancellation: true,
+      },
     ],
-    amenities: ['Morning Newspaper & Tea', 'Warm Breakfast Tray', 'Power Sockets', 'Luggage Overhead Racks'],
+    amenities: [
+      'Morning Newspaper & Tea',
+      'Warm Breakfast Tray',
+      'Power Sockets',
+      'Luggage Overhead Racks',
+    ],
     foodIncluded: true,
     carbonSavings: '70% lower CO₂ than driving',
   },
@@ -1162,10 +1442,29 @@ export const TRAINS_DATA: TrainOption[] = [
     badge: 'Fastest',
     runsOnDays: ['Daily'],
     classes: [
-      { classType: 'Green', className: 'Green Car (First Class Luxury)', price: 10800, status: 'Available - 14', statusType: 'available', freeCancellation: true },
-      { classType: 'Ordinary', className: 'Reserved Seat (Ordinary)', price: 7400, status: 'Available - 60', statusType: 'available', freeCancellation: true },
+      {
+        classType: 'Green',
+        className: 'Green Car (First Class Luxury)',
+        price: 10800,
+        status: 'Available - 14',
+        statusType: 'available',
+        freeCancellation: true,
+      },
+      {
+        classType: 'Ordinary',
+        className: 'Reserved Seat (Ordinary)',
+        price: 7400,
+        status: 'Available - 60',
+        statusType: 'available',
+        freeCancellation: true,
+      },
     ],
-    amenities: ['Mt. Fuji View Side Booking', 'High-Speed Wi-Fi', 'Bento Box Cart Service', 'Footrests & Hot Towels'],
+    amenities: [
+      'Mt. Fuji View Side Booking',
+      'High-Speed Wi-Fi',
+      'Bento Box Cart Service',
+      'Footrests & Hot Towels',
+    ],
     foodIncluded: false,
     carbonSavings: '92% lower emissions vs regional flight',
   },
@@ -1188,7 +1487,13 @@ export const BUSES_DATA: BusOption[] = [
     reviewCount: 320,
     seatsLeft: 8,
     badge: 'Top Cleanliness',
-    amenities: ['Zero Emission Electric Drive', 'Live GPS Tracking', 'Individual USB & Type-C Chargers', 'Fresh Sanitized Blanket', 'Complimentary Water Bottle'],
+    amenities: [
+      'Zero Emission Electric Drive',
+      'Live GPS Tracking',
+      'Individual USB & Type-C Chargers',
+      'Fresh Sanitized Blanket',
+      'Complimentary Water Bottle',
+    ],
     liveTracking: true,
     cancellationPolicy: 'Free cancellation up to 6 hours before departure',
   },
@@ -1208,7 +1513,13 @@ export const BUSES_DATA: BusOption[] = [
     reviewCount: 540,
     seatsLeft: 5,
     badge: 'High Safety',
-    amenities: ['Private Sleeping Pods', 'Onboard Washroom', 'Professional Bus Captain', 'Air Suspension for Mountain Roads', 'SOS Emergency Alarm'],
+    amenities: [
+      'Private Sleeping Pods',
+      'Onboard Washroom',
+      'Professional Bus Captain',
+      'Air Suspension for Mountain Roads',
+      'SOS Emergency Alarm',
+    ],
     liveTracking: true,
     cancellationPolicy: '100% refund on cancellation up to 12h prior',
   },
@@ -1228,7 +1539,13 @@ export const BUSES_DATA: BusOption[] = [
     reviewCount: 410,
     seatsLeft: 12,
     badge: 'Express Route',
-    amenities: ['Whisper-Quiet Electric Cabin', 'Ergonomic Calf-Support Seats', 'Free High Speed Wi-Fi', 'Snack Box Included', 'Luggage Security Tags'],
+    amenities: [
+      'Whisper-Quiet Electric Cabin',
+      'Ergonomic Calf-Support Seats',
+      'Free High Speed Wi-Fi',
+      'Snack Box Included',
+      'Luggage Security Tags',
+    ],
     liveTracking: true,
     cancellationPolicy: 'Free date change up to 4 hours before',
   },
@@ -1248,7 +1565,12 @@ export const BUSES_DATA: BusOption[] = [
     reviewCount: 680,
     seatsLeft: 6,
     badge: 'Best Value',
-    amenities: ['Double & Single Sleeper Berths', 'Individual LED Entertainment Screens', 'Reading Lights', 'Mineral Water & Blanket'],
+    amenities: [
+      'Double & Single Sleeper Berths',
+      'Individual LED Entertainment Screens',
+      'Reading Lights',
+      'Mineral Water & Blanket',
+    ],
     liveTracking: true,
     cancellationPolicy: 'Easy cancellation with 90% refund',
   },
@@ -1268,7 +1590,12 @@ export const BUSES_DATA: BusOption[] = [
     reviewCount: 290,
     seatsLeft: 14,
     badge: 'Express Route',
-    amenities: ['Extra Legroom (38 inches)', 'Panoramic Tinted Glass', 'Fast USB Fast Charging', 'Emergency Medical Kit'],
+    amenities: [
+      'Extra Legroom (38 inches)',
+      'Panoramic Tinted Glass',
+      'Fast USB Fast Charging',
+      'Emergency Medical Kit',
+    ],
     liveTracking: true,
     cancellationPolicy: 'Free reschedule within 24 hours',
   },
@@ -1285,9 +1612,15 @@ export const CABS_DATA: CabOption[] = [
     perKmRate: '₹18 / km (Outstation)',
     driverRating: 4.96,
     driverExperience: '12+ Years Local Experience',
-    inclusions: ['All Toll & State Taxes Included', 'Chilled Mineral Water & Sanitizer', 'Air-Conditioned throughout', 'Bilingual Courteous Chauffeur'],
+    inclusions: [
+      'All Toll & State Taxes Included',
+      'Chilled Mineral Water & Sanitizer',
+      'Air-Conditioned throughout',
+      'Bilingual Courteous Chauffeur',
+    ],
     estimatedTime: 'Doorstep Pickup & Instant Assistance',
-    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80',
+    image:
+      'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80',
   },
   {
     id: 'cab-2',
@@ -1299,9 +1632,15 @@ export const CABS_DATA: CabOption[] = [
     perKmRate: '₹45 / km (VIP Chauffeur)',
     driverRating: 5.0,
     driverExperience: 'Diplomatic & VIP Chauffeur Trained',
-    inclusions: ['Champagne & Artisan Refreshments', 'Fast-Track Airport Gate Escort', 'Wi-Fi & iPhone/Android Fast Charging', 'Luggage Handling Assistance'],
+    inclusions: [
+      'Champagne & Artisan Refreshments',
+      'Fast-Track Airport Gate Escort',
+      'Wi-Fi & iPhone/Android Fast Charging',
+      'Luggage Handling Assistance',
+    ],
     estimatedTime: 'VIP Arrival Experience',
-    image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80',
+    image:
+      'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80',
   },
   {
     id: 'cab-3',
@@ -1313,9 +1652,14 @@ export const CABS_DATA: CabOption[] = [
     perKmRate: '₹22 / km (Zero Emission)',
     driverRating: 4.94,
     driverExperience: '8+ Years Experience',
-    inclusions: ['100% Electric & Silent Ride', 'Reclining Rear Seats & Panoramic Moonroof', 'All Parking & Tolls Covered'],
+    inclusions: [
+      '100% Electric & Silent Ride',
+      'Reclining Rear Seats & Panoramic Moonroof',
+      'All Parking & Tolls Covered',
+    ],
     estimatedTime: 'Eco-Friendly Luxury',
-    image: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80',
+    image:
+      'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80',
   },
 ];
 
@@ -1336,7 +1680,8 @@ export const PREMIUM_TIERS: PremiumTier[] = [
   {
     id: 'pro',
     name: 'Wandr Pro',
-    tagline: 'For active explorers who value effortless travel, zero booking fees, and VIP perks for just ₹300/month.',
+    tagline:
+      'For active explorers who value effortless travel, zero booking fees, and VIP perks for just ₹300/month.',
     monthlyPrice: 300,
     annualPrice: 2999,
     annualMonthlyEquivalent: 250,
@@ -1344,14 +1689,46 @@ export const PREMIUM_TIERS: PremiumTier[] = [
     color: '#E05A47',
     badge: 'Most Popular • ₹300/mo',
     features: [
-      { title: '0% Platform Booking Fees', desc: 'Save up to ₹12,000 on flights, villas & transfers', included: true },
-      { title: '24/7 Dedicated Concierge on WhatsApp', desc: 'Direct access to human travel specialists in 60s', included: true },
-      { title: 'Flight Disruption Auto-Rebooking Guard', desc: 'Automatic rebooking or hotel vouchers on cancellations', included: true },
-      { title: '4 Complimentary Airport Lounge Passes / yr', desc: 'Access 1,300+ priority lounges worldwide', included: true },
-      { title: 'Free Hotel Room Upgrades & Early Check-in', desc: 'Subject to boutique stay availability', included: true },
-      { title: 'Offline Dynamic Live Trip Companion', desc: 'GPS routes, offline digital passes & local tips', included: true },
-      { title: 'Private Villa Secret Access', desc: 'Bespoke off-market villas and private islands', included: false },
-      { title: 'Dedicated Personal Trip Designer', desc: '1-on-1 itinerary video call consultations', included: false },
+      {
+        title: '0% Platform Booking Fees',
+        desc: 'Save up to ₹12,000 on flights, villas & transfers',
+        included: true,
+      },
+      {
+        title: '24/7 Dedicated Concierge on WhatsApp',
+        desc: 'Direct access to human travel specialists in 60s',
+        included: true,
+      },
+      {
+        title: 'Flight Disruption Auto-Rebooking Guard',
+        desc: 'Automatic rebooking or hotel vouchers on cancellations',
+        included: true,
+      },
+      {
+        title: '4 Complimentary Airport Lounge Passes / yr',
+        desc: 'Access 1,300+ priority lounges worldwide',
+        included: true,
+      },
+      {
+        title: 'Free Hotel Room Upgrades & Early Check-in',
+        desc: 'Subject to boutique stay availability',
+        included: true,
+      },
+      {
+        title: 'Offline Dynamic Live Trip Companion',
+        desc: 'GPS routes, offline digital passes & local tips',
+        included: true,
+      },
+      {
+        title: 'Private Villa Secret Access',
+        desc: 'Bespoke off-market villas and private islands',
+        included: false,
+      },
+      {
+        title: 'Dedicated Personal Trip Designer',
+        desc: '1-on-1 itinerary video call consultations',
+        included: false,
+      },
     ],
   },
   {
@@ -1365,14 +1742,46 @@ export const PREMIUM_TIERS: PremiumTier[] = [
     color: '#D4AF37',
     badge: 'Ultra Luxury Tier • ₹600/mo',
     features: [
-      { title: '0% Platform Booking Fees', desc: 'Save up to ₹25,000+ on every luxury journey', included: true },
-      { title: 'Dedicated Personal Senior Trip Designer', desc: 'Unlimited bespoke itinerary calls & custom routes', included: true },
-      { title: 'VIP Airport Tarmac & Fast-Track Transfers', desc: 'Breeze through customs & priority immigration', included: true },
-      { title: 'Unlimited International Airport Lounge Access', desc: 'For you and up to 2 companions globally', included: true },
-      { title: 'Guaranteed Late 4 PM Check-out & Free Spa Credit', desc: '₹5,000 complimentary spa voucher on every stay', included: true },
-      { title: 'Private Villa & Yacht Secret Collection', desc: 'Access unlisted luxury estates & private boat charters', included: true },
-      { title: '24/7 Bilingual On-Ground Local Bodyguard / Chauffeur Assist', desc: 'Instant SOS & private security support in 40+ countries', included: true },
-      { title: 'Comprehensive Global Travel Protection', desc: 'Up to $100,000 medical & luggage disruption coverage', included: true },
+      {
+        title: '0% Platform Booking Fees',
+        desc: 'Save up to ₹25,000+ on every luxury journey',
+        included: true,
+      },
+      {
+        title: 'Dedicated Personal Senior Trip Designer',
+        desc: 'Unlimited bespoke itinerary calls & custom routes',
+        included: true,
+      },
+      {
+        title: 'VIP Airport Tarmac & Fast-Track Transfers',
+        desc: 'Breeze through customs & priority immigration',
+        included: true,
+      },
+      {
+        title: 'Unlimited International Airport Lounge Access',
+        desc: 'For you and up to 2 companions globally',
+        included: true,
+      },
+      {
+        title: 'Guaranteed Late 4 PM Check-out & Free Spa Credit',
+        desc: '₹5,000 complimentary spa voucher on every stay',
+        included: true,
+      },
+      {
+        title: 'Private Villa & Yacht Secret Collection',
+        desc: 'Access unlisted luxury estates & private boat charters',
+        included: true,
+      },
+      {
+        title: '24/7 Bilingual On-Ground Local Bodyguard / Chauffeur Assist',
+        desc: 'Instant SOS & private security support in 40+ countries',
+        included: true,
+      },
+      {
+        title: 'Comprehensive Global Travel Protection',
+        desc: 'Up to $100,000 medical & luggage disruption coverage',
+        included: true,
+      },
     ],
   },
 ];

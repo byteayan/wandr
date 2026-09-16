@@ -1,18 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Car,
-  MapPin,
-  Calendar,
-  Clock,
-  ShieldCheck,
-  Star,
-  Users,
-  Luggage,
-  Sparkles,
-  Check,
-  Search,
-  Zap,
-} from 'lucide-react';
+import { Car, MapPin, Calendar, Star, Users, Luggage, Check, Search } from 'lucide-react';
 import { CabOption } from '../types/travel';
 import { CABS_DATA } from '../data/travelData';
 
@@ -21,14 +8,10 @@ interface CabsSearchProps {
   selectedCabId?: string;
 }
 
-export const CabsSearch: React.FC<CabsSearchProps> = ({
-  onSelectCab,
-  selectedCabId,
-}) => {
+export const CabsSearch: React.FC<CabsSearchProps> = ({ onSelectCab, selectedCabId }) => {
   const [pickupLocation, setPickupLocation] = useState<string>('Delhi Airport (DEL) Terminal 3');
   const [destination, setDestination] = useState<string>('Jaipur City Center / Heritage Hotel');
   const [pickupDate, setPickupDate] = useState<string>('2026-10-14');
-  const [pickupTime, setPickupTime] = useState<string>('10:00 AM');
   const [cabType, setCabType] = useState<string>('ALL');
   const [isSearching, setIsSearching] = useState<boolean>(false);
 
@@ -42,8 +25,17 @@ export const CabsSearch: React.FC<CabsSearchProps> = ({
   const filteredCabs = CABS_DATA.filter((cab) => {
     if (cabType === 'ALL') return true;
     if (cabType === 'Sedan') return cab.vehicleType.toLowerCase().includes('sedan');
-    if (cabType === 'SUV') return cab.vehicleType.toLowerCase().includes('suv') || cab.vehicleType.toLowerCase().includes('innova');
-    if (cabType === 'Luxury') return cab.vehicleName.toLowerCase().includes('mercedes') || cab.vehicleName.toLowerCase().includes('bmw') || cab.vehicleName.toLowerCase().includes('innova');
+    if (cabType === 'SUV')
+      return (
+        cab.vehicleType.toLowerCase().includes('suv') ||
+        cab.vehicleType.toLowerCase().includes('innova')
+      );
+    if (cabType === 'Luxury')
+      return (
+        cab.vehicleName.toLowerCase().includes('mercedes') ||
+        cab.vehicleName.toLowerCase().includes('bmw') ||
+        cab.vehicleName.toLowerCase().includes('innova')
+      );
     return true;
   });
 
@@ -60,7 +52,8 @@ export const CabsSearch: React.FC<CabsSearchProps> = ({
             Doorstep airport pickups & intercity chauffeurs.
           </h3>
           <p className="text-xs sm:text-sm text-stone-500 font-light mt-1">
-            Upfront fixed pricing, verified executive chauffeurs, flight delay buffer, and pristine sanitized vehicles.
+            Upfront fixed pricing, verified executive chauffeurs, flight delay buffer, and pristine
+            sanitized vehicles.
           </p>
         </div>
 
@@ -217,7 +210,9 @@ export const CabsSearch: React.FC<CabsSearchProps> = ({
 
                 <div className="p-6 pt-0 flex items-center justify-between border-t border-stone-100 bg-[#FAF8F5]/60 mt-4">
                   <div className="pt-3">
-                    <div className="text-[10px] text-stone-400 font-light">Fixed all-inclusive fare</div>
+                    <div className="text-[10px] text-stone-400 font-light">
+                      Fixed all-inclusive fare
+                    </div>
                     <div className="text-xl font-serif font-bold text-stone-900">
                       ₹{cab.pricePerTrip.toLocaleString('en-IN')}
                     </div>

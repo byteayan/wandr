@@ -1,15 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Plane,
-  Train,
-  Bus,
-  Car,
-  Compass,
-  Sparkles,
-  ArrowRight,
-  ShieldCheck,
-  Check,
-} from 'lucide-react';
+import { Plane, Train, Bus, Car, Compass } from 'lucide-react';
 import { FlightSearch } from './FlightSearch';
 import { TrainSearch } from './TrainSearch';
 import { BusSearch } from './BusSearch';
@@ -46,7 +36,6 @@ export const TransitHub: React.FC<TransitHubProps> = ({
   selectedTrainId,
   selectedBusId,
   selectedCabId,
-  selectedTransitMode = 'flight',
 }) => {
   const [activeMode, setActiveMode] = useState<TravelMode>(initialMode);
 
@@ -105,7 +94,8 @@ export const TransitHub: React.FC<TransitHubProps> = ({
             How would you like to travel?
           </h2>
           <p className="text-xs sm:text-sm text-stone-500 font-light mt-2">
-            Seamlessly search and compare flights, high-speed rail, luxury sleepers, and verified private chauffeurs in one place.
+            Seamlessly search and compare flights, high-speed rail, luxury sleepers, and verified
+            private chauffeurs in one place.
           </p>
         </div>
 
@@ -136,15 +126,15 @@ export const TransitHub: React.FC<TransitHubProps> = ({
                         : 'bg-[#FAF8F5] text-stone-700 group-hover:scale-105 border border-stone-200/70'
                     }`}
                   >
-                    <Icon className={`w-5 h-5 ${isSelected ? 'text-[#E05A47]' : mode.accentColor}`} />
+                    <Icon
+                      className={`w-5 h-5 ${isSelected ? 'text-[#E05A47]' : mode.accentColor}`}
+                    />
                   </div>
 
                   {mode.badge && (
                     <span
                       className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${
-                        isSelected
-                          ? 'bg-white/20 text-white'
-                          : 'bg-stone-100 text-stone-600'
+                        isSelected ? 'bg-white/20 text-white' : 'bg-stone-100 text-stone-600'
                       }`}
                     >
                       {mode.badge}
@@ -178,31 +168,19 @@ export const TransitHub: React.FC<TransitHubProps> = ({
         {/* Selected Travel Mode Search Interface */}
         <div className="animate-fadeIn">
           {activeMode === 'flights' && (
-            <FlightSearch
-              onSelectFlight={onSelectFlight}
-              selectedFlightId={selectedFlightId}
-            />
+            <FlightSearch onSelectFlight={onSelectFlight} selectedFlightId={selectedFlightId} />
           )}
 
           {activeMode === 'trains' && (
-            <TrainSearch
-              onSelectTrain={onSelectTrain}
-              selectedTrainId={selectedTrainId}
-            />
+            <TrainSearch onSelectTrain={onSelectTrain} selectedTrainId={selectedTrainId} />
           )}
 
           {activeMode === 'buses' && (
-            <BusSearch
-              onSelectBus={onSelectBus}
-              selectedBusId={selectedBusId}
-            />
+            <BusSearch onSelectBus={onSelectBus} selectedBusId={selectedBusId} />
           )}
 
           {activeMode === 'cabs' && (
-            <CabsSearch
-              onSelectCab={onSelectCab}
-              selectedCabId={selectedCabId}
-            />
+            <CabsSearch onSelectCab={onSelectCab} selectedCabId={selectedCabId} />
           )}
         </div>
       </div>

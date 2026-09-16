@@ -11,12 +11,10 @@ import {
   Send,
   Download,
   Users,
-  Sparkles,
   ExternalLink,
   Smartphone,
   ShieldCheck,
   CheckCircle2,
-  Heart,
   Plane,
   Hotel,
 } from 'lucide-react';
@@ -52,8 +50,9 @@ export const ShareTripModal: React.FC<ShareTripModalProps> = ({
   const [copiedLink, setCopiedLink] = useState<boolean>(false);
   const [copiedText, setCopiedText] = useState<boolean>(false);
   const [qrDataUrl, setQrDataUrl] = useState<string>('');
-  const [companionNote, setCompanionNote] = useState<string>('Hey! Check out this itinerary I designed on Wandr. Let me know what you think!');
-  const [includeSplit, setIncludeSplit] = useState<boolean>(true);
+  const [companionNote, setCompanionNote] = useState<string>(
+    'Hey! Check out this itinerary I designed on Wandr. Let me know what you think!'
+  );
 
   const curatorName = userProfile?.name || 'Ayan Alam';
   const shareUrl = generateShareableTripLink(tripPlan, curatorName, userProfile?.email);
@@ -125,7 +124,8 @@ export const ShareTripModal: React.FC<ShareTripModalProps> = ({
                   Share Trip with Companions
                 </h3>
                 <p className="text-xs text-stone-300 font-light mt-0.5">
-                  Anyone with this link can view the interactive itinerary, activities, and bookings.
+                  Anyone with this link can view the interactive itinerary, activities, and
+                  bookings.
                 </p>
               </div>
             </div>
@@ -208,13 +208,16 @@ export const ShareTripModal: React.FC<ShareTripModalProps> = ({
                 </span>
               </div>
               <p className="text-xs text-stone-500 font-light mb-2">
-                {tripPlan.startDate} – {tripPlan.endDate} • From {tripPlan.originCity.split(' ')[0]} • Style: {tripPlan.companion}
+                {tripPlan.startDate} – {tripPlan.endDate} • From {tripPlan.originCity.split(' ')[0]}{' '}
+                • Style: {tripPlan.companion}
               </p>
 
               <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-stone-100 text-xs">
                 <div className="flex items-center gap-1 text-stone-700">
                   <Hotel className="w-3.5 h-3.5 text-[#E05A47]" />
-                  <span className="truncate max-w-[120px] font-medium">{tripPlan.selectedStay.name}</span>
+                  <span className="truncate max-w-[120px] font-medium">
+                    {tripPlan.selectedStay.name}
+                  </span>
                 </div>
                 <span className="text-stone-300">•</span>
                 <div className="flex items-center gap-1 text-stone-700">
@@ -273,7 +276,9 @@ export const ShareTripModal: React.FC<ShareTripModalProps> = ({
                 </div>
                 <p className="text-[11px] text-stone-400 mt-2 flex items-center gap-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>No login required. Companions can immediately view, inspect days, or duplicate.</span>
+                  <span>
+                    No login required. Companions can immediately view, inspect days, or duplicate.
+                  </span>
                 </p>
               </div>
 
@@ -288,7 +293,11 @@ export const ShareTripModal: React.FC<ShareTripModalProps> = ({
                     onClick={handleCopyFormattedText}
                     className="text-[11px] font-semibold text-[#E05A47] hover:underline flex items-center gap-1 cursor-pointer"
                   >
-                    {copiedText ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3" />}
+                    {copiedText ? (
+                      <Check className="w-3 h-3 text-emerald-600" />
+                    ) : (
+                      <Copy className="w-3 h-3" />
+                    )}
                     <span>{copiedText ? 'Copied Full Note!' : 'Copy Formatted Text'}</span>
                   </button>
                 </div>
@@ -412,7 +421,8 @@ export const ShareTripModal: React.FC<ShareTripModalProps> = ({
                       Companion Split Estimate: {split.label}
                     </div>
                     <div className="text-[11px] text-amber-800">
-                      ₹{split.perPerson.toLocaleString('en-IN')} per traveller (inclusive of stays, transit & activities)
+                      ₹{split.perPerson.toLocaleString('en-IN')} per traveller (inclusive of stays,
+                      transit & activities)
                     </div>
                   </div>
                 </div>
@@ -445,7 +455,8 @@ export const ShareTripModal: React.FC<ShareTripModalProps> = ({
                   Scan to open on phone instantly
                 </h5>
                 <p className="text-xs text-stone-500 mt-1">
-                  Point any smartphone camera at this code to load the live {tripPlan.destination.name} itinerary on iOS or Android.
+                  Point any smartphone camera at this code to load the live{' '}
+                  {tripPlan.destination.name} itinerary on iOS or Android.
                 </p>
               </div>
 
@@ -475,7 +486,8 @@ export const ShareTripModal: React.FC<ShareTripModalProps> = ({
                       Export Trip to Calendar (.ics)
                     </h5>
                     <p className="text-xs text-blue-800 max-w-sm mt-0.5">
-                      Adds all {tripPlan.durationDays} days of activities, check-in details, and excursions directly to Google Calendar, Apple iCal, or Outlook.
+                      Adds all {tripPlan.durationDays} days of activities, check-in details, and
+                      excursions directly to Google Calendar, Apple iCal, or Outlook.
                     </p>
                   </div>
                 </div>
@@ -500,7 +512,9 @@ export const ShareTripModal: React.FC<ShareTripModalProps> = ({
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>Hotel check-in & accommodation address at {tripPlan.selectedStay.name}</span>
+                    <span>
+                      Hotel check-in & accommodation address at {tripPlan.selectedStay.name}
+                    </span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />

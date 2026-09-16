@@ -1,21 +1,9 @@
 import React, { useState, useRef } from 'react';
 import {
   X,
-  User,
-  Calendar,
-  Heart,
   Clock,
-  Compass,
-  ArrowRight,
-  ShieldCheck,
   Star,
-  Hotel,
-  Ticket,
-  MapPin,
-  LogOut,
-  Sliders,
   Sparkles,
-  Maximize2,
   CheckCircle2,
   Crown,
   Plane,
@@ -35,11 +23,9 @@ import {
   Trash2,
   PhoneCall,
   ExternalLink,
-  ShieldAlert,
 } from 'lucide-react';
 import { UserProfile, Destination, StayItem, TripFeedbackData } from '../types/travel';
 import { DESTINATIONS, STAYS_DATA, ACTIVITIES_DATA } from '../data/travelData';
-import { WandrLogo } from './WandrLogo';
 import { UserAvatar } from './UserAvatar';
 import { PRESET_AVATARS, DEFAULT_AVATAR_URL } from '../utils/avatarUtils';
 import {
@@ -71,7 +57,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
   onOpenShare,
   onUpdateProfile,
 }) => {
-  const [activeTab, setActiveTab] = useState<'upcoming' | 'past' | 'saved' | 'settings'>('upcoming');
+  const [activeTab, setActiveTab] = useState<'upcoming' | 'past' | 'saved' | 'settings'>(
+    'upcoming'
+  );
   const [savedSubTab, setSavedSubTab] = useState<'stays' | 'destinations' | 'activities'>('stays');
   const [showPhotoPreview, setShowPhotoPreview] = useState<boolean>(false);
   const [isEditingProfile, setIsEditingProfile] = useState<boolean>(false);
@@ -104,10 +92,10 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
 
   if (!isOpen) return null;
 
-  const handleExportPdf = (trip: UpcomingTripItem) => {
+  const handleExportPdf = async (trip: UpcomingTripItem) => {
     setIsExporting({ tripId: trip.id, type: 'pdf' });
     try {
-      downloadUpcomingTripPdf(trip, userProfile);
+      await downloadUpcomingTripPdf(trip, userProfile);
       setExportNotice({ tripId: trip.id, text: 'PDF Voucher downloaded!' });
       setTimeout(() => setExportNotice(null), 3500);
     } catch (err) {
@@ -193,7 +181,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
 
   const handleRequestCallback = () => {
     setCallbackRequested(true);
-    setSupportActionNotice('Your priority callback request has been logged. Senior Concierge Wayan will call in 3 mins.');
+    setSupportActionNotice(
+      'Your priority callback request has been logged. Senior Concierge Wayan will call in 3 mins.'
+    );
     setTimeout(() => {
       setSupportActionNotice(null);
     }, 6000);
@@ -201,7 +191,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
 
   const savedStays = STAYS_DATA.filter((s) => userProfile.savedStayIds.includes(s.id));
   const savedDests = DESTINATIONS.filter((d) => userProfile.savedDestinationIds.includes(d.id));
-  const savedActivities = ACTIVITIES_DATA.filter((a) => userProfile.savedActivityIds.includes(a.id));
+  const savedActivities = ACTIVITIES_DATA.filter((a) =>
+    userProfile.savedActivityIds.includes(a.id)
+  );
 
   return (
     <>
@@ -250,7 +242,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                     </h3>
                     <span className="px-2.5 py-0.5 rounded-full bg-[#FF5722]/20 border border-[#FF5722]/40 text-[#FFA726] text-[10px] font-semibold tracking-wide flex items-center gap-1">
                       <Crown className="w-3 h-3 text-[#FFA726]" />
-                      {userProfile.isPremium ? userProfile.premiumTier || 'VIP Member' : 'Wandr Explorer'}
+                      {userProfile.isPremium
+                        ? userProfile.premiumTier || 'VIP Member'
+                        : 'Wandr Explorer'}
                     </span>
                   </div>
                   <p className="text-xs text-stone-300 font-light flex items-center gap-2 flex-wrap">
@@ -306,23 +300,36 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                 onClick={() => setActiveTab('upcoming')}
                 className="bg-stone-800/50 hover:bg-stone-800/80 rounded-xl p-2.5 text-center border border-stone-700/50 cursor-pointer transition-colors"
               >
-                <span className="text-[10px] uppercase tracking-wider text-stone-400 font-medium block">Upcoming</span>
-                <span className="text-base sm:text-lg font-bold text-white">{userProfile.upcomingTrips.length} Journey</span>
+                <span className="text-[10px] uppercase tracking-wider text-stone-400 font-medium block">
+                  Upcoming
+                </span>
+                <span className="text-base sm:text-lg font-bold text-white">
+                  {userProfile.upcomingTrips.length} Journey
+                </span>
               </div>
               <div
                 onClick={() => setActiveTab('past')}
                 className="bg-stone-800/50 hover:bg-stone-800/80 rounded-xl p-2.5 text-center border border-stone-700/50 cursor-pointer transition-colors"
               >
-                <span className="text-[10px] uppercase tracking-wider text-stone-400 font-medium block">Past Trips</span>
-                <span className="text-base sm:text-lg font-bold text-white">{userProfile.pastTrips.length} Completed</span>
+                <span className="text-[10px] uppercase tracking-wider text-stone-400 font-medium block">
+                  Past Trips
+                </span>
+                <span className="text-base sm:text-lg font-bold text-white">
+                  {userProfile.pastTrips.length} Completed
+                </span>
               </div>
               <div
                 onClick={() => setActiveTab('saved')}
                 className="bg-stone-800/50 hover:bg-stone-800/80 rounded-xl p-2.5 text-center border border-stone-700/50 cursor-pointer transition-colors"
               >
-                <span className="text-[10px] uppercase tracking-wider text-stone-400 font-medium block">Saved</span>
+                <span className="text-[10px] uppercase tracking-wider text-stone-400 font-medium block">
+                  Saved
+                </span>
                 <span className="text-base sm:text-lg font-bold text-white">
-                  {userProfile.savedStayIds.length + userProfile.savedDestinationIds.length + userProfile.savedActivityIds.length} Items
+                  {userProfile.savedStayIds.length +
+                    userProfile.savedDestinationIds.length +
+                    userProfile.savedActivityIds.length}{' '}
+                  Items
                 </span>
               </div>
             </div>
@@ -368,7 +375,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
               }`}
             >
               Wishlist & Saved (
-              {userProfile.savedStayIds.length + userProfile.savedDestinationIds.length + userProfile.savedActivityIds.length}
+              {userProfile.savedStayIds.length +
+                userProfile.savedDestinationIds.length +
+                userProfile.savedActivityIds.length}
               )
             </button>
             <button
@@ -398,7 +407,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                       <WifiOff className="w-3.5 h-3.5" />
                     </div>
                     <p className="text-amber-900 leading-snug">
-                      <span className="font-bold">Offline Access:</span> Export your confirmed trip details as a PDF voucher or sync to your calendar (.ics) for full access when offline or in transit.
+                      <span className="font-bold">Offline Access:</span> Export your confirmed trip
+                      details as a PDF voucher or sync to your calendar (.ics) for full access when
+                      offline or in transit.
                     </p>
                   </div>
                 </div>
@@ -406,7 +417,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                 {userProfile.upcomingTrips.length === 0 ? (
                   <div className="text-center py-10">
                     <Plane className="w-12 h-12 text-stone-300 mx-auto mb-3" />
-                    <p className="text-sm font-medium text-stone-700">No upcoming trips planned yet.</p>
+                    <p className="text-sm font-medium text-stone-700">
+                      No upcoming trips planned yet.
+                    </p>
                     <button
                       onClick={() => {
                         onClose();
@@ -513,12 +526,16 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                                 <div className="min-w-0 flex-1">
                                   <div className="text-xs font-bold text-stone-900 flex items-center justify-between">
                                     <span>Download PDF Voucher</span>
-                                    {isExporting?.tripId === trip.id && isExporting.type === 'pdf' && (
-                                      <span className="text-[10px] text-amber-600 font-normal">Building...</span>
-                                    )}
+                                    {isExporting?.tripId === trip.id &&
+                                      isExporting.type === 'pdf' && (
+                                        <span className="text-[10px] text-amber-600 font-normal">
+                                          Building...
+                                        </span>
+                                      )}
                                   </div>
                                   <p className="text-[10px] text-stone-500 leading-tight mt-0.5">
-                                    Formatted multi-page guide with schedules, voucher ID & emergency desk.
+                                    Formatted multi-page guide with schedules, voucher ID &
+                                    emergency desk.
                                   </p>
                                 </div>
                               </button>
@@ -536,12 +553,16 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                                 <div className="min-w-0 flex-1">
                                   <div className="text-xs font-bold text-stone-900 flex items-center justify-between">
                                     <span>Sync to Calendar (.ics)</span>
-                                    {isExporting?.tripId === trip.id && isExporting.type === 'ics' && (
-                                      <span className="text-[10px] text-amber-600 font-normal">Exporting...</span>
-                                    )}
+                                    {isExporting?.tripId === trip.id &&
+                                      isExporting.type === 'ics' && (
+                                        <span className="text-[10px] text-amber-600 font-normal">
+                                          Exporting...
+                                        </span>
+                                      )}
                                   </div>
                                   <p className="text-[10px] text-stone-500 leading-tight mt-0.5">
-                                    Add all daily activities to Google Calendar, Apple iCal or Outlook.
+                                    Add all daily activities to Google Calendar, Apple iCal or
+                                    Outlook.
                                   </p>
                                 </div>
                               </button>
@@ -581,7 +602,12 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
             {activeTab === 'past' && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {userProfile.pastTrips.map((past) => {
-                  const dest = DESTINATIONS.find((d) => d.name.toLowerCase().includes(past.destinationName.toLowerCase().split(' ')[0])) || DESTINATIONS[0];
+                  const dest =
+                    DESTINATIONS.find((d) =>
+                      d.name
+                        .toLowerCase()
+                        .includes(past.destinationName.toLowerCase().split(' ')[0])
+                    ) || DESTINATIONS[0];
 
                   return (
                     <div
@@ -651,7 +677,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                   <button
                     onClick={() => setSavedSubTab('stays')}
                     className={`px-3.5 py-1.5 rounded-full text-xs font-medium cursor-pointer transition-all ${
-                      savedSubTab === 'stays' ? 'bg-stone-900 text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+                      savedSubTab === 'stays'
+                        ? 'bg-stone-900 text-white'
+                        : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
                     }`}
                   >
                     Hotels & Stays ({savedStays.length})
@@ -659,7 +687,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                   <button
                     onClick={() => setSavedSubTab('destinations')}
                     className={`px-3.5 py-1.5 rounded-full text-xs font-medium cursor-pointer transition-all ${
-                      savedSubTab === 'destinations' ? 'bg-stone-900 text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+                      savedSubTab === 'destinations'
+                        ? 'bg-stone-900 text-white'
+                        : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
                     }`}
                   >
                     Destinations ({savedDests.length})
@@ -667,7 +697,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                   <button
                     onClick={() => setSavedSubTab('activities')}
                     className={`px-3.5 py-1.5 rounded-full text-xs font-medium cursor-pointer transition-all ${
-                      savedSubTab === 'activities' ? 'bg-stone-900 text-white' : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+                      savedSubTab === 'activities'
+                        ? 'bg-stone-900 text-white'
+                        : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
                     }`}
                   >
                     Activities ({savedActivities.length})
@@ -678,7 +710,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                 {savedSubTab === 'stays' && (
                   <div className="space-y-3">
                     {savedStays.length === 0 ? (
-                      <p className="text-xs text-stone-500 py-6 text-center">No saved stays yet. Browse villas and click the heart icon to save!</p>
+                      <p className="text-xs text-stone-500 py-6 text-center">
+                        No saved stays yet. Browse villas and click the heart icon to save!
+                      </p>
                     ) : (
                       savedStays.map((stay) => (
                         <div
@@ -693,9 +727,12 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                               className="w-12 h-12 rounded-xl object-cover"
                             />
                             <div>
-                              <h5 className="text-xs font-serif font-bold text-stone-900">{stay.name}</h5>
+                              <h5 className="text-xs font-serif font-bold text-stone-900">
+                                {stay.name}
+                              </h5>
                               <span className="text-[11px] text-stone-500 font-light">
-                                ₹{stay.pricePerNight.toLocaleString('en-IN')}/night • {stay.propertyType}
+                                ₹{stay.pricePerNight.toLocaleString('en-IN')}/night •{' '}
+                                {stay.propertyType}
                               </span>
                             </div>
                           </div>
@@ -727,7 +764,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                 {savedSubTab === 'destinations' && (
                   <div className="space-y-3">
                     {savedDests.length === 0 ? (
-                      <p className="text-xs text-stone-500 py-6 text-center">No saved destinations yet.</p>
+                      <p className="text-xs text-stone-500 py-6 text-center">
+                        No saved destinations yet.
+                      </p>
                     ) : (
                       savedDests.map((dest) => (
                         <div
@@ -778,7 +817,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                 {savedSubTab === 'activities' && (
                   <div className="space-y-3">
                     {savedActivities.length === 0 ? (
-                      <p className="text-xs text-stone-500 py-6 text-center">No saved experiences yet.</p>
+                      <p className="text-xs text-stone-500 py-6 text-center">
+                        No saved experiences yet.
+                      </p>
                     ) : (
                       savedActivities.map((act) => (
                         <div
@@ -793,7 +834,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                               className="w-12 h-12 rounded-xl object-cover"
                             />
                             <div>
-                              <h5 className="text-xs font-serif font-bold text-stone-900">{act.title}</h5>
+                              <h5 className="text-xs font-serif font-bold text-stone-900">
+                                {act.title}
+                              </h5>
                               <span className="text-[11px] text-stone-500 font-light">
                                 ₹{act.price.toLocaleString('en-IN')} • {act.duration}
                               </span>
@@ -930,7 +973,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-bold text-stone-700 mb-1">Email Address</label>
+                      <label className="block text-xs font-bold text-stone-700 mb-1">
+                        Email Address
+                      </label>
                       <input
                         type="email"
                         value={editEmail}
@@ -940,7 +985,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-stone-700 mb-1">Phone (VIP Hotline Sync)</label>
+                      <label className="block text-xs font-bold text-stone-700 mb-1">
+                        Phone (VIP Hotline Sync)
+                      </label>
                       <input
                         type="tel"
                         value={editPhone}
@@ -1073,7 +1120,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                   <MessageSquare className="w-4 h-4 shrink-0" />
                   <div>
                     <span className="font-bold block">VIP WhatsApp Support Channel</span>
-                    <span className="text-[10px] text-emerald-100">Live human agent replies in ~45 seconds</span>
+                    <span className="text-[10px] text-emerald-100">
+                      Live human agent replies in ~45 seconds
+                    </span>
                   </div>
                 </div>
                 <ExternalLink className="w-3.5 h-3.5 text-emerald-200" />
@@ -1090,7 +1139,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                   <PhoneCall className="w-4 h-4 text-[#E05A47] shrink-0" />
                   <div>
                     <span className="font-bold block">
-                      {callbackRequested ? 'Callback Scheduled (Priority Queue #1)' : 'Request 5-Minute Phone Callback'}
+                      {callbackRequested
+                        ? 'Callback Scheduled (Priority Queue #1)'
+                        : 'Request 5-Minute Phone Callback'}
                     </span>
                     <span className="text-[10px] text-stone-500">
                       Our destination specialist will call {userProfile.phone || '+91 98765 43210'}
@@ -1106,7 +1157,9 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                   <Phone className="w-4 h-4 text-stone-600 shrink-0" />
                   <div>
                     <span className="font-bold block">Global Emergency Hotline</span>
-                    <span className="text-[10px] text-stone-500">+91 98765 43210 (Toll-Free Priority)</span>
+                    <span className="text-[10px] text-stone-500">
+                      +91 98765 43210 (Toll-Free Priority)
+                    </span>
                   </div>
                 </div>
                 <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, ArrowRight, Compass, Heart, Globe } from 'lucide-react';
+import { Sparkles, ArrowRight } from 'lucide-react';
 import { WandrLogo } from './WandrLogo';
 
 interface FooterProps {
@@ -28,7 +28,8 @@ export const Footer: React.FC<FooterProps> = ({ onPlanTripClick, onNavigateTab }
             </h2>
 
             <p className="text-base sm:text-lg text-stone-400 font-light mb-8">
-              Your next adventure is closer than you think. Tell us your vibe and let our AI engine orchestrate the flights, villas, and memory-making.
+              Your next adventure is closer than you think. Tell us your vibe and let our AI engine
+              orchestrate the flights, villas, and memory-making.
             </p>
 
             <button
@@ -48,7 +49,8 @@ export const Footer: React.FC<FooterProps> = ({ onPlanTripClick, onNavigateTab }
             <WandrLogo size="md" variant="horizontal" theme="white" withTagline={true} />
             <p className="text-stone-400 max-w-sm font-light leading-relaxed">
               “Don’t just book a trip. Design the experience.” <br />
-              Wandr is the AI-powered travel platform uniting bespoke discovery, flights, and vetted sanctuaries under one unified journey.
+              Wandr is the AI-powered travel platform uniting bespoke discovery, flights, and vetted
+              sanctuaries under one unified journey.
             </p>
             <div className="flex items-center gap-2 text-stone-500 text-[11px] font-light">
               <span>Curated globally with craft & passion</span>
@@ -57,34 +59,49 @@ export const Footer: React.FC<FooterProps> = ({ onPlanTripClick, onNavigateTab }
 
           {/* Col 2: Navigation */}
           <div>
-            <h4 className="font-semibold uppercase tracking-wider text-stone-300 mb-3">
-              Explore
-            </h4>
+            <h4 className="font-semibold uppercase tracking-wider text-stone-300 mb-3">Explore</h4>
             <ul className="space-y-2 text-stone-400 font-light">
               <li>
-                <button onClick={() => onNavigateTab('explore')} className="hover:text-white transition-colors cursor-pointer">
+                <button
+                  onClick={() => onNavigateTab('explore')}
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
                   Destinations
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigateTab('stays')} className="hover:text-white transition-colors cursor-pointer">
+                <button
+                  onClick={() => onNavigateTab('stays')}
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
                   Villas & Stays
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigateTab('travel')} className="hover:text-white transition-colors cursor-pointer">
+                <button
+                  onClick={() => onNavigateTab('travel')}
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
                   Trains, Flights & Buses
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigateTab('activities')} className="hover:text-white transition-colors cursor-pointer">
+                <button
+                  onClick={() => onNavigateTab('activities')}
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
                   Expeditions
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigateTab('premium')} className="hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer">
+                <button
+                  onClick={() => onNavigateTab('premium')}
+                  className="hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer"
+                >
                   <span>Go Premium</span>
-                  <span className="px-1.5 py-0.2 rounded-full bg-amber-400/20 text-amber-300 text-[9px] font-bold">VIP</span>
+                  <span className="px-1.5 py-0.2 rounded-full bg-amber-400/20 text-amber-300 text-[9px] font-bold">
+                    VIP
+                  </span>
                 </button>
               </li>
             </ul>
@@ -92,9 +109,7 @@ export const Footer: React.FC<FooterProps> = ({ onPlanTripClick, onNavigateTab }
 
           {/* Col 3: Experiences */}
           <div>
-            <h4 className="font-semibold uppercase tracking-wider text-stone-300 mb-3">
-              Vibes
-            </h4>
+            <h4 className="font-semibold uppercase tracking-wider text-stone-300 mb-3">Vibes</h4>
             <ul className="space-y-2 text-stone-400 font-light">
               <li>Romantic Escapes</li>
               <li>Adventure & Highlands</li>
@@ -121,9 +136,7 @@ export const Footer: React.FC<FooterProps> = ({ onPlanTripClick, onNavigateTab }
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-stone-500 text-xs font-light">
-          <div>
-            © {new Date().getFullYear()} WANDR Travel Tech Inc. All rights reserved.
-          </div>
+          <div>© {new Date().getFullYear()} WANDR Travel Tech Inc. All rights reserved.</div>
           <div className="flex items-center gap-6">
             <span className="hover:text-stone-300 cursor-pointer">Privacy Policy</span>
             <span className="hover:text-stone-300 cursor-pointer">Terms of Service</span>

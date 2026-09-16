@@ -1,17 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Plane,
-  Calendar,
-  Users,
-  ArrowRight,
-  Sparkles,
-  Clock,
-  Luggage,
-  ShieldCheck,
-  Check,
-  Leaf,
-  ChevronDown,
-} from 'lucide-react';
+import { Plane, Calendar, Users, Sparkles, Clock, Luggage, Leaf } from 'lucide-react';
 import { FlightOption } from '../types/travel';
 import { FLIGHTS_DATA, POPULAR_ORIGINS } from '../data/travelData';
 
@@ -20,17 +8,11 @@ interface FlightSearchProps {
   selectedFlightId?: string;
 }
 
-export const FlightSearch: React.FC<FlightSearchProps> = ({
-  onSelectFlight,
-  selectedFlightId,
-}) => {
+export const FlightSearch: React.FC<FlightSearchProps> = ({ onSelectFlight, selectedFlightId }) => {
   const [fromCity, setFromCity] = useState<string>('Delhi (DEL)');
   const [toCity, setToCity] = useState<string>('Bali (DPS)');
-  const [departDate, setDepartDate] = useState<string>('2026-10-12');
-  const [returnDate, setReturnDate] = useState<string>('2026-10-18');
-  const [travellers, setTravellers] = useState<string>('2 Travellers');
-  const [cabinClass, setCabinClass] = useState<'Economy' | 'Premium Economy' | 'Business'>('Economy');
-  const [isSearching, setIsSearching] = useState<boolean>(false);
+  const [cabinClass] = useState<'Economy' | 'Premium Economy' | 'Business'>('Economy');
+  const [, setIsSearching] = useState<boolean>(false);
 
   const handleSearch = () => {
     setIsSearching(true);
@@ -52,7 +34,8 @@ export const FlightSearch: React.FC<FlightSearchProps> = ({
             Transparent flights. Zero hidden charges.
           </h3>
           <p className="text-xs sm:text-sm text-stone-500 font-light mt-1">
-            Direct airline connectivity with guaranteed baggage, priority boarding, and full carbon offset insights.
+            Direct airline connectivity with guaranteed baggage, priority boarding, and full carbon
+            offset insights.
           </p>
         </div>
 
@@ -163,8 +146,8 @@ export const FlightSearch: React.FC<FlightSearchProps> = ({
                                 flight.badge === 'Cheapest'
                                   ? 'bg-emerald-50 text-emerald-800 border border-emerald-200/80'
                                   : flight.badge === 'Fastest'
-                                  ? 'bg-stone-100 text-stone-800 border border-stone-200'
-                                  : 'bg-amber-50 text-amber-800 border border-amber-200/80'
+                                    ? 'bg-stone-100 text-stone-800 border border-stone-200'
+                                    : 'bg-amber-50 text-amber-800 border border-amber-200/80'
                               }`}
                             >
                               {flight.badge}
@@ -209,9 +192,7 @@ export const FlightSearch: React.FC<FlightSearchProps> = ({
                         <span className="text-lg font-serif font-bold text-stone-900 block">
                           {flight.arriveTime}
                         </span>
-                        <span className="text-xs font-medium text-stone-500">
-                          {flight.toCode}
-                        </span>
+                        <span className="text-xs font-medium text-stone-500">{flight.toCode}</span>
                       </div>
                     </div>
                   </div>
@@ -226,7 +207,9 @@ export const FlightSearch: React.FC<FlightSearchProps> = ({
                       <div className="text-xl font-bold text-stone-900">
                         ₹{flight.price.toLocaleString('en-IN')}
                       </div>
-                      <div className="text-[10px] text-stone-400 font-light">per person (taxes included)</div>
+                      <div className="text-[10px] text-stone-400 font-light">
+                        per person (taxes included)
+                      </div>
                     </div>
 
                     <button

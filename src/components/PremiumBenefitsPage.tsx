@@ -5,19 +5,12 @@ import {
   ShieldCheck,
   Check,
   X as CloseIcon,
-  Zap,
-  Coffee,
   Plane,
-  HeartHandshake,
   Headphones,
-  Compass,
   ArrowRight,
-  Star,
   Lock,
   ChevronDown,
-  Gift,
   CheckCircle2,
-  Download,
   MessageSquare,
   BadgeCheck,
 } from 'lucide-react';
@@ -54,7 +47,8 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
 
     setTimeout(() => {
       setIsProcessingUpgrade(false);
-      const tierName = selectedTierForUpgrade.id === 'black' ? 'Wanderlust Black' : 'Wanderlust Pro';
+      const tierName =
+        selectedTierForUpgrade.id === 'black' ? 'Wanderlust Black' : 'Wanderlust Pro';
       onUpgradeSuccess(tierName);
       setSelectedTierForUpgrade(null);
       setShowCelebration(true);
@@ -63,14 +57,54 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
   };
 
   const comparisonFeatures = [
-    { name: 'Platform Booking Surcharges', free: 'Standard (3.5% fee)', pro: '0% Zero Fees (Save ₹12K+)', black: '0% Zero Fees (Save ₹25K+)' },
-    { name: '24/7 Dedicated Concierge', free: 'Email support (24h)', pro: '60s WhatsApp Human Agent', black: 'Direct 1-on-1 Senior Manager' },
-    { name: 'Disruption & Rebooking Protection', free: 'Standard airline policy', pro: 'Auto-Rebooking + Voucher', black: 'VIP Private Chauffeur & Rebook' },
-    { name: 'Global Airport Lounge Passes', free: 'None', pro: '4 Passes / year', black: 'Unlimited + 2 Guests' },
-    { name: 'Boutique Hotel Room Upgrades', free: 'Subject to pay', pro: 'Complimentary on Availability', black: 'Guaranteed Highest Category' },
-    { name: 'Late 4:00 PM Check-Out', free: 'Not included', pro: 'Subject to Availability', black: 'Guaranteed + Free Spa Credit' },
-    { name: 'Secret Villas & Unlisted Stays', free: 'Standard list only', pro: 'Curated Hidden Gems', black: 'Ultra-Exclusive Estates & Yachts' },
-    { name: 'Live Smart Trip Companion', free: 'Online only', pro: 'Offline GPS + Live Alerts', black: 'Offline GPS + Personal Guide' },
+    {
+      name: 'Platform Booking Surcharges',
+      free: 'Standard (3.5% fee)',
+      pro: '0% Zero Fees (Save ₹12K+)',
+      black: '0% Zero Fees (Save ₹25K+)',
+    },
+    {
+      name: '24/7 Dedicated Concierge',
+      free: 'Email support (24h)',
+      pro: '60s WhatsApp Human Agent',
+      black: 'Direct 1-on-1 Senior Manager',
+    },
+    {
+      name: 'Disruption & Rebooking Protection',
+      free: 'Standard airline policy',
+      pro: 'Auto-Rebooking + Voucher',
+      black: 'VIP Private Chauffeur & Rebook',
+    },
+    {
+      name: 'Global Airport Lounge Passes',
+      free: 'None',
+      pro: '4 Passes / year',
+      black: 'Unlimited + 2 Guests',
+    },
+    {
+      name: 'Boutique Hotel Room Upgrades',
+      free: 'Subject to pay',
+      pro: 'Complimentary on Availability',
+      black: 'Guaranteed Highest Category',
+    },
+    {
+      name: 'Late 4:00 PM Check-Out',
+      free: 'Not included',
+      pro: 'Subject to Availability',
+      black: 'Guaranteed + Free Spa Credit',
+    },
+    {
+      name: 'Secret Villas & Unlisted Stays',
+      free: 'Standard list only',
+      pro: 'Curated Hidden Gems',
+      black: 'Ultra-Exclusive Estates & Yachts',
+    },
+    {
+      name: 'Live Smart Trip Companion',
+      free: 'Online only',
+      pro: 'Offline GPS + Live Alerts',
+      black: 'Offline GPS + Personal Guide',
+    },
   ];
 
   const faqs = [
@@ -112,7 +146,8 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
           </h1>
 
           <p className="text-base sm:text-lg text-stone-300 font-light max-w-2xl mx-auto leading-relaxed mb-10">
-            Unlock 0% booking fees, 24/7 dedicated private WhatsApp concierge, guaranteed boutique upgrades, and worldwide airport lounge access — for just ₹300/month.
+            Unlock 0% booking fees, 24/7 dedicated private WhatsApp concierge, guaranteed boutique
+            upgrades, and worldwide airport lounge access — for just ₹300/month.
           </p>
 
           {/* Active Premium Member Banner (If already subscribed) */}
@@ -123,7 +158,8 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
                 Active Membership: {userProfile.premiumTier || 'Wanderlust Pro'}
               </div>
               <p className="text-sm text-stone-200 font-light mb-4">
-                You have VIP status unlocked across all stays, flights, and concierges until October 2027.
+                You have VIP status unlocked across all stays, flights, and concierges until October
+                2027.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-3">
                 <button
@@ -177,7 +213,8 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
                   Welcome to {userProfile.premiumTier || 'Wanderlust Pro'}! 🎉
                 </h3>
                 <p className="text-xs text-emerald-200 font-light mt-1">
-                  Your 0% fees, 4 lounge passes, and 24/7 dedicated concierge are now activated across your account.
+                  Your 0% fees, 4 lounge passes, and 24/7 dedicated concierge are now activated
+                  across your account.
                 </p>
               </div>
             </div>
@@ -200,7 +237,8 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
             </div>
             <div className="text-2xl font-serif font-bold text-stone-900 mb-1">0% Surcharges</div>
             <p className="text-xs text-stone-500 font-light leading-relaxed">
-              Zero platform commissions or hidden markup on airlines, boutique villas, or curated tours.
+              Zero platform commissions or hidden markup on airlines, boutique villas, or curated
+              tours.
             </p>
           </div>
 
@@ -210,7 +248,8 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
             </div>
             <div className="text-2xl font-serif font-bold text-stone-900 mb-1">60s Concierge</div>
             <p className="text-xs text-stone-500 font-light leading-relaxed">
-              Instant access to expert human trip designers via dedicated WhatsApp line anytime, anywhere.
+              Instant access to expert human trip designers via dedicated WhatsApp line anytime,
+              anywhere.
             </p>
           </div>
 
@@ -220,7 +259,8 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
             </div>
             <div className="text-2xl font-serif font-bold text-stone-900 mb-1">1,300+ Lounges</div>
             <p className="text-xs text-stone-500 font-light leading-relaxed">
-              Complimentary airport lounge access globally with premium food, high-speed Wi-Fi, and showers.
+              Complimentary airport lounge access globally with premium food, high-speed Wi-Fi, and
+              showers.
             </p>
           </div>
 
@@ -230,7 +270,8 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
             </div>
             <div className="text-2xl font-serif font-bold text-stone-900 mb-1">VIP Stays</div>
             <p className="text-xs text-stone-500 font-light leading-relaxed">
-              Complimentary room upgrades, early check-in, late 4 PM check-out, and on-arrival welcome champagne.
+              Complimentary room upgrades, early check-in, late 4 PM check-out, and on-arrival
+              welcome champagne.
             </p>
           </div>
         </div>
@@ -247,7 +288,8 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
             Choose your level of luxury.
           </h2>
           <p className="text-sm sm:text-base text-stone-500 font-light mt-2">
-            Cancel anytime with a single tap. All plans pay for themselves on your very first vacation.
+            Cancel anytime with a single tap. All plans pay for themselves on your very first
+            vacation.
           </p>
 
           {/* Billing Switcher Toggle */}
@@ -284,11 +326,13 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
           {PREMIUM_TIERS.map((tier) => {
             const isAnnual = billingCycle === 'annual';
             const priceDisplay = isAnnual ? tier.annualMonthlyEquivalent : tier.monthlyPrice;
-            const billedText = isAnnual ? `Billed annually at ₹${tier.annualPrice.toLocaleString('en-IN')}/yr` : 'Billed monthly, cancel anytime';
-            const isUserCurrentTier = userProfile.isPremium && (
-              (tier.id === 'pro' && userProfile.premiumTier === 'Wanderlust Pro') ||
-              (tier.id === 'black' && userProfile.premiumTier === 'Wanderlust Black')
-            );
+            const billedText = isAnnual
+              ? `Billed annually at ₹${tier.annualPrice.toLocaleString('en-IN')}/yr`
+              : 'Billed monthly, cancel anytime';
+            const isUserCurrentTier =
+              userProfile.isPremium &&
+              ((tier.id === 'pro' && userProfile.premiumTier === 'Wanderlust Pro') ||
+                (tier.id === 'black' && userProfile.premiumTier === 'Wanderlust Black'));
 
             return (
               <div
@@ -327,9 +371,7 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
                       </span>
                       <span className="text-xs text-stone-500 font-light">/ month</span>
                     </div>
-                    <div className="text-[11px] text-stone-400 font-light mt-1">
-                      {billedText}
-                    </div>
+                    <div className="text-[11px] text-stone-400 font-light mt-1">{billedText}</div>
                   </div>
 
                   {/* Features List */}
@@ -455,9 +497,7 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
                   onClick={() => setFaqOpenIndex(isOpen ? null : idx)}
                   className="w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer"
                 >
-                  <span className="text-sm font-serif font-bold text-stone-900">
-                    {faq.q}
-                  </span>
+                  <span className="text-sm font-serif font-bold text-stone-900">{faq.q}</span>
                   <ChevronDown
                     className={`w-4 h-4 text-stone-400 transition-transform duration-200 shrink-0 ${
                       isOpen ? 'rotate-180 text-stone-900' : ''
@@ -505,11 +545,19 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
               <div className="p-4 rounded-2xl bg-white border border-stone-200 shadow-2xs flex items-center justify-between">
                 <div>
                   <span className="text-xs text-stone-400 uppercase tracking-wider font-semibold">
-                    {billingCycle === 'annual' ? 'Annual Plan (Save 17%)' : 'Monthly Plan (₹300/mo)'}
+                    {billingCycle === 'annual'
+                      ? 'Annual Plan (Save 17%)'
+                      : 'Monthly Plan (₹300/mo)'}
                   </span>
                   <div className="text-2xl font-serif font-bold text-stone-900 mt-0.5">
-                    ₹{billingCycle === 'annual' ? selectedTierForUpgrade.annualPrice.toLocaleString('en-IN') : selectedTierForUpgrade.monthlyPrice.toLocaleString('en-IN')}
-                    <span className="text-xs text-stone-500 font-normal"> / {billingCycle === 'annual' ? 'year' : 'month'}</span>
+                    ₹
+                    {billingCycle === 'annual'
+                      ? selectedTierForUpgrade.annualPrice.toLocaleString('en-IN')
+                      : selectedTierForUpgrade.monthlyPrice.toLocaleString('en-IN')}
+                    <span className="text-xs text-stone-500 font-normal">
+                      {' '}
+                      / {billingCycle === 'annual' ? 'year' : 'month'}
+                    </span>
                   </div>
                 </div>
                 <div className="text-right">
@@ -538,7 +586,9 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
               <div className="p-3 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-500 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Lock className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>Payment Method: <strong>Instant UPI & Credit Card Sandbox</strong></span>
+                  <span>
+                    Payment Method: <strong>Instant UPI & Credit Card Sandbox</strong>
+                  </span>
                 </div>
                 <span className="text-[10px] text-stone-400">256-bit Encrypted</span>
               </div>
@@ -607,7 +657,8 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
 
             <div className="my-5 space-y-3">
               <p className="text-xs text-stone-600 leading-relaxed">
-                Connect with our dedicated travel experts instantly. Pick an action or send a custom itinerary request:
+                Connect with our dedicated travel experts instantly. Pick an action or send a custom
+                itinerary request:
               </p>
 
               <a
@@ -620,7 +671,9 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
                   <Plane className="w-4 h-4 text-stone-700 shrink-0" />
                   <div>
                     <span className="font-bold block">Request Airport Lounge Passes</span>
-                    <span className="text-[10px] text-stone-500">Issued instantly to your mobile</span>
+                    <span className="text-[10px] text-stone-500">
+                      Issued instantly to your mobile
+                    </span>
                   </div>
                 </div>
                 <ArrowRight className="w-3.5 h-3.5 text-stone-400" />
@@ -636,7 +689,9 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
                   <Crown className="w-4 h-4 text-amber-500 shrink-0" />
                   <div>
                     <span className="font-bold block">Apply VIP Villa Upgrade</span>
-                    <span className="text-[10px] text-stone-500">Subject to room category availability</span>
+                    <span className="text-[10px] text-stone-500">
+                      Subject to room category availability
+                    </span>
                   </div>
                 </div>
                 <ArrowRight className="w-3.5 h-3.5 text-stone-400" />
@@ -652,7 +707,9 @@ export const PremiumBenefitsPage: React.FC<PremiumBenefitsPageProps> = ({
                   <MessageSquare className="w-4 h-4 shrink-0" />
                   <div>
                     <span className="font-bold block">Open Direct WhatsApp Chat</span>
-                    <span className="text-[10px] text-emerald-100">Live agent replies within 45 seconds</span>
+                    <span className="text-[10px] text-emerald-100">
+                      Live agent replies within 45 seconds
+                    </span>
                   </div>
                 </div>
                 <ArrowRight className="w-3.5 h-3.5 text-emerald-200" />

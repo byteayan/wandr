@@ -7,23 +7,17 @@ import {
   MapPin,
   PhoneCall,
   MessageSquare,
-  AlertTriangle,
   CheckCircle,
   QrCode,
-  Compass,
   ArrowRight,
   Shield,
   Sparkles,
-  ExternalLink,
-  ChevronRight,
   X,
   Mic,
   MicOff,
   Volume2,
   VolumeX,
   PhoneOff,
-  Ambulance,
-  Building,
   Check,
 } from 'lucide-react';
 import { TripPlan, TripFeedbackData } from '../types/travel';
@@ -199,7 +193,8 @@ export const LiveTripMode: React.FC<LiveTripModeProps> = ({ tripPlan, onOpenFeed
                 Move Ubud Jungle Spa ahead to 04:00 PM; swap Sunset Lookout to dry 06:45 PM window.
               </h3>
               <p className="text-xs text-stone-400 font-light mt-1 max-w-2xl">
-                Our weather radar detected sudden tropical cloud cover over Uluwatu cliffs. We rearranged your afternoon so you stay dry indoors during peak shower.
+                Our weather radar detected sudden tropical cloud cover over Uluwatu cliffs. We
+                rearranged your afternoon so you stay dry indoors during peak shower.
               </p>
             </div>
           </div>
@@ -238,8 +233,8 @@ export const LiveTripMode: React.FC<LiveTripModeProps> = ({ tripPlan, onOpenFeed
                     item.status === 'in-progress'
                       ? 'bg-stone-900/90 border-[#E05A47]/60 shadow-lg ring-1 ring-[#E05A47]/40'
                       : item.status === 'completed'
-                      ? 'bg-stone-900/40 border-stone-800/60 opacity-80'
-                      : 'bg-stone-900/60 border-stone-800/80'
+                        ? 'bg-stone-900/40 border-stone-800/60 opacity-80'
+                        : 'bg-stone-900/60 border-stone-800/80'
                   }`}
                 >
                   <div className="flex items-start justify-between gap-4">
@@ -324,7 +319,9 @@ export const LiveTripMode: React.FC<LiveTripModeProps> = ({ tripPlan, onOpenFeed
                   </div>
                   <div>
                     <h4 className="text-sm font-serif font-bold text-stone-100">Wayan Putra</h4>
-                    <span className="text-xs text-stone-400 font-light">Toyota Innova • DK 4021 AA</span>
+                    <span className="text-xs text-stone-400 font-light">
+                      Toyota Innova • DK 4021 AA
+                    </span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
@@ -359,7 +356,8 @@ export const LiveTripMode: React.FC<LiveTripModeProps> = ({ tripPlan, onOpenFeed
                 Completed Your Journey?
               </h4>
               <p className="text-xs text-stone-400 font-light mt-1 mb-4">
-                Share your feedback on the AI itinerary & villa stays to earn <span className="text-amber-400 font-semibold">₹1,000 Travel Credit</span>.
+                Share your feedback on the AI itinerary & villa stays to earn{' '}
+                <span className="text-amber-400 font-semibold">₹1,000 Travel Credit</span>.
               </p>
               <button
                 type="button"
@@ -435,7 +433,9 @@ export const LiveTripMode: React.FC<LiveTripModeProps> = ({ tripPlan, onOpenFeed
                 type="button"
                 onClick={() => setIsMuted(!isMuted)}
                 className={`p-3.5 rounded-full transition-colors cursor-pointer ${
-                  isMuted ? 'bg-amber-500/30 text-amber-300' : 'bg-stone-800 text-stone-300 hover:bg-stone-700'
+                  isMuted
+                    ? 'bg-amber-500/30 text-amber-300'
+                    : 'bg-stone-800 text-stone-300 hover:bg-stone-700'
                 }`}
                 title={isMuted ? 'Unmute' : 'Mute'}
               >
@@ -446,7 +446,9 @@ export const LiveTripMode: React.FC<LiveTripModeProps> = ({ tripPlan, onOpenFeed
                 type="button"
                 onClick={() => setIsSpeaker(!isSpeaker)}
                 className={`p-3.5 rounded-full transition-colors cursor-pointer ${
-                  isSpeaker ? 'bg-blue-500/30 text-blue-300' : 'bg-stone-800 text-stone-300 hover:bg-stone-700'
+                  isSpeaker
+                    ? 'bg-blue-500/30 text-blue-300'
+                    : 'bg-stone-800 text-stone-300 hover:bg-stone-700'
                 }`}
                 title={isSpeaker ? 'Speaker On' : 'Speaker Off'}
               >
@@ -463,9 +465,7 @@ export const LiveTripMode: React.FC<LiveTripModeProps> = ({ tripPlan, onOpenFeed
               </button>
             </div>
 
-            <p className="text-[11px] text-stone-400">
-              VoIP Secured via Wandr Fleet Network
-            </p>
+            <p className="text-[11px] text-stone-400">VoIP Secured via Wandr Fleet Network</p>
           </div>
         </div>
       )}
@@ -489,7 +489,9 @@ export const LiveTripMode: React.FC<LiveTripModeProps> = ({ tripPlan, onOpenFeed
                   <h3 className="text-base font-serif font-bold text-white">
                     Wandr 24/7 Bali SOS Emergency
                   </h3>
-                  <span className="text-[11px] text-stone-400">Bali Province Bilingual Rapid Response</span>
+                  <span className="text-[11px] text-stone-400">
+                    Bali Province Bilingual Rapid Response
+                  </span>
                 </div>
               </div>
               <button
@@ -503,7 +505,10 @@ export const LiveTripMode: React.FC<LiveTripModeProps> = ({ tripPlan, onOpenFeed
             {sosSent && (
               <div className="my-3 p-3 bg-red-950/70 border border-red-500/60 rounded-xl text-xs text-red-200 flex items-center gap-2">
                 <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>GPS coordinates dispatched to Wandr Bali Hub. Duty manager is dialling your mobile now.</span>
+                <span>
+                  GPS coordinates dispatched to Wandr Bali Hub. Duty manager is dialling your mobile
+                  now.
+                </span>
               </div>
             )}
 
@@ -517,7 +522,9 @@ export const LiveTripMode: React.FC<LiveTripModeProps> = ({ tripPlan, onOpenFeed
                   <Radio className="w-5 h-5 animate-pulse" />
                   <div className="text-left">
                     <span className="block text-sm">One-Tap SOS Dispatch</span>
-                    <span className="text-[10px] font-normal text-red-100">Transmits Live GPS coordinates to Bali Response Desk</span>
+                    <span className="text-[10px] font-normal text-red-100">
+                      Transmits Live GPS coordinates to Bali Response Desk
+                    </span>
                   </div>
                 </div>
                 <ArrowRight className="w-4 h-4" />
@@ -525,13 +532,19 @@ export const LiveTripMode: React.FC<LiveTripModeProps> = ({ tripPlan, onOpenFeed
 
               <div className="grid grid-cols-2 gap-2 pt-2">
                 <div className="p-3 rounded-2xl bg-stone-800 border border-stone-700">
-                  <span className="text-[10px] uppercase tracking-wider text-stone-400 block font-semibold">Tourist Police</span>
-                  <span className="text-sm font-bold text-white block mt-0.5">110 / +62 361 224111</span>
+                  <span className="text-[10px] uppercase tracking-wider text-stone-400 block font-semibold">
+                    Tourist Police
+                  </span>
+                  <span className="text-sm font-bold text-white block mt-0.5">
+                    110 / +62 361 224111
+                  </span>
                   <span className="text-[10px] text-stone-400">English Supported</span>
                 </div>
 
                 <div className="p-3 rounded-2xl bg-stone-800 border border-stone-700">
-                  <span className="text-[10px] uppercase tracking-wider text-stone-400 block font-semibold">BIMC Medical Rescue</span>
+                  <span className="text-[10px] uppercase tracking-wider text-stone-400 block font-semibold">
+                    BIMC Medical Rescue
+                  </span>
                   <span className="text-sm font-bold text-white block mt-0.5">+62 361 761263</span>
                   <span className="text-[10px] text-stone-400">24/7 International Hospital</span>
                 </div>
@@ -582,7 +595,8 @@ export const LiveTripMode: React.FC<LiveTripModeProps> = ({ tripPlan, onOpenFeed
               </h4>
               <p className="text-xs text-stone-500 font-mono mt-0.5">Voucher: WNDR-BALI-8842-VIP</p>
               <p className="text-xs text-stone-600 mt-2">
-                Valid for Komaneka Villa express check-in, Tukad Cepung Sanctuary entry, and VIP Lounge access.
+                Valid for Komaneka Villa express check-in, Tukad Cepung Sanctuary entry, and VIP
+                Lounge access.
               </p>
             </div>
 

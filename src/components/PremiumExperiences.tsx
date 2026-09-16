@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Sparkles,
-  Heart,
-  Plus,
-  Check,
-  ShieldCheck,
-  Star,
-  CheckCircle2,
-} from 'lucide-react';
+import { Sparkles, Plus, Check, CheckCircle2 } from 'lucide-react';
 import { PremiumExperience } from '../types/travel';
 import { PREMIUM_EXPERIENCES } from '../data/travelData';
 
@@ -21,7 +13,10 @@ export const PremiumExperiences: React.FC<PremiumExperiencesProps> = ({
   selectedExperienceIds,
 }) => {
   return (
-    <section id="premium-experiences" className="py-16 sm:py-24 bg-[#FAF8F5] border-y border-stone-200/80">
+    <section
+      id="premium-experiences"
+      className="py-16 sm:py-24 bg-[#FAF8F5] border-y border-stone-200/80"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
@@ -33,7 +28,8 @@ export const PremiumExperiences: React.FC<PremiumExperiencesProps> = ({
             Make it unforgettable.
           </h2>
           <p className="text-sm sm:text-base text-stone-500 font-light mt-2">
-            The extraordinary details that turn good trips into legendary memories. Reserved exclusively for Wandr travellers.
+            The extraordinary details that turn good trips into legendary memories. Reserved
+            exclusively for Wandr travellers.
           </p>
         </div>
 
@@ -81,7 +77,10 @@ export const PremiumExperiences: React.FC<PremiumExperiencesProps> = ({
                     {/* Included Checkpoints */}
                     <div className="space-y-1.5 pt-2 border-t border-stone-100">
                       {exp.includes.map((item, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-[11px] text-stone-600 font-medium">
+                        <div
+                          key={idx}
+                          className="flex items-center gap-2 text-[11px] text-stone-600 font-medium"
+                        >
                           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
                           <span>{item}</span>
                         </div>

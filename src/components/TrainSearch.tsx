@@ -1,21 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Train,
-  Calendar,
-  Users,
-  Search,
-  Sparkles,
-  Clock,
-  ShieldCheck,
-  Check,
-  Leaf,
-  Filter,
-  ArrowRight,
-  Info,
-  Coffee,
-  Wifi,
-  Zap,
-} from 'lucide-react';
+import { Train, Calendar, Users, Search, Check, Filter } from 'lucide-react';
 import { TrainOption, TrainClassOption } from '../types/travel';
 import { TRAINS_DATA, POPULAR_TRAIN_STATIONS } from '../data/travelData';
 
@@ -24,10 +8,7 @@ interface TrainSearchProps {
   selectedTrainId?: string;
 }
 
-export const TrainSearch: React.FC<TrainSearchProps> = ({
-  onSelectTrain,
-  selectedTrainId,
-}) => {
+export const TrainSearch: React.FC<TrainSearchProps> = ({ onSelectTrain, selectedTrainId }) => {
   const [fromStation, setFromStation] = useState<string>('New Delhi (NDLS)');
   const [toStation, setToStation] = useState<string>('Varanasi Junction (BSB)');
   const [journeyDate, setJourneyDate] = useState<string>('2026-10-14');
@@ -35,7 +16,9 @@ export const TrainSearch: React.FC<TrainSearchProps> = ({
   const [selectedClassFilter, setSelectedClassFilter] = useState<string>('ALL');
   const [trainTypeFilter, setTrainTypeFilter] = useState<string>('ALL');
   const [isSearching, setIsSearching] = useState<boolean>(false);
-  const [selectedClassPerTrain, setSelectedClassPerTrain] = useState<Record<string, TrainClassOption>>({});
+  const [selectedClassPerTrain, setSelectedClassPerTrain] = useState<
+    Record<string, TrainClassOption>
+  >({});
 
   const handleSearch = () => {
     setIsSearching(true);
@@ -72,7 +55,8 @@ export const TrainSearch: React.FC<TrainSearchProps> = ({
             High-speed scenic railways with confirmed seats.
           </h3>
           <p className="text-xs sm:text-sm text-stone-500 font-light mt-1">
-            Real-time availability, confirmed berth predictions, onboard meals, and zero cancellation penalty.
+            Real-time availability, confirmed berth predictions, onboard meals, and zero
+            cancellation penalty.
           </p>
         </div>
 
@@ -219,7 +203,9 @@ export const TrainSearch: React.FC<TrainSearchProps> = ({
             <div className="w-12 h-12 rounded-full bg-stone-100 text-stone-400 flex items-center justify-center mx-auto mb-3">
               <Train className="w-6 h-6" />
             </div>
-            <h4 className="text-base font-serif font-bold text-stone-900 mb-1">No trains match your filters</h4>
+            <h4 className="text-base font-serif font-bold text-stone-900 mb-1">
+              No trains match your filters
+            </h4>
             <p className="text-xs text-stone-500 font-light max-w-md mx-auto mb-4">
               Try selecting "All Classes" or reset your filters.
             </p>
@@ -280,7 +266,9 @@ export const TrainSearch: React.FC<TrainSearchProps> = ({
                           <div className="text-xl sm:text-2xl font-serif font-bold text-stone-900">
                             {train.departTime}
                           </div>
-                          <div className="text-xs text-stone-500 font-light truncate">{train.fromStation}</div>
+                          <div className="text-xs text-stone-500 font-light truncate">
+                            {train.fromStation}
+                          </div>
                         </div>
 
                         <div className="flex flex-col items-center">
@@ -303,7 +291,9 @@ export const TrainSearch: React.FC<TrainSearchProps> = ({
                           <div className="text-xl sm:text-2xl font-serif font-bold text-stone-900">
                             {train.arriveTime}
                           </div>
-                          <div className="text-xs text-stone-500 font-light truncate">{train.toStation}</div>
+                          <div className="text-xs text-stone-500 font-light truncate">
+                            {train.toStation}
+                          </div>
                         </div>
                       </div>
 

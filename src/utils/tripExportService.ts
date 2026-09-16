@@ -1,6 +1,5 @@
-import jsPDF from 'jspdf';
-import { UserProfile, TripPlan } from '../types/travel';
-import { DESTINATIONS, STAYS_DATA, ACTIVITIES_DATA, FLIGHTS_DATA } from '../data/travelData';
+import { UserProfile } from '../types/travel';
+import { DESTINATIONS, STAYS_DATA, FLIGHTS_DATA } from '../data/travelData';
 import { generateCustomTripPlan } from './tripPlannerEngine';
 
 export interface UpcomingTripItem {
@@ -34,10 +33,10 @@ export function generateUpcomingTripIcs(trip: UpcomingTripItem, userProfile?: Us
     trip.companion.toLowerCase() === 'solo'
       ? 'solo'
       : trip.companion.toLowerCase() === 'couple'
-      ? 'couple'
-      : trip.companion.toLowerCase() === 'family'
-      ? 'family'
-      : 'friends';
+        ? 'couple'
+        : trip.companion.toLowerCase() === 'family'
+          ? 'family'
+          : 'friends';
 
   const plan = generateCustomTripPlan(
     destination.id,
@@ -48,7 +47,7 @@ export function generateUpcomingTripIcs(trip: UpcomingTripItem, userProfile?: Us
     'Delhi (DEL)'
   );
 
-  let icsContent = [
+  const icsContent = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
     'PRODID:-//Wandr//AI Travel Curator//EN',
@@ -116,7 +115,10 @@ export function downloadUpcomingTripIcs(trip: UpcomingTripItem, userProfile?: Us
   const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8;' });
   const link = document.createElement('a');
   link.href = URL.createObjectURL(blob);
-  link.setAttribute('download', `Wandr_${trip.destinationName.replace(/\s+/g, '_')}_${trip.days}D.ics`);
+  link.setAttribute(
+    'download',
+    `Wandr_${trip.destinationName.replace(/\s+/g, '_')}_${trip.days}D.ics`
+  );
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -125,7 +127,13 @@ export function downloadUpcomingTripIcs(trip: UpcomingTripItem, userProfile?: Us
 /**
  * Generates and downloads a clean, multi-page offline PDF Travel Voucher & Itinerary Document.
  */
-export function downloadUpcomingTripPdf(trip: UpcomingTripItem, userProfile?: UserProfile): void {
+export async function downloadUpcomingTripPdf(
+  trip: UpcomingTripItem,
+  userProfile?: UserProfile
+): Promise<void> {
+  // jsPDF (plus html2canvas) is ~250 kB; only pull it in when a voucher is actually exported.
+  const { default: jsPDF } = await import('jspdf');
+
   const doc = new jsPDF({
     orientation: 'portrait',
     unit: 'mm',
@@ -145,10 +153,10 @@ export function downloadUpcomingTripPdf(trip: UpcomingTripItem, userProfile?: Us
     trip.companion.toLowerCase() === 'solo'
       ? 'solo'
       : trip.companion.toLowerCase() === 'couple'
-      ? 'couple'
-      : trip.companion.toLowerCase() === 'family'
-      ? 'family'
-      : 'friends';
+        ? 'couple'
+        : trip.companion.toLowerCase() === 'family'
+          ? 'family'
+          : 'friends';
 
   const plan = generateCustomTripPlan(
     destination.id,
@@ -159,8 +167,7 @@ export function downloadUpcomingTripPdf(trip: UpcomingTripItem, userProfile?: Us
     'Delhi (DEL)'
   );
 
-  const matchedStay =
-    STAYS_DATA.find((s) => s.destinationId === destination.id) || STAYS_DATA[0];
+  const matchedStay = STAYS_DATA.find((s) => s.destinationId === destination.id) || STAYS_DATA[0];
   const matchedFlight = FLIGHTS_DATA[0];
 
   const guestName = userProfile?.name || 'Ayan Alam';
@@ -206,7 +213,12 @@ export function downloadUpcomingTripPdf(trip: UpcomingTripItem, userProfile?: Us
   doc.setFont('helvetica', 'normal');
   doc.setTextColor(180, 180, 180);
   doc.text(`Voucher ID: ${voucherCode}`, pageWidth - margin - 8, y + 22, { align: 'right' });
-  doc.text(`Issued: ${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`, pageWidth - margin - 8, y + 28, { align: 'right' });
+  doc.text(
+    `Issued: ${new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`,
+    pageWidth - margin - 8,
+    y + 28,
+    { align: 'right' }
+  );
 
   y += 44;
 
@@ -243,7 +255,11 @@ export function downloadUpcomingTripPdf(trip: UpcomingTripItem, userProfile?: Us
   doc.setTextColor(71, 85, 105);
   doc.text(`Destination: ${trip.destinationName}, ${trip.country}`, margin + 66, y + 15);
   doc.text(`Travel Dates: ${trip.dates} (${trip.days} Days)`, margin + 66, y + 21);
-  doc.text(`Travel Style: ${trip.companion} • ${destination.vibeTags.slice(0, 3).join(', ')}`, margin + 66, y + 27);
+  doc.text(
+    `Travel Style: ${trip.companion} • ${destination.vibeTags.slice(0, 3).join(', ')}`,
+    margin + 66,
+    y + 27
+  );
 
   // Column 3: Total Cost
   doc.line(margin + 125, y + 5, margin + 125, y + 31);
@@ -305,15 +321,24 @@ export function downloadUpcomingTripPdf(trip: UpcomingTripItem, userProfile?: Us
 
   y += 5;
 
-  plan.days.forEach((day, index) => {
+  plan.days.forEach((day) => {
     // Check if we need a new page
     if (y > pageHeight - 45) {
       // Add Footer on current page
       doc.setFontSize(7.5);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(148, 163, 184);
-      doc.text(`Wandr Travel • ${trip.destinationName} Offline Guide • Page 1`, margin, pageHeight - 8);
-      doc.text(`Concierge Support: +91 98765 43210 (24/7 WhatsApp)`, pageWidth - margin, pageHeight - 8, { align: 'right' });
+      doc.text(
+        `Wandr Travel • ${trip.destinationName} Offline Guide • Page 1`,
+        margin,
+        pageHeight - 8
+      );
+      doc.text(
+        `Concierge Support: +91 98765 43210 (24/7 WhatsApp)`,
+        pageWidth - margin,
+        pageHeight - 8,
+        { align: 'right' }
+      );
 
       doc.addPage();
       y = margin + 5;
@@ -324,7 +349,11 @@ export function downloadUpcomingTripPdf(trip: UpcomingTripItem, userProfile?: Us
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(9);
       doc.setTextColor(255, 255, 255);
-      doc.text(`WANDR ITINERARY: ${trip.destinationName.toUpperCase()} (CONTINUED)`, margin + 6, y + 9);
+      doc.text(
+        `WANDR ITINERARY: ${trip.destinationName.toUpperCase()} (CONTINUED)`,
+        margin + 6,
+        y + 9
+      );
       doc.setFontSize(7.5);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(200, 200, 200);
@@ -365,7 +394,11 @@ export function downloadUpcomingTripPdf(trip: UpcomingTripItem, userProfile?: Us
       if (act.location) {
         doc.setFont('helvetica', 'normal');
         doc.setTextColor(100, 116, 139);
-        doc.text(`(${act.location})`, margin + 6 + doc.getTextWidth(`• ${act.time} — ${act.title} `), y);
+        doc.text(
+          `(${act.location})`,
+          margin + 6 + doc.getTextWidth(`• ${act.time} — ${act.title} `),
+          y
+        );
       }
       y += 4;
     });
@@ -392,9 +425,17 @@ export function downloadUpcomingTripPdf(trip: UpcomingTripItem, userProfile?: Us
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(7.5);
   doc.setTextColor(79, 70, 229);
-  doc.text(`• Wandr Global WhatsApp Concierge: +91 98765 43210 (Priority VIP Desk)`, margin + 6, y + 12);
+  doc.text(
+    `• Wandr Global WhatsApp Concierge: +91 98765 43210 (Priority VIP Desk)`,
+    margin + 6,
+    y + 12
+  );
   doc.text(`• Local Tourist Police & Emergency in ${trip.country}: 112 / 110`, margin + 6, y + 17);
-  doc.text(`• Hotel Front Desk (${matchedStay.name}): +62 361 849 8988 • Check-in: 14:00 | Check-out: 12:00`, margin + 6, y + 22);
+  doc.text(
+    `• Hotel Front Desk (${matchedStay.name}): +62 361 849 8988 • Check-in: 14:00 | Check-out: 12:00`,
+    margin + 6,
+    y + 22
+  );
 
   // Footer on final page
   const totalPages = doc.getNumberOfPages();
@@ -403,8 +444,14 @@ export function downloadUpcomingTripPdf(trip: UpcomingTripItem, userProfile?: Us
     doc.setFontSize(7);
     doc.setFont('helvetica', 'normal');
     doc.setTextColor(148, 163, 184);
-    doc.text(`Wandr Travel Experience • ${trip.destinationName} • Page ${i} of ${totalPages}`, margin, pageHeight - 8);
-    doc.text('Designed for Seamless Offline Travel', pageWidth - margin, pageHeight - 8, { align: 'right' });
+    doc.text(
+      `Wandr Travel Experience • ${trip.destinationName} • Page ${i} of ${totalPages}`,
+      margin,
+      pageHeight - 8
+    );
+    doc.text('Designed for Seamless Offline Travel', pageWidth - margin, pageHeight - 8, {
+      align: 'right',
+    });
   }
 
   // Save the PDF
