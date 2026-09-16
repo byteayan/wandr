@@ -2,6 +2,8 @@
 
 **Don't just book a trip. Design the experience.**
 
+**[Live demo →](https://wandr-tawny.vercel.app)**
+
 Planning a trip today means ten open tabs: destination research, flights, trains, buses,
 cabs, hotels, places to visit, activities, restaurants, and finally stitching it all into an
 itinerary. Every one of those surfaces optimises for _bookings_. Travellers care about the

@@ -113,7 +113,7 @@ export default function App() {
     });
   };
 
-  // Handle AI Planner Submit
+  // Handle trip planner submit
   const handleDesignTrip = (data: {
     companion: CompanionType;
     vibes: VibeType[];
@@ -447,7 +447,7 @@ export default function App() {
         />
       ) : (
         <>
-          {/* 2. Hero + Floating AI Trip Planner */}
+          {/* 2. Hero + floating trip planner */}
           <HeroPlanner
             onDesignTrip={handleDesignTrip}
             onExploreClick={() => {

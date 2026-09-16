@@ -25,7 +25,7 @@ export const HowItWorks: React.FC = () => {
       num: '04',
       title: 'DESTINATION',
       icon: '🗺️',
-      desc: 'AI scores matching world locations with 95%+ compatibility.',
+      desc: 'We score matching world locations with 95%+ compatibility.',
     },
     {
       num: '05',
@@ -37,7 +37,7 @@ export const HowItWorks: React.FC = () => {
       num: '06',
       title: 'CUSTOMIZE',
       icon: '🎛️',
-      desc: 'Swap stays, add private shoots, or prompt AI to shift vibe.',
+      desc: 'Swap stays, add private shoots, or shift the vibe anytime.',
     },
     {
       num: '07',

@@ -28,8 +28,8 @@ export const Footer: React.FC<FooterProps> = ({ onPlanTripClick, onNavigateTab }
             </h2>
 
             <p className="text-base sm:text-lg text-stone-400 font-light mb-8">
-              Your next adventure is closer than you think. Tell us your vibe and let our AI engine
-              orchestrate the flights, villas, and memory-making.
+              Your next adventure is closer than you think. Tell us your vibe and let our planning
+              engine orchestrate the flights, villas, and memory-making.
             </p>
 
             <button
@@ -49,8 +49,8 @@ export const Footer: React.FC<FooterProps> = ({ onPlanTripClick, onNavigateTab }
             <WandrLogo size="md" variant="horizontal" theme="white" withTagline={true} />
             <p className="text-stone-400 max-w-sm font-light leading-relaxed">
               “Don’t just book a trip. Design the experience.” <br />
-              Wandr is the AI-powered travel platform uniting bespoke discovery, flights, and vetted
-              sanctuaries under one unified journey.
+              Wandr is the intent-first travel platform uniting bespoke discovery, flights, and
+              vetted sanctuaries under one unified journey.
             </p>
             <div className="flex items-center gap-2 text-stone-500 text-[11px] font-light">
               <span>Curated globally with craft & passion</span>

@@ -50,7 +50,7 @@ export function generateUpcomingTripIcs(trip: UpcomingTripItem, userProfile?: Us
   const icsContent = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Wandr//AI Travel Curator//EN',
+    'PRODID:-//Wandr//Trip Curator//EN',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
     `X-WR-CALNAME:Wandr Trip: ${trip.destinationName} (${trip.days} Days)`,
@@ -194,7 +194,7 @@ export async function downloadUpcomingTripPdf(
   doc.setFontSize(8);
   doc.setFont('helvetica', 'normal');
   doc.setTextColor(200, 200, 200);
-  doc.text('AI TRAVEL CURATOR & LUXURY CONCIERGE', margin + 8, y + 18);
+  doc.text('CURATED TRAVEL & LUXURY CONCIERGE', margin + 8, y + 18);
 
   doc.setFontSize(12);
   doc.setFont('helvetica', 'bold');

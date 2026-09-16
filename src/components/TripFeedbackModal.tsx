@@ -166,7 +166,7 @@ export const TripFeedbackModal: React.FC<TripFeedbackModalProps> = ({
               {/* 1. Overall Star Rating */}
               <div className="text-center bg-[#FAF8F5] p-5 rounded-3xl border border-stone-200/80">
                 <label className="text-xs font-semibold text-stone-500 uppercase tracking-wider block mb-1">
-                  Overall AI Experience Rating
+                  Overall Experience Rating
                 </label>
 
                 {/* Stars Row */}
@@ -211,11 +211,11 @@ export const TripFeedbackModal: React.FC<TripFeedbackModalProps> = ({
                 </label>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
-                  {/* AI Planning */}
+                  {/* Planning */}
                   <div className="bg-stone-50 p-3 rounded-2xl border border-stone-200/80 flex items-center justify-between">
                     <span className="font-medium text-stone-800 flex items-center gap-1.5">
                       <Sparkles className="w-3.5 h-3.5 text-[#E05A47]" />
-                      AI Route & Timing
+                      Route & Timing
                     </span>
                     <div className="flex items-center gap-1">
                       {[1, 2, 3, 4, 5].map((s) => (
@@ -348,7 +348,7 @@ export const TripFeedbackModal: React.FC<TripFeedbackModalProps> = ({
                     <MessageSquare className="w-3.5 h-3.5 text-stone-500" />
                     Share Your Thoughts & Comments
                   </label>
-                  <span className="text-[10px] text-stone-400">Helps refine future AI trips</span>
+                  <span className="text-[10px] text-stone-400">Helps refine future trips</span>
                 </div>
                 <textarea
                   value={comments}
@@ -376,7 +376,7 @@ export const TripFeedbackModal: React.FC<TripFeedbackModalProps> = ({
               {/* 6. Recommendation Question */}
               <div className="pt-2 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <span className="text-xs font-medium text-stone-700">
-                  Would you recommend Wandr AI to friends?
+                  Would you recommend Wandr to friends?
                 </span>
                 <div className="flex items-center gap-1.5">
                   {[
@@ -451,8 +451,8 @@ export const TripFeedbackModal: React.FC<TripFeedbackModalProps> = ({
                   Thank You for Your Feedback!
                 </h4>
                 <p className="text-xs sm:text-sm text-stone-500 font-light max-w-sm mx-auto">
-                  Your insights help Wandr AI refine future personalized itineraries, route
-                  algorithms, and luxury partner curation.
+                  Your insights help Wandr refine future personalized itineraries, route algorithms,
+                  and luxury partner curation.
                 </p>
               </div>
 

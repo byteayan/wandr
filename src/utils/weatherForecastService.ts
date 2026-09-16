@@ -364,7 +364,7 @@ export function generateDestinationWeatherForecast(
     daysForecast,
     aiWeatherSuitabilityScore: 95,
     aiSuitabilityVerdict: 'Optimal Climate Window • Ideal for Outdoor Itineraries',
-    lastUpdated: 'Live AI Climate Sync',
+    lastUpdated: 'Live Climate Sync',
   };
 }
 

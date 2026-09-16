@@ -377,7 +377,7 @@ export const WeatherForecastCard: React.FC<WeatherForecastCardProps> = ({
             </div>
           </div>
 
-          {/* Right Column: AI Packing & Destination Advisory */}
+          {/* Right column: packing & destination advisory */}
           <div className="lg:col-span-5 bg-white p-5 rounded-2xl border border-stone-200/90 shadow-2xs space-y-3.5">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -394,7 +394,7 @@ export const WeatherForecastCard: React.FC<WeatherForecastCardProps> = ({
             </div>
 
             <p className="text-[11px] text-stone-500 font-light">
-              AI recommendations based on predicted humidity and temperature ranges for{' '}
+              Recommendations based on predicted humidity and temperature ranges for{' '}
               <span className="font-medium text-stone-700">{report.destinationName}</span>:
             </p>
 

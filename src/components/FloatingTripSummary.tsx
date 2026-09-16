@@ -164,7 +164,7 @@ export const FloatingTripSummary: React.FC<FloatingTripSummaryProps> = ({
         savingsVsBudget: 0,
       };
 
-  // AI Optimization Savings Calculation vs Standard Retail Prices
+  // Optimization savings calculation vs standard retail prices
   const retailFlightCost = Math.round(costs.flightCost * 1.15) + 650;
   const retailStayCost = Math.round(costs.stayCost * 1.22);
   const retailActivitiesCost = Math.round(costs.activitiesCost * 1.18);
@@ -640,7 +640,7 @@ export const FloatingTripSummary: React.FC<FloatingTripSummaryProps> = ({
                   </div>
                 </div>
 
-                {/* AI Optimization Savings Card */}
+                {/* Optimization savings card */}
                 <div className="bg-gradient-to-br from-emerald-50/90 to-teal-50/60 rounded-2xl p-3 border border-emerald-200/80 text-emerald-950">
                   <div className="flex items-center justify-between mb-1.5">
                     <div className="flex items-center gap-1.5">
@@ -648,7 +648,7 @@ export const FloatingTripSummary: React.FC<FloatingTripSummaryProps> = ({
                         <TrendingDown className="w-3 h-3" />
                       </div>
                       <span className="font-semibold text-xs text-emerald-900">
-                        Wandr AI Savings Summary
+                        Wandr Savings Summary
                       </span>
                     </div>
                     <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-200/80 text-emerald-900 border border-emerald-300">
@@ -669,7 +669,7 @@ export const FloatingTripSummary: React.FC<FloatingTripSummaryProps> = ({
                         <span>
                           You Save{' '}
                           {formatWithCurrency(totalSavings, selectedCurrencyCode, liveRates)} with
-                          AI Bundling
+                          Smart Bundling
                         </span>
                       </div>
                     </div>
