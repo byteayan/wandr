@@ -50,7 +50,9 @@ export const StayDetailsModal: React.FC<StayDetailsModalProps> = ({
               <div className="flex items-center gap-1 text-xs font-semibold text-stone-900">
                 <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                 <span>{stay.rating.toFixed(2)}</span>
-                <span className="text-stone-400 font-light">({stay.reviewCount} verified reviews)</span>
+                <span className="text-stone-400 font-light">
+                  ({stay.reviewCount} verified reviews)
+                </span>
               </div>
             </div>
             <h3 className="text-xl sm:text-2xl font-serif font-bold text-stone-900 tracking-tight mt-1">
@@ -58,7 +60,9 @@ export const StayDetailsModal: React.FC<StayDetailsModalProps> = ({
             </h3>
             <div className="flex items-center gap-1 text-xs text-stone-500 font-light mt-0.5">
               <MapPin className="w-3.5 h-3.5 text-[#E05A47]" />
-              <span>{stay.location} • {stay.distanceToCenter}</span>
+              <span>
+                {stay.location} • {stay.distanceToCenter}
+              </span>
             </div>
           </div>
 
@@ -104,9 +108,7 @@ export const StayDetailsModal: React.FC<StayDetailsModalProps> = ({
                   <ChevronLeft className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() =>
-                    setActiveImgIndex((activeImgIndex + 1) % stay.images.length)
-                  }
+                  onClick={() => setActiveImgIndex((activeImgIndex + 1) % stay.images.length)}
                   className="p-2 rounded-full bg-stone-900/60 text-white hover:bg-stone-900/80 backdrop-blur-xs shadow cursor-pointer transition-colors"
                 >
                   <ChevronRight className="w-4 h-4" />
@@ -170,7 +172,9 @@ export const StayDetailsModal: React.FC<StayDetailsModalProps> = ({
               ₹{stay.pricePerNight.toLocaleString('en-IN')}{' '}
               <span className="text-xs text-stone-500 font-light">/ night</span>
             </div>
-            <div className="text-[11px] text-stone-400 font-light">All local resort taxes included</div>
+            <div className="text-[11px] text-stone-400 font-light">
+              All local resort taxes included
+            </div>
           </div>
 
           <button

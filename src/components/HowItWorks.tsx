@@ -98,9 +98,7 @@ export const HowItWorks: React.FC = () => {
                 <h3 className="text-xs font-serif font-bold text-stone-900 tracking-wider mb-1 group-hover:text-[#E05A47] transition-colors">
                   {step.title}
                 </h3>
-                <p className="text-[11px] text-stone-500 font-light leading-relaxed">
-                  {step.desc}
-                </p>
+                <p className="text-[11px] text-stone-500 font-light leading-relaxed">{step.desc}</p>
               </div>
 
               {idx < steps.length - 1 && (

@@ -31,8 +31,10 @@ export const PRESET_AVATARS = [
   },
 ];
 
-export const DEFAULT_AVATAR_URL = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80';
-export const FALLBACK_AVATAR_URL = 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&auto=format&fit=crop&q=80';
+export const DEFAULT_AVATAR_URL =
+  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80';
+export const FALLBACK_AVATAR_URL =
+  'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&auto=format&fit=crop&q=80';
 
 /**
  * Returns a safe avatar URL.

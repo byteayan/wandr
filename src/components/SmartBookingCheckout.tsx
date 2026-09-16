@@ -122,7 +122,8 @@ export const SmartBookingCheckout: React.FC<SmartBookingCheckoutProps> = ({
             Stop juggling 5 different tabs.
           </h2>
           <p className="text-sm sm:text-base text-stone-500 font-light mt-2">
-            Every element of your trip is coordinated into one transparent invoice with verified inventory and unified cancellation terms.
+            Every element of your trip is coordinated into one transparent invoice with verified
+            inventory and unified cancellation terms.
           </p>
         </div>
 
@@ -153,7 +154,8 @@ export const SmartBookingCheckout: React.FC<SmartBookingCheckoutProps> = ({
                         Flights ({tripPlan.selectedFlight.airline})
                       </div>
                       <div className="text-xs text-stone-500 font-light">
-                        {tripPlan.selectedFlight.fromCode} → {tripPlan.selectedFlight.toCode} • Roundtrip Included
+                        {tripPlan.selectedFlight.fromCode} → {tripPlan.selectedFlight.toCode} •
+                        Roundtrip Included
                       </div>
                     </div>
                   </div>
@@ -257,7 +259,8 @@ export const SmartBookingCheckout: React.FC<SmartBookingCheckoutProps> = ({
                         Experiences ({tripPlan.selectedPremium.length} Bespoke Add-ons)
                       </div>
                       <div className="text-xs text-stone-500 font-light">
-                        {tripPlan.selectedPremium.map((p) => p.title.split(' ')[0]).join(', ') || 'None selected'}
+                        {tripPlan.selectedPremium.map((p) => p.title.split(' ')[0]).join(', ') ||
+                          'None selected'}
                       </div>
                     </div>
                   </div>
@@ -275,7 +278,8 @@ export const SmartBookingCheckout: React.FC<SmartBookingCheckoutProps> = ({
                 <div className="flex items-center gap-2">
                   <Info className="w-4 h-4 text-stone-400 shrink-0" />
                   <span>
-                    <strong>Free cancellation</strong> until 7 days prior to departure. Zero convenience surcharge.
+                    <strong>Free cancellation</strong> until 7 days prior to departure. Zero
+                    convenience surcharge.
                   </span>
                 </div>
                 <button
@@ -354,7 +358,8 @@ export const SmartBookingCheckout: React.FC<SmartBookingCheckoutProps> = ({
                   <div className="text-right">
                     <span className="text-xs text-stone-400 font-light block">All-inclusive</span>
                     <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-400 mt-1 bg-emerald-950/60 px-2 py-0.5 rounded-md border border-emerald-500/30">
-                      <Check className="w-3 h-3" /> ≤ ₹{tripPlan.budget.toLocaleString('en-IN')} Budget
+                      <Check className="w-3 h-3" /> ≤ ₹{tripPlan.budget.toLocaleString('en-IN')}{' '}
+                      Budget
                     </span>
                   </div>
                 </div>
@@ -365,7 +370,9 @@ export const SmartBookingCheckout: React.FC<SmartBookingCheckoutProps> = ({
                     <span className="text-[11px] uppercase tracking-wider text-stone-400 font-semibold flex items-center gap-1.5">
                       <Coins className="w-3.5 h-3.5 text-amber-400" /> Target Budget
                     </span>
-                    <span className="font-bold text-white">₹{tripPlan.budget.toLocaleString('en-IN')}</span>
+                    <span className="font-bold text-white">
+                      ₹{tripPlan.budget.toLocaleString('en-IN')}
+                    </span>
                   </div>
                   <div className="flex items-center justify-between text-[11px]">
                     <span className="text-emerald-400 font-medium">
@@ -374,7 +381,8 @@ export const SmartBookingCheckout: React.FC<SmartBookingCheckoutProps> = ({
                         : '🎯 Exact Target Match (Guaranteed ≤ Budget)'}
                     </span>
                     <span className="text-stone-400">
-                      {Math.round((costs.grandTotal / (tripPlan.budget || costs.grandTotal)) * 100)}% of Budget
+                      {Math.round((costs.grandTotal / (tripPlan.budget || costs.grandTotal)) * 100)}
+                      % of Budget
                     </span>
                   </div>
                   {/* Progress bar */}
@@ -410,7 +418,11 @@ export const SmartBookingCheckout: React.FC<SmartBookingCheckoutProps> = ({
                   <div className="flex justify-between">
                     <span>Activities & Experiences</span>
                     <span className="font-medium text-white">
-                      {formatWithCurrency(costs.activitiesCost + costs.experiencesCost, selectedCurrencyCode, liveRates)}
+                      {formatWithCurrency(
+                        costs.activitiesCost + costs.experiencesCost,
+                        selectedCurrencyCode,
+                        liveRates
+                      )}
                     </span>
                   </div>
                   <div className="flex justify-between text-stone-400 pt-2 border-t border-stone-800">
@@ -422,7 +434,9 @@ export const SmartBookingCheckout: React.FC<SmartBookingCheckoutProps> = ({
                       <span className="flex items-center gap-1">
                         <Sparkles className="w-3 h-3" /> Wandr Smart Budget Subsidy
                       </span>
-                      <span>-{formatWithCurrency(costs.budgetDiscount, selectedCurrencyCode, liveRates)}</span>
+                      <span>
+                        -{formatWithCurrency(costs.budgetDiscount, selectedCurrencyCode, liveRates)}
+                      </span>
                     </div>
                   )}
                 </div>
@@ -482,12 +496,15 @@ export const SmartBookingCheckout: React.FC<SmartBookingCheckoutProps> = ({
                       Confirm & Lock Your Trip
                     </h3>
                     <p className="text-xs text-stone-500 flex flex-wrap items-center gap-1.5 mt-0.5">
-                      <span>{tripPlan.destination.name} • {tripPlan.durationDays} Days •</span>
+                      <span>
+                        {tripPlan.destination.name} • {tripPlan.durationDays} Days •
+                      </span>
                       <span className="font-bold text-stone-900">
                         {formatWithCurrency(costs.grandTotal, selectedCurrencyCode, liveRates)}
                       </span>
                       <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
-                        <Check className="w-3 h-3" /> ≤ ₹{tripPlan.budget.toLocaleString('en-IN')} Budget
+                        <Check className="w-3 h-3" /> ≤ ₹{tripPlan.budget.toLocaleString('en-IN')}{' '}
+                        Budget
                       </span>
                     </p>
                   </div>
@@ -503,8 +520,12 @@ export const SmartBookingCheckout: React.FC<SmartBookingCheckoutProps> = ({
                       className="w-11 h-11 ring-2 ring-stone-900/10 shadow-2xs"
                     />
                     <div>
-                      <div className="text-xs font-bold text-stone-900">{userProfile?.name || 'Ayan Alam'}</div>
-                      <div className="text-[11px] text-stone-500 font-light">{userProfile?.email || 'ayanalamxnaruto@gmail.com'}</div>
+                      <div className="text-xs font-bold text-stone-900">
+                        {userProfile?.name || 'Ayan Alam'}
+                      </div>
+                      <div className="text-[11px] text-stone-500 font-light">
+                        {userProfile?.email || 'ayanalamxnaruto@gmail.com'}
+                      </div>
                     </div>
                   </div>
                   <span className="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-semibold">
@@ -568,7 +589,8 @@ export const SmartBookingCheckout: React.FC<SmartBookingCheckoutProps> = ({
                     <>
                       <Lock className="w-4 h-4" />
                       <span>
-                        Pay {formatWithCurrency(costs.grandTotal, selectedCurrencyCode, liveRates)} & Confirm Trip
+                        Pay {formatWithCurrency(costs.grandTotal, selectedCurrencyCode, liveRates)}{' '}
+                        & Confirm Trip
                       </span>
                     </>
                   )}
@@ -584,7 +606,10 @@ export const SmartBookingCheckout: React.FC<SmartBookingCheckoutProps> = ({
                   Trip Confirmed & Designed!
                 </h3>
                 <p className="text-xs sm:text-sm text-stone-500 max-w-sm mx-auto mb-6">
-                  Your booking code is <strong>#WANDR-{tripPlan.destination.name.toUpperCase().slice(0, 3)}-8824</strong>. All flight tickets, villa vouchers, and chauffeur contact details are synced to your Wandr Live Dashboard.
+                  Your booking code is{' '}
+                  <strong>#WANDR-{tripPlan.destination.name.toUpperCase().slice(0, 3)}-8824</strong>
+                  . All flight tickets, villa vouchers, and chauffeur contact details are synced to
+                  your Wandr Live Dashboard.
                 </p>
 
                 <div className="flex flex-col gap-2">

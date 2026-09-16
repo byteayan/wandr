@@ -46,7 +46,8 @@ export const TrustTransparency: React.FC = () => {
             Built on radical travel transparency.
           </h2>
           <p className="text-sm sm:text-base text-stone-500 font-light mt-2">
-            We don’t believe in confusing travel agent commissions or fake discounts. Just clean, intelligent travel design.
+            We don’t believe in confusing travel agent commissions or fake discounts. Just clean,
+            intelligent travel design.
           </p>
         </div>
 
@@ -63,12 +64,8 @@ export const TrustTransparency: React.FC = () => {
                   <div className="w-12 h-12 rounded-2xl bg-stone-50 border border-stone-200/80 text-stone-900 flex items-center justify-center mb-4">
                     <Icon className="w-6 h-6 text-[#E05A47]" />
                   </div>
-                  <h3 className="text-base font-serif font-bold text-stone-900 mb-2">
-                    {p.title}
-                  </h3>
-                  <p className="text-xs text-stone-500 font-light leading-relaxed">
-                    {p.desc}
-                  </p>
+                  <h3 className="text-base font-serif font-bold text-stone-900 mb-2">{p.title}</h3>
+                  <p className="text-xs text-stone-500 font-light leading-relaxed">{p.desc}</p>
                 </div>
                 <div className="pt-4 mt-4 border-t border-stone-100 flex items-center gap-1.5 text-[11px] font-medium text-emerald-800">
                   <CheckCircle2 className="w-3.5 h-3.5" />

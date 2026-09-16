@@ -258,9 +258,7 @@ export const TripFeedbackModal: React.FC<TripFeedbackModalProps> = ({
                         >
                           <Star
                             className={`w-3.5 h-3.5 ${
-                              s <= stayRating
-                                ? 'fill-amber-400 text-amber-400'
-                                : 'text-stone-300'
+                              s <= stayRating ? 'fill-amber-400 text-amber-400' : 'text-stone-300'
                             }`}
                           />
                         </button>
@@ -395,9 +393,7 @@ export const TripFeedbackModal: React.FC<TripFeedbackModalProps> = ({
                       key={opt.id}
                       type="button"
                       onClick={() =>
-                        setRecommendationScore(
-                          opt.id as 'definitely' | 'likely' | 'neutral'
-                        )
+                        setRecommendationScore(opt.id as 'definitely' | 'likely' | 'neutral')
                       }
                       className={`px-3 py-1 rounded-full text-xs font-medium transition-all cursor-pointer ${
                         recommendationScore === opt.id
@@ -460,7 +456,8 @@ export const TripFeedbackModal: React.FC<TripFeedbackModalProps> = ({
                   Thank You for Your Feedback!
                 </h4>
                 <p className="text-xs sm:text-sm text-stone-500 font-light max-w-sm mx-auto">
-                  Your insights help Wandr AI refine future personalized itineraries, route algorithms, and luxury partner curation.
+                  Your insights help Wandr AI refine future personalized itineraries, route
+                  algorithms, and luxury partner curation.
                 </p>
               </div>
 

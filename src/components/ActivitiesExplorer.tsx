@@ -1,14 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Sparkles,
-  Star,
-  Clock,
-  MapPin,
-  Check,
-  Plus,
-  Compass,
-  ArrowRight,
-} from 'lucide-react';
+import { Sparkles, Star, Clock, MapPin, Check, Plus, Compass, ArrowRight } from 'lucide-react';
 import { ActivityItem, VibeType } from '../types/travel';
 import { ACTIVITIES_DATA } from '../data/travelData';
 
@@ -23,14 +14,7 @@ export const ActivitiesExplorer: React.FC<ActivitiesExplorerProps> = ({
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
-  const categories = [
-    'All',
-    'Adventure',
-    'Romantic',
-    'Food',
-    'Culture',
-    'Nature',
-  ];
+  const categories = ['All', 'Adventure', 'Romantic', 'Food', 'Culture', 'Nature'];
 
   const filteredActivities = ACTIVITIES_DATA.filter((act) => {
     if (selectedCategory === 'All') return true;
@@ -51,7 +35,8 @@ export const ActivitiesExplorer: React.FC<ActivitiesExplorerProps> = ({
               Make the trip memorable.
             </h2>
             <p className="text-sm sm:text-base text-stone-500 font-light mt-2 max-w-xl">
-              Skip boring tour buses. Dive with manta rays, master secret spice recipes, and ascend volcanic peaks at sunrise.
+              Skip boring tour buses. Dive with manta rays, master secret spice recipes, and ascend
+              volcanic peaks at sunrise.
             </p>
           </div>
 

@@ -9,7 +9,13 @@ import {
   PremiumExperience,
   ItineraryDay,
 } from '../types/travel';
-import { DESTINATIONS, STAYS_DATA, FLIGHTS_DATA, ACTIVITIES_DATA, PREMIUM_EXPERIENCES } from '../data/travelData';
+import {
+  DESTINATIONS,
+  STAYS_DATA,
+  FLIGHTS_DATA,
+  ACTIVITIES_DATA,
+  PREMIUM_EXPERIENCES,
+} from '../data/travelData';
 
 export interface TripCostsBreakdown {
   flightCost: number;
@@ -53,16 +59,16 @@ export function calculateTripTotal(
   const flightCost = flight?.price || 0;
   const stayNights = Math.max(1, durationDays - 1);
   const stayCost = (stay?.pricePerNight || 0) * stayNights;
-  const currentTransportCost = transportIncluded ? (transportCost || 0) : 0;
+  const currentTransportCost = transportIncluded ? transportCost || 0 : 0;
   const activitiesCost = (activities || []).reduce((acc, a) => acc + (a?.price || 0), 0);
   const experiencesCost = (premium || []).reduce((acc, p) => acc + (p?.price || 0), 0);
-  
+
   const subtotal = flightCost + stayCost + currentTransportCost + activitiesCost + experiencesCost;
   const taxes = Math.round(subtotal * 0.05); // 5% GST/Service tax, transparently shown
   const rawTotal = subtotal + taxes;
 
   const cap = budgetCap && budgetCap > 0 ? budgetCap : undefined;
-  
+
   let budgetDiscount = 0;
   let grandTotal = rawTotal;
 
@@ -105,7 +111,7 @@ export function generateCustomTripPlan(
   const targetBudget = getTargetBudget(budgetTier, customBudget);
   const daysCount = Math.max(3, durationDays);
   const stayNights = Math.max(1, daysCount - 1);
-  
+
   // 1. Find matching stay based on target budget
   const matchingStays = STAYS_DATA.filter((s) => s.destinationId === dest.id);
   const candidateStays = matchingStays.length > 0 ? [...matchingStays] : [...STAYS_DATA];
@@ -145,7 +151,9 @@ export function generateCustomTripPlan(
   } else if (targetBudget <= 120000) {
     flight = candidateFlights[0] || FLIGHTS_DATA[0];
   } else {
-    flight = candidateFlights.find((f) => f.cabin === 'Business') || candidateFlights[candidateFlights.length - 1];
+    flight =
+      candidateFlights.find((f) => f.cabin === 'Business') ||
+      candidateFlights[candidateFlights.length - 1];
   }
 
   // 3. Find matching activities for the destination & vibes
@@ -161,7 +169,9 @@ export function generateCustomTripPlan(
   }
 
   // 4. Find matching premium experiences
-  const destPrem = PREMIUM_EXPERIENCES.filter((p) => p.destinationId === dest.id || p.recommendedFor.includes(companion));
+  const destPrem = PREMIUM_EXPERIENCES.filter(
+    (p) => p.destinationId === dest.id || p.recommendedFor.includes(companion)
+  );
   const candidatePrem = destPrem.length > 0 ? destPrem : PREMIUM_EXPERIENCES;
   let selectedPrem: PremiumExperience[];
   if (targetBudget <= 60000) {
@@ -327,7 +337,16 @@ export function generateCustomTripPlan(
   }
 
   // Calculate final total strictly respecting the budgetCap
-  const costs = calculateTripTotal(flight, stay, daysCount, selectedActivities, selectedPrem, true, transportCost, targetBudget);
+  const costs = calculateTripTotal(
+    flight,
+    stay,
+    daysCount,
+    selectedActivities,
+    selectedPrem,
+    true,
+    transportCost,
+    targetBudget
+  );
 
   return {
     id: `wandr-${dest.id}-${daysCount}d-${companion}`,

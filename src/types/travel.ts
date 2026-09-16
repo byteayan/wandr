@@ -1,14 +1,7 @@
 export type CompanionType = 'couple' | 'solo' | 'friends' | 'family';
 
 export type VibeType =
-  | 'Romantic'
-  | 'Adventure'
-  | 'Relaxing'
-  | 'Luxury'
-  | 'Party'
-  | 'Nature'
-  | 'Food'
-  | 'Culture';
+  'Romantic' | 'Adventure' | 'Relaxing' | 'Luxury' | 'Party' | 'Nature' | 'Food' | 'Culture';
 
 export type BudgetTier = '50k' | '100k' | '200k' | 'custom';
 
@@ -49,7 +42,13 @@ export interface StayItem {
   name: string;
   destinationId: string;
   destinationName: string;
-  propertyType: 'Boutique Villa' | 'Luxury Resort' | 'Eco Lodge' | 'Heritage Suite' | 'Beachfront Chalet' | 'Modern Apartment';
+  propertyType:
+    | 'Boutique Villa'
+    | 'Luxury Resort'
+    | 'Eco Lodge'
+    | 'Heritage Suite'
+    | 'Beachfront Chalet'
+    | 'Modern Apartment';
   location: string;
   rating: number;
   reviewCount: number;
@@ -100,7 +99,8 @@ export interface TrainOption {
   id: string;
   trainNumber: string;
   trainName: string;
-  trainType: 'Vande Bharat' | 'Rajdhani' | 'Shatabdi' | 'Tejas Superfast' | 'Express' | 'Shinkansen Bullet';
+  trainType:
+    'Vande Bharat' | 'Rajdhani' | 'Shatabdi' | 'Tejas Superfast' | 'Express' | 'Shinkansen Bullet';
   fromStation: string;
   fromCode: string;
   toStation: string;
@@ -121,7 +121,12 @@ export interface TrainOption {
 export interface BusOption {
   id: string;
   operator: string;
-  busType: 'AC Sleeper (2+1)' | 'Multi-Axle Volvo AC' | 'BharatBenz Premium' | 'Semi-Sleeper Luxury' | 'Scania Multi-Axle';
+  busType:
+    | 'AC Sleeper (2+1)'
+    | 'Multi-Axle Volvo AC'
+    | 'BharatBenz Premium'
+    | 'Semi-Sleeper Luxury'
+    | 'Scania Multi-Axle';
   fromCity: string;
   toCity: string;
   boardingPoint: string;
@@ -142,7 +147,8 @@ export interface BusOption {
 export interface CabOption {
   id: string;
   vehicleName: string;
-  vehicleType: 'Sedan Comfort' | 'Luxury SUV' | 'Innova Crysta' | 'Premium EV Sedan' | 'Executive Van';
+  vehicleType:
+    'Sedan Comfort' | 'Luxury SUV' | 'Innova Crysta' | 'Premium EV Sedan' | 'Executive Van';
   capacity: string;
   luggageCapacity: string;
   pricePerTrip: number;

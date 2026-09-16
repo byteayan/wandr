@@ -155,7 +155,9 @@ export const Navbar: React.FC<NavbarProps> = ({
               >
                 <Crown className="w-3.5 h-3.5 text-amber-600 group-hover:scale-110 transition-transform" />
                 <span>Premium</span>
-                <span className="text-[10px] text-amber-700 bg-amber-100/80 px-1.5 py-0.2 rounded font-semibold">₹300/mo</span>
+                <span className="text-[10px] text-amber-700 bg-amber-100/80 px-1.5 py-0.2 rounded font-semibold">
+                  ₹300/mo
+                </span>
               </button>
             )}
 
@@ -244,9 +246,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <div>
                   <div className="flex items-center gap-2">
                     <span className="text-sm font-semibold text-white">{userProfile.name}</span>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-stone-800 text-stone-300 font-medium">Account</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-stone-800 text-stone-300 font-medium">
+                      Account
+                    </span>
                   </div>
-                  <span className="text-xs text-stone-400 font-light truncate block max-w-[180px]">{userProfile.email}</span>
+                  <span className="text-xs text-stone-400 font-light truncate block max-w-[180px]">
+                    {userProfile.email}
+                  </span>
                 </div>
               </div>
               <ChevronDown className="w-4 h-4 text-stone-400 -rotate-90" />
@@ -320,7 +326,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               <div className="flex items-center gap-2">
                 <Crown className="w-4 h-4 text-amber-400" />
-                <span>{isPremium ? `${userProfile.premiumTier || 'VIP Member'} Active` : 'Wandr Premium Membership'}</span>
+                <span>
+                  {isPremium
+                    ? `${userProfile.premiumTier || 'VIP Member'} Active`
+                    : 'Wandr Premium Membership'}
+                </span>
               </div>
               <span className="text-[10px] text-amber-300 font-normal">
                 {isPremium ? 'Perks Active →' : '₹300/mo • 0% Fees →'}

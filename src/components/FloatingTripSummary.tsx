@@ -194,21 +194,21 @@ export const FloatingTripSummary: React.FC<FloatingTripSummaryProps> = ({
     tripPlan?.selectedTransitMode === 'train' && tripPlan.selectedTrain
       ? `Train: ${tripPlan.selectedTrain.trainName}`
       : tripPlan?.selectedTransitMode === 'bus' && tripPlan.selectedBus
-      ? `Bus: ${tripPlan.selectedBus.operator}`
-      : tripPlan?.selectedTransitMode === 'cab' && tripPlan.selectedCab
-      ? `Cab: ${tripPlan.selectedCab.vehicleName}`
-      : tripPlan?.selectedFlight
-      ? `Flight: ${tripPlan.selectedFlight.airline}`
-      : 'Transit: Direct Route';
+        ? `Bus: ${tripPlan.selectedBus.operator}`
+        : tripPlan?.selectedTransitMode === 'cab' && tripPlan.selectedCab
+          ? `Cab: ${tripPlan.selectedCab.vehicleName}`
+          : tripPlan?.selectedFlight
+            ? `Flight: ${tripPlan.selectedFlight.airline}`
+            : 'Transit: Direct Route';
 
   const TransitIcon =
     tripPlan?.selectedTransitMode === 'train'
       ? Train
       : tripPlan?.selectedTransitMode === 'bus'
-      ? Bus
-      : tripPlan?.selectedTransitMode === 'cab'
-      ? Car
-      : Plane;
+        ? Bus
+        : tripPlan?.selectedTransitMode === 'cab'
+          ? Car
+          : Plane;
 
   // Planning Steps calculation
   const planningSteps = tripPlan?.destination
@@ -262,7 +262,11 @@ export const FloatingTripSummary: React.FC<FloatingTripSummaryProps> = ({
   const currentRateRatio =
     selectedCurrencyCode === 'INR'
       ? isDestCurrencyDifferent
-        ? `1 INR = ${(liveRates[destCurrency.code] || DEFAULT_INR_RATES[destCurrency.code] || 1).toFixed(
+        ? `1 INR = ${(
+            liveRates[destCurrency.code] ||
+            DEFAULT_INR_RATES[destCurrency.code] ||
+            1
+          ).toFixed(
             destCurrency.code === 'IDR' || destCurrency.code === 'VND' ? 1 : 3
           )} ${destCurrency.code}`
         : '1 INR = ₹1.00 (Base Home Currency)'
@@ -336,7 +340,9 @@ export const FloatingTripSummary: React.FC<FloatingTripSummaryProps> = ({
                         className="text-[9px] font-semibold px-1.5 py-0.2 rounded-full bg-stone-800 hover:bg-stone-700 text-stone-300 border border-stone-700 flex items-center gap-1 cursor-pointer transition-colors"
                       >
                         <ArrowLeftRight className="w-2.5 h-2.5 text-amber-400" />
-                        <span>{activeCurrency.flag} {selectedCurrencyCode}</span>
+                        <span>
+                          {activeCurrency.flag} {selectedCurrencyCode}
+                        </span>
                       </button>
                     )}
 
@@ -456,7 +462,9 @@ export const FloatingTripSummary: React.FC<FloatingTripSummaryProps> = ({
                       title="Refresh real-time rates"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="font-medium">{isFetchingRates ? 'Updating...' : 'Live Mid-Market'}</span>
+                      <span className="font-medium">
+                        {isFetchingRates ? 'Updating...' : 'Live Mid-Market'}
+                      </span>
                       <RefreshCw
                         className={`w-2.5 h-2.5 ml-0.5 ${isFetchingRates ? 'animate-spin' : ''}`}
                       />
@@ -491,7 +499,9 @@ export const FloatingTripSummary: React.FC<FloatingTripSummaryProps> = ({
                     >
                       <span>{destCurrency.flag}</span>
                       <span className="truncate">
-                        {destCurrency.code === 'INR' ? 'Local' : `${destCurrency.code} (${destCurrency.symbol.trim()})`}
+                        {destCurrency.code === 'INR'
+                          ? 'Local'
+                          : `${destCurrency.code} (${destCurrency.symbol.trim()})`}
                       </span>
                     </button>
 
@@ -501,14 +511,16 @@ export const FloatingTripSummary: React.FC<FloatingTripSummaryProps> = ({
                         type="button"
                         onClick={() => setShowCurrencyDropdown(!showCurrencyDropdown)}
                         className={`w-full py-1.5 px-1.5 rounded-lg flex items-center justify-center gap-1 transition-all cursor-pointer ${
-                          selectedCurrencyCode !== 'INR' && selectedCurrencyCode !== destCurrency.code
+                          selectedCurrencyCode !== 'INR' &&
+                          selectedCurrencyCode !== destCurrency.code
                             ? 'bg-amber-500 text-stone-950 font-bold shadow-xs'
                             : 'text-stone-300 hover:text-white hover:bg-stone-700/60'
                         }`}
                       >
                         <Globe2 className="w-3 h-3" />
                         <span className="truncate">
-                          {selectedCurrencyCode !== 'INR' && selectedCurrencyCode !== destCurrency.code
+                          {selectedCurrencyCode !== 'INR' &&
+                          selectedCurrencyCode !== destCurrency.code
                             ? `${activeCurrency.flag} ${selectedCurrencyCode}`
                             : 'More'}
                         </span>
@@ -662,7 +674,9 @@ export const FloatingTripSummary: React.FC<FloatingTripSummaryProps> = ({
                       <div className="text-[11px] font-bold text-emerald-900 mt-0.5 flex items-center gap-1">
                         <Sparkles className="w-3 h-3 text-emerald-600" />
                         <span>
-                          You Save {formatWithCurrency(totalSavings, selectedCurrencyCode, liveRates)} with AI Bundling
+                          You Save{' '}
+                          {formatWithCurrency(totalSavings, selectedCurrencyCode, liveRates)} with
+                          AI Bundling
                         </span>
                       </div>
                     </div>
@@ -703,7 +717,8 @@ export const FloatingTripSummary: React.FC<FloatingTripSummaryProps> = ({
                     </div>
                     <span className="text-stone-900 font-semibold shrink-0 font-serif">
                       {formatWithCurrency(
-                        tripPlan.selectedStay.pricePerNight * Math.max(1, tripPlan.durationDays - 1),
+                        tripPlan.selectedStay.pricePerNight *
+                          Math.max(1, tripPlan.durationDays - 1),
                         selectedCurrencyCode,
                         liveRates
                       )}
@@ -717,7 +732,11 @@ export const FloatingTripSummary: React.FC<FloatingTripSummaryProps> = ({
                       <span className="truncate font-medium">{transitLabel}</span>
                     </div>
                     <span className="text-stone-900 font-semibold shrink-0 font-serif">
-                      {formatWithCurrency(tripPlan.selectedFlight.price, selectedCurrencyCode, liveRates)}
+                      {formatWithCurrency(
+                        tripPlan.selectedFlight.price,
+                        selectedCurrencyCode,
+                        liveRates
+                      )}
                     </span>
                   </div>
 
@@ -745,7 +764,8 @@ export const FloatingTripSummary: React.FC<FloatingTripSummaryProps> = ({
                         Wandr Bundle Total ({activeCurrency.code})
                       </span>
                       <span className="inline-flex items-center gap-0.5 text-[9px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-200">
-                        <Check className="w-2.5 h-2.5" /> ≤ ₹{tripPlan.budget.toLocaleString('en-IN')}
+                        <Check className="w-2.5 h-2.5" /> ≤ ₹
+                        {tripPlan.budget.toLocaleString('en-IN')}
                       </span>
                     </div>
                     <div className="text-[10px] text-stone-500 font-light mt-0.5">
@@ -753,7 +773,8 @@ export const FloatingTripSummary: React.FC<FloatingTripSummaryProps> = ({
                         <span>≈ ₹{costs.grandTotal.toLocaleString('en-IN')} INR Home Rate</span>
                       ) : isDestCurrencyDifferent ? (
                         <span>
-                          ≈ {formatWithCurrency(costs.grandTotal, destCurrency.code, liveRates)} {destCurrency.name}
+                          ≈ {formatWithCurrency(costs.grandTotal, destCurrency.code, liveRates)}{' '}
+                          {destCurrency.name}
                         </span>
                       ) : (
                         <span>Taxes & transfers included</span>

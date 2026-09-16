@@ -44,10 +44,7 @@ interface PreTripChecklistProps {
   className?: string;
 }
 
-export const PreTripChecklist: React.FC<PreTripChecklistProps> = ({
-  tripPlan,
-  className = '',
-}) => {
+export const PreTripChecklist: React.FC<PreTripChecklistProps> = ({ tripPlan, className = '' }) => {
   const [checklistData, setChecklistData] = useState<PreTripChecklistData | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<ChecklistCategory | 'all'>('all');
   const [showUnpackedOnly, setShowUnpackedOnly] = useState<boolean>(false);
@@ -108,7 +105,12 @@ export const PreTripChecklist: React.FC<PreTripChecklistProps> = ({
     }
 
     setChecklistData(baseData);
-  }, [tripPlan.destination?.id, tripPlan.durationDays, tripPlan.companion, tripPlan.selectedActivities?.length]);
+  }, [
+    tripPlan.destination?.id,
+    tripPlan.durationDays,
+    tripPlan.companion,
+    tripPlan.selectedActivities?.length,
+  ]);
 
   // Persist changes to localStorage
   const saveToStorage = (updatedItems: ChecklistItem[]) => {
@@ -165,12 +167,12 @@ export const PreTripChecklist: React.FC<PreTripChecklistProps> = ({
         newItemCategory === 'documents'
           ? 'Documents & Wallet'
           : newItemCategory === 'clothing'
-          ? 'Clothing & Apparel'
-          : newItemCategory === 'activity_gear'
-          ? 'Activity & Experience Gear'
-          : newItemCategory === 'electronics'
-          ? 'Electronics & Gadgets'
-          : 'Health & Toiletries',
+            ? 'Clothing & Apparel'
+            : newItemCategory === 'activity_gear'
+              ? 'Activity & Experience Gear'
+              : newItemCategory === 'electronics'
+                ? 'Electronics & Gadgets'
+                : 'Health & Toiletries',
       reasonTag: 'Personal Traveler Item',
       isEssential: false,
       packed: false,
@@ -234,7 +236,12 @@ export const PreTripChecklist: React.FC<PreTripChecklistProps> = ({
     return true;
   });
 
-  const categoriesConfig: { key: ChecklistCategory | 'all'; label: string; icon: React.ReactNode; count: number }[] = [
+  const categoriesConfig: {
+    key: ChecklistCategory | 'all';
+    label: string;
+    icon: React.ReactNode;
+    count: number;
+  }[] = [
     {
       key: 'all',
       label: 'All Items',
@@ -334,7 +341,8 @@ export const PreTripChecklist: React.FC<PreTripChecklistProps> = ({
             <span>Pre-Trip Packing & Readiness</span>
           </h3>
           <p className="text-xs text-stone-500 font-light mt-0.5 max-w-xl">
-            Auto-curated packing essentials based on local climate, airline baggage rules, and planned activities.
+            Auto-curated packing essentials based on local climate, airline baggage rules, and
+            planned activities.
           </p>
         </div>
 
@@ -479,9 +487,7 @@ export const PreTripChecklist: React.FC<PreTripChecklistProps> = ({
                 {checklistData.packedItemsCount} of {checklistData.totalItemsCount} Packed
               </span>
             </div>
-            <p className="text-xs text-stone-400 font-light mt-0.5">
-              {statusInfo.desc}
-            </p>
+            <p className="text-xs text-stone-400 font-light mt-0.5">{statusInfo.desc}</p>
           </div>
         </div>
 
@@ -676,13 +682,17 @@ export const PreTripChecklist: React.FC<PreTripChecklistProps> = ({
                         {/* Climate/Activity Custom Tag */}
                         <span
                           className={`text-[9px] font-medium px-2 py-0.5 rounded-full shrink-0 flex items-center gap-1 ${
-                            item.reasonTag.includes('Tropical') || item.reasonTag.includes('Climate')
+                            item.reasonTag.includes('Tropical') ||
+                            item.reasonTag.includes('Climate')
                               ? 'bg-amber-50 text-amber-900 border border-amber-200/80'
-                              : item.reasonTag.includes('Trek') || item.reasonTag.includes('Water') || item.reasonTag.includes('Tour')
-                              ? 'bg-sky-50 text-sky-900 border border-sky-200/80'
-                              : item.reasonTag.includes('Border') || item.reasonTag.includes('Flight')
-                              ? 'bg-purple-50 text-purple-900 border border-purple-200/80'
-                              : 'bg-stone-100 text-stone-700 border border-stone-200'
+                              : item.reasonTag.includes('Trek') ||
+                                  item.reasonTag.includes('Water') ||
+                                  item.reasonTag.includes('Tour')
+                                ? 'bg-sky-50 text-sky-900 border border-sky-200/80'
+                                : item.reasonTag.includes('Border') ||
+                                    item.reasonTag.includes('Flight')
+                                  ? 'bg-purple-50 text-purple-900 border border-purple-200/80'
+                                  : 'bg-stone-100 text-stone-700 border border-stone-200'
                           }`}
                         >
                           <Tag className="w-2.5 h-2.5 opacity-70" />
@@ -702,9 +712,7 @@ export const PreTripChecklist: React.FC<PreTripChecklistProps> = ({
                     {item.notes && (
                       <button
                         type="button"
-                        onClick={() =>
-                          setExpandedNotesId(isNotesExpanded ? null : item.id)
-                        }
+                        onClick={() => setExpandedNotesId(isNotesExpanded ? null : item.id)}
                         className={`p-1.5 rounded-lg text-[10px] transition-colors cursor-pointer flex items-center gap-1 ${
                           isNotesExpanded
                             ? 'bg-stone-200 text-stone-800'

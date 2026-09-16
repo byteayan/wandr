@@ -7,9 +7,7 @@ interface InspirationSectionProps {
   onSelectInspiration: (dest: Destination) => void;
 }
 
-export const InspirationSection: React.FC<InspirationSectionProps> = ({
-  onSelectInspiration,
-}) => {
+export const InspirationSection: React.FC<InspirationSectionProps> = ({ onSelectInspiration }) => {
   const stories = [
     {
       id: 'story-1',
@@ -17,8 +15,10 @@ export const InspirationSection: React.FC<InspirationSectionProps> = ({
       destId: 'amalfi',
       readTime: '4 min read',
       tag: 'Editorial',
-      image: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80',
-      summary: 'Why Positano and Capri are best experienced without rigid itineraries — and how to rent a private wooden gozzo boat.',
+      image:
+        'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=80',
+      summary:
+        'Why Positano and Capri are best experienced without rigid itineraries — and how to rent a private wooden gozzo boat.',
     },
     {
       id: 'story-2',
@@ -26,8 +26,10 @@ export const InspirationSection: React.FC<InspirationSectionProps> = ({
       destId: 'kyoto',
       readTime: '5 min read',
       tag: 'Culture Vibe',
-      image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80',
-      summary: 'Waking up at 5 AM in Arashiyama, riverside bamboo meditation, and where to taste seasonal ceremonial matcha.',
+      image:
+        'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80',
+      summary:
+        'Waking up at 5 AM in Arashiyama, riverside bamboo meditation, and where to taste seasonal ceremonial matcha.',
     },
     {
       id: 'story-3',
@@ -35,8 +37,10 @@ export const InspirationSection: React.FC<InspirationSectionProps> = ({
       destId: 'kashmir',
       readTime: '3 min read',
       tag: 'Nature Escape',
-      image: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1200&q=80',
-      summary: 'A slow cedarwood houseboat journey across Dal Lake surrounded by snow-capped Zabarwan peaks.',
+      image:
+        'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1200&q=80',
+      summary:
+        'A slow cedarwood houseboat journey across Dal Lake surrounded by snow-capped Zabarwan peaks.',
     },
   ];
 
@@ -54,7 +58,8 @@ export const InspirationSection: React.FC<InspirationSectionProps> = ({
               Inspiration for the curious.
             </h2>
             <p className="text-sm sm:text-base text-stone-500 font-light mt-2 max-w-xl">
-              Visual moodboards, hidden boutique sanctuaries, and unfiltered local guides written by modern travellers.
+              Visual moodboards, hidden boutique sanctuaries, and unfiltered local guides written by
+              modern travellers.
             </p>
           </div>
         </div>

@@ -404,7 +404,13 @@ export default function App() {
                 <Sparkles className="w-3.5 h-3.5" />
               </div>
               <p className="text-stone-200">
-                <span className="font-semibold text-white">Shared Itinerary Loaded:</span> Viewing a {sharedTripAlert.durationDays}-day curated trip to <span className="text-[#FFA726] font-semibold">{sharedTripAlert.destinationName}</span> shared by <strong className="text-white font-serif">{sharedTripAlert.curatorName}</strong>.
+                <span className="font-semibold text-white">Shared Itinerary Loaded:</span> Viewing a{' '}
+                {sharedTripAlert.durationDays}-day curated trip to{' '}
+                <span className="text-[#FFA726] font-semibold">
+                  {sharedTripAlert.destinationName}
+                </span>{' '}
+                shared by{' '}
+                <strong className="text-white font-serif">{sharedTripAlert.curatorName}</strong>.
               </p>
             </div>
 
@@ -534,10 +540,7 @@ export default function App() {
 
           {/* 10. Live Trip Mode Dashboard */}
           {liveModeActive && (
-            <LiveTripMode
-              tripPlan={tripPlan}
-              onOpenFeedback={handleOpenFeedback}
-            />
+            <LiveTripMode tripPlan={tripPlan} onOpenFeedback={handleOpenFeedback} />
           )}
 
           {/* 11. How Wandr Works (8-step journey) */}
@@ -559,7 +562,8 @@ export default function App() {
           if (tab === 'premium') {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           } else {
-            const el = document.getElementById(`${tab}-section`) || document.getElementById('travel-hub');
+            const el =
+              document.getElementById(`${tab}-section`) || document.getElementById('travel-hub');
             el?.scrollIntoView({ behavior: 'smooth' });
           }
         }}

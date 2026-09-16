@@ -25,10 +25,7 @@ interface BusSearchProps {
   selectedBusId?: string;
 }
 
-export const BusSearch: React.FC<BusSearchProps> = ({
-  onSelectBus,
-  selectedBusId,
-}) => {
+export const BusSearch: React.FC<BusSearchProps> = ({ onSelectBus, selectedBusId }) => {
   const [fromCity, setFromCity] = useState<string>('Delhi');
   const [toCity, setToCity] = useState<string>('Jaipur');
   const [journeyDate, setJourneyDate] = useState<string>('2026-10-14');
@@ -74,7 +71,8 @@ export const BusSearch: React.FC<BusSearchProps> = ({
             Premium Volvo & electric sleepers. Recline in comfort.
           </h3>
           <p className="text-xs sm:text-sm text-stone-500 font-light mt-1">
-            Multi-Axle Scania, BharatBenz, and quiet electric coaches with sanitized berths, onboard live GPS, and flexible cancellation.
+            Multi-Axle Scania, BharatBenz, and quiet electric coaches with sanitized berths, onboard
+            live GPS, and flexible cancellation.
           </p>
         </div>
 
@@ -219,7 +217,9 @@ export const BusSearch: React.FC<BusSearchProps> = ({
             <div className="w-12 h-12 rounded-full bg-stone-100 text-stone-400 flex items-center justify-center mx-auto mb-3">
               <Bus className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-serif font-bold text-stone-900 mb-1">No buses matching filter criteria</h3>
+            <h3 className="text-lg font-serif font-bold text-stone-900 mb-1">
+              No buses matching filter criteria
+            </h3>
             <p className="text-xs text-stone-500 font-light max-w-md mx-auto mb-4">
               Try switching back to "All Fleets" to browse luxury sleeper options.
             </p>
@@ -265,8 +265,8 @@ export const BusSearch: React.FC<BusSearchProps> = ({
                                 bus.badge === 'Top Cleanliness'
                                   ? 'bg-emerald-50 text-emerald-800 border border-emerald-200/80'
                                   : bus.badge === 'High Safety'
-                                  ? 'bg-blue-50 text-blue-800 border border-blue-200/80'
-                                  : 'bg-stone-100 text-stone-800 border border-stone-200'
+                                    ? 'bg-blue-50 text-blue-800 border border-blue-200/80'
+                                    : 'bg-stone-100 text-stone-800 border border-stone-200'
                               }`}
                             >
                               {bus.badge}
@@ -287,11 +287,15 @@ export const BusSearch: React.FC<BusSearchProps> = ({
                         <div className="mt-2.5 space-y-1 text-xs text-stone-500 font-light">
                           <div className="flex items-center gap-1.5">
                             <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                            <span><strong>Boarding:</strong> {bus.boardingPoint}</span>
+                            <span>
+                              <strong>Boarding:</strong> {bus.boardingPoint}
+                            </span>
                           </div>
                           <div className="flex items-center gap-1.5">
                             <span className="w-2 h-2 rounded-full bg-[#E05A47]" />
-                            <span><strong>Dropping:</strong> {bus.droppingPoint}</span>
+                            <span>
+                              <strong>Dropping:</strong> {bus.droppingPoint}
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -303,9 +307,7 @@ export const BusSearch: React.FC<BusSearchProps> = ({
                         <span className="text-xl font-serif font-bold text-stone-900 block">
                           {bus.departTime}
                         </span>
-                        <span className="text-xs font-medium text-stone-600">
-                          {bus.fromCity}
-                        </span>
+                        <span className="text-xs font-medium text-stone-600">{bus.fromCity}</span>
                       </div>
 
                       <div className="flex flex-col items-center min-w-24 sm:min-w-32">
@@ -329,9 +331,7 @@ export const BusSearch: React.FC<BusSearchProps> = ({
                         <span className="text-xl font-serif font-bold text-stone-900 block">
                           {bus.arriveTime}
                         </span>
-                        <span className="text-xs font-medium text-stone-600">
-                          {bus.toCity}
-                        </span>
+                        <span className="text-xs font-medium text-stone-600">{bus.toCity}</span>
                       </div>
                     </div>
 
@@ -344,7 +344,9 @@ export const BusSearch: React.FC<BusSearchProps> = ({
                         <div className="text-2xl font-serif font-bold text-stone-900">
                           ₹{bus.price.toLocaleString('en-IN')}
                         </div>
-                        <div className="text-[10px] text-stone-400 font-light">all taxes included</div>
+                        <div className="text-[10px] text-stone-400 font-light">
+                          all taxes included
+                        </div>
                       </div>
 
                       <button
@@ -364,7 +366,10 @@ export const BusSearch: React.FC<BusSearchProps> = ({
                   <div className="mt-4 pt-3 border-t border-stone-100 flex flex-wrap items-center justify-between gap-3 text-[11px] text-stone-500 font-light">
                     <div className="flex flex-wrap items-center gap-2">
                       {bus.amenities.slice(0, 3).map((a, i) => (
-                        <span key={i} className="px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-600">
+                        <span
+                          key={i}
+                          className="px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-600"
+                        >
                           ✓ {a}
                         </span>
                       ))}

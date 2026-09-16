@@ -35,10 +35,7 @@ interface HeroPlannerProps {
   onExploreClick: () => void;
 }
 
-export const HeroPlanner: React.FC<HeroPlannerProps> = ({
-  onDesignTrip,
-  onExploreClick,
-}) => {
+export const HeroPlanner: React.FC<HeroPlannerProps> = ({ onDesignTrip, onExploreClick }) => {
   // State for AI Planner
   const [selectedCompanion, setSelectedCompanion] = useState<CompanionType>('couple');
   const [selectedVibes, setSelectedVibes] = useState<VibeType[]>(['Romantic', 'Adventure']);
@@ -113,8 +110,7 @@ export const HeroPlanner: React.FC<HeroPlannerProps> = ({
   };
 
   // Find best match destination preview
-  const matchedDest =
-    DESTINATIONS.find((d) => d.id === selectedDestId) || DESTINATIONS[0];
+  const matchedDest = DESTINATIONS.find((d) => d.id === selectedDestId) || DESTINATIONS[0];
 
   return (
     <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
@@ -139,11 +135,13 @@ export const HeroPlanner: React.FC<HeroPlannerProps> = ({
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-normal tracking-tight text-white leading-[1.12] mb-6">
-            Your next trip starts with a <span className="font-editorial italic text-stone-100">vibe</span>.
+            Your next trip starts with a{' '}
+            <span className="font-editorial italic text-stone-100">vibe</span>.
           </h1>
 
           <p className="text-base sm:text-lg text-stone-200/90 font-light leading-relaxed max-w-2xl mb-8">
-            Tell Wandr who you're traveling with, what you want to feel, and your budget. We'll design the journey.
+            Tell Wandr who you're traveling with, what you want to feel, and your budget. We'll
+            design the journey.
           </p>
 
           <div className="flex flex-wrap items-center gap-3.5">
@@ -300,9 +298,7 @@ export const HeroPlanner: React.FC<HeroPlannerProps> = ({
                 <label className="text-[11px] uppercase tracking-[0.18em] font-semibold text-stone-500">
                   3. What's your budget?
                 </label>
-                <span className="text-[11px] font-medium text-stone-400">
-                  Per person
-                </span>
+                <span className="text-[11px] font-medium text-stone-400">Per person</span>
               </div>
               <div className="grid grid-cols-2 gap-2">
                 {budgetOptions.map((b) => {
@@ -319,7 +315,9 @@ export const HeroPlanner: React.FC<HeroPlannerProps> = ({
                       }`}
                     >
                       <div className="font-semibold text-xs">{b.label}</div>
-                      <div className={`text-[10px] truncate ${isSelected ? 'text-stone-300' : 'text-stone-500'}`}>
+                      <div
+                        className={`text-[10px] truncate ${isSelected ? 'text-stone-300' : 'text-stone-500'}`}
+                      >
                         {b.desc}
                       </div>
                     </button>
@@ -349,9 +347,7 @@ export const HeroPlanner: React.FC<HeroPlannerProps> = ({
                 <label className="text-[11px] uppercase tracking-[0.18em] font-semibold text-stone-500">
                   4. How long?
                 </label>
-                <span className="text-[11px] font-medium text-stone-400">
-                  Ideal duration
-                </span>
+                <span className="text-[11px] font-medium text-stone-400">Ideal duration</span>
               </div>
               <div className="grid grid-cols-2 gap-2">
                 {durations.map((d) => {

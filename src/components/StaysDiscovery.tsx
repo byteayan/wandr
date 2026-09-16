@@ -78,7 +78,8 @@ export const StaysDiscovery: React.FC<StaysDiscoveryProps> = ({
               Stays designed for waking up inspired.
             </h2>
             <p className="text-sm sm:text-base text-stone-500 font-light mt-2 max-w-xl">
-              Curated private pool villas, heritage houseboats, and cliffside suites. Hand-vetted for design, quietude, and hospitality.
+              Curated private pool villas, heritage houseboats, and cliffside suites. Hand-vetted
+              for design, quietude, and hospitality.
             </p>
           </div>
         </div>
@@ -244,9 +245,7 @@ export const StaysDiscovery: React.FC<StaysDiscoveryProps> = ({
                     <h3 className="text-lg font-serif font-bold text-stone-900 tracking-tight mb-1 group-hover:text-[#E05A47] transition-colors">
                       {stay.name}
                     </h3>
-                    <p className="text-xs text-stone-500 font-light mb-3">
-                      {stay.roomType}
-                    </p>
+                    <p className="text-xs text-stone-500 font-light mb-3">{stay.roomType}</p>
 
                     {/* Amenities Badges */}
                     <div className="flex flex-wrap gap-1.5 mb-4">

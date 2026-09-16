@@ -48,7 +48,9 @@ export const PersonalizedTripResult: React.FC<PersonalizedTripResultProps> = ({
   onOpenShare,
 }) => {
   const [expandedDay, setExpandedDay] = useState<number | null>(1);
-  const [activeViewTab, setActiveViewTab] = useState<'all' | 'itinerary' | 'checklist' | 'weather'>('all');
+  const [activeViewTab, setActiveViewTab] = useState<'all' | 'itinerary' | 'checklist' | 'weather'>(
+    'all'
+  );
   const [aiPromptInput, setAiPromptInput] = useState<string>('');
   const [isAiModifying, setIsAiModifying] = useState<boolean>(false);
   const [showAddExperienceTray, setShowAddExperienceTray] = useState<boolean>(false);
@@ -75,7 +77,8 @@ export const PersonalizedTripResult: React.FC<PersonalizedTripResultProps> = ({
           if (d.dayNumber === 3) {
             return {
               ...d,
-              summary: 'Special romantic focus: Sunset cliffside dinner with acoustic serenades and champagne.',
+              summary:
+                'Special romantic focus: Sunset cliffside dinner with acoustic serenades and champagne.',
             };
           }
           return d;
@@ -88,7 +91,8 @@ export const PersonalizedTripResult: React.FC<PersonalizedTripResultProps> = ({
             if (d.dayNumber === 2) {
               return {
                 ...d,
-                summary: 'High-adrenaline upgrade: 4x4 off-road jungle expedition & canyon gorge river jump.',
+                summary:
+                  'High-adrenaline upgrade: 4x4 off-road jungle expedition & canyon gorge river jump.',
               };
             }
             return d;
@@ -143,7 +147,10 @@ export const PersonalizedTripResult: React.FC<PersonalizedTripResultProps> = ({
   };
 
   return (
-    <section id="personalized-trip" className="py-16 sm:py-24 bg-[#FDFCFB] border-y border-stone-200/80">
+    <section
+      id="personalized-trip"
+      className="py-16 sm:py-24 bg-[#FDFCFB] border-y border-stone-200/80"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Badge & Title */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -152,11 +159,17 @@ export const PersonalizedTripResult: React.FC<PersonalizedTripResultProps> = ({
             AI Dynamic Synthesis Complete
           </div>
           <h2 className="text-3xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight mb-4">
-            Your trip, <span className="font-editorial italic font-normal text-stone-600">designed around you</span>.
+            Your trip,{' '}
+            <span className="font-editorial italic font-normal text-stone-600">
+              designed around you
+            </span>
+            .
           </h2>
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
             <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium text-stone-700 bg-stone-50 px-4 sm:px-6 py-2 rounded-full border border-stone-200/80 shadow-2xs">
-              <span className="font-serif font-bold text-stone-900">{tripPlan.destination.name}</span>
+              <span className="font-serif font-bold text-stone-900">
+                {tripPlan.destination.name}
+              </span>
               <span className="text-stone-300">•</span>
               <span>{tripPlan.durationDays} Days</span>
               <span className="text-stone-300">•</span>
@@ -233,7 +246,9 @@ export const PersonalizedTripResult: React.FC<PersonalizedTripResultProps> = ({
                   className="w-full bg-[#FAF8F5] text-xs text-stone-900 px-4 py-2.5 rounded-full border border-stone-200/80 focus:outline-none focus:border-[#E05A47] pr-16"
                 />
                 <button
-                  onClick={() => aiPromptInput.trim() && handleApplyAiModifier(aiPromptInput.trim())}
+                  onClick={() =>
+                    aiPromptInput.trim() && handleApplyAiModifier(aiPromptInput.trim())
+                  }
                   disabled={!aiPromptInput.trim() || isAiModifying}
                   className="absolute right-1 top-1 bottom-1 px-3.5 bg-stone-900 hover:bg-[#E05A47] disabled:opacity-40 text-white text-[11px] font-medium rounded-full transition-all flex items-center justify-center cursor-pointer"
                 >
@@ -251,7 +266,9 @@ export const PersonalizedTripResult: React.FC<PersonalizedTripResultProps> = ({
             >
               <Hotel className="w-3.5 h-3.5 text-[#E05A47]" />
               <span>
-                {tripPlan.selectedStay.luxuryTier ? 'Stay: Luxury Suite (Active)' : 'Upgrade stay to 5-Star'}
+                {tripPlan.selectedStay.luxuryTier
+                  ? 'Stay: Luxury Suite (Active)'
+                  : 'Upgrade stay to 5-Star'}
               </span>
             </button>
 
@@ -272,10 +289,10 @@ export const PersonalizedTripResult: React.FC<PersonalizedTripResultProps> = ({
                 {tripPlan.selectedTransitMode === 'train' && tripPlan.selectedTrain
                   ? `Train: ${tripPlan.selectedTrain.trainName}`
                   : tripPlan.selectedTransitMode === 'bus' && tripPlan.selectedBus
-                  ? `Bus: ${tripPlan.selectedBus.operator}`
-                  : tripPlan.selectedTransitMode === 'cab' && tripPlan.selectedCab
-                  ? `Cab: ${tripPlan.selectedCab.vehicleName}`
-                  : `Transit: ${tripPlan.selectedFlight.airline}`}
+                    ? `Bus: ${tripPlan.selectedBus.operator}`
+                    : tripPlan.selectedTransitMode === 'cab' && tripPlan.selectedCab
+                      ? `Cab: ${tripPlan.selectedCab.vehicleName}`
+                      : `Transit: ${tripPlan.selectedFlight.airline}`}
               </span>
             </button>
 
@@ -381,7 +398,9 @@ export const PersonalizedTripResult: React.FC<PersonalizedTripResultProps> = ({
                           +₹{prem.price.toLocaleString('en-IN')}
                         </span>
                       </div>
-                      <h5 className="text-xs font-serif font-bold text-stone-900 mb-1">{prem.title}</h5>
+                      <h5 className="text-xs font-serif font-bold text-stone-900 mb-1">
+                        {prem.title}
+                      </h5>
                       <p className="text-[11px] text-stone-500 line-clamp-2 mb-3 font-light">
                         {prem.description}
                       </p>
@@ -421,110 +440,114 @@ export const PersonalizedTripResult: React.FC<PersonalizedTripResultProps> = ({
         {/* Day-by-Day Timeline Layout (Shown in All or Itinerary tab) */}
         {(activeViewTab === 'all' || activeViewTab === 'itinerary') && (
           <div className="space-y-4">
-          {tripPlan.days.map((day) => {
-            const isExpanded = expandedDay === day.dayNumber;
-            return (
-              <div
-                key={day.dayNumber}
-                className="bg-white rounded-3xl border border-stone-200/90 overflow-hidden transition-all duration-200 hover:border-stone-300 shadow-2xs"
-              >
-                {/* Day Header Accordion Toggle */}
-                <button
-                  onClick={() => setExpandedDay(isExpanded ? null : day.dayNumber)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer transition-colors"
+            {tripPlan.days.map((day) => {
+              const isExpanded = expandedDay === day.dayNumber;
+              return (
+                <div
+                  key={day.dayNumber}
+                  className="bg-white rounded-3xl border border-stone-200/90 overflow-hidden transition-all duration-200 hover:border-stone-300 shadow-2xs"
                 >
-                  <div className="flex items-center gap-4 sm:gap-6">
-                    <div className="flex flex-col items-center justify-center w-13 h-13 rounded-2xl bg-stone-50 border border-stone-200/80 shadow-2xs shrink-0">
-                      <span className="text-[9px] font-semibold uppercase text-[#E05A47] tracking-[0.18em]">
-                        DAY
-                      </span>
-                      <span className="text-lg font-serif font-bold text-stone-900 leading-tight">
-                        0{day.dayNumber}
-                      </span>
+                  {/* Day Header Accordion Toggle */}
+                  <button
+                    onClick={() => setExpandedDay(isExpanded ? null : day.dayNumber)}
+                    className="w-full px-6 py-5 flex items-center justify-between text-left cursor-pointer transition-colors"
+                  >
+                    <div className="flex items-center gap-4 sm:gap-6">
+                      <div className="flex flex-col items-center justify-center w-13 h-13 rounded-2xl bg-stone-50 border border-stone-200/80 shadow-2xs shrink-0">
+                        <span className="text-[9px] font-semibold uppercase text-[#E05A47] tracking-[0.18em]">
+                          DAY
+                        </span>
+                        <span className="text-lg font-serif font-bold text-stone-900 leading-tight">
+                          0{day.dayNumber}
+                        </span>
+                      </div>
+
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900">
+                            {day.dayTitle}
+                          </h3>
+                          {day.dateStr && (
+                            <span className="hidden sm:inline px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-500 text-[11px] font-medium border border-stone-200/70">
+                              {day.dateStr}
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-xs sm:text-sm text-stone-500 line-clamp-1 mt-0.5 font-light">
+                          {day.summary}
+                        </p>
+                      </div>
                     </div>
 
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900">
-                          {day.dayTitle}
-                        </h3>
-                        {day.dateStr && (
-                          <span className="hidden sm:inline px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-500 text-[11px] font-medium border border-stone-200/70">
-                            {day.dateStr}
-                          </span>
+                    <div className="flex items-center gap-3">
+                      <span className="text-xs font-medium text-stone-400 hidden sm:inline">
+                        {day.activities.length} items
+                      </span>
+                      <div className="w-8 h-8 rounded-full bg-stone-50 border border-stone-200/80 flex items-center justify-center text-stone-600">
+                        {isExpanded ? (
+                          <ChevronUp className="w-4 h-4" />
+                        ) : (
+                          <ChevronDown className="w-4 h-4" />
                         )}
                       </div>
-                      <p className="text-xs sm:text-sm text-stone-500 line-clamp-1 mt-0.5 font-light">
-                        {day.summary}
-                      </p>
                     </div>
-                  </div>
+                  </button>
 
-                  <div className="flex items-center gap-3">
-                    <span className="text-xs font-medium text-stone-400 hidden sm:inline">
-                      {day.activities.length} items
-                    </span>
-                    <div className="w-8 h-8 rounded-full bg-stone-50 border border-stone-200/80 flex items-center justify-center text-stone-600">
-                      {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                    </div>
-                  </div>
-                </button>
-
-                {/* Day Activities Expansion */}
-                {isExpanded && (
-                  <div className="px-6 pb-6 pt-2 border-t border-stone-100 bg-[#FCFBF9]">
-                    <div className="relative pl-6 space-y-6 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-px before:bg-stone-200">
-                      {day.activities.map((act, index) => (
-                        <div key={act.id || index} className="relative flex items-start gap-4">
-                          {/* Timeline Pin Dot */}
-                          <div className="absolute -left-6 top-1.5 w-3.5 h-3.5 rounded-full bg-white border-2 border-[#E05A47] flex items-center justify-center">
-                            <div className="w-1 h-1 rounded-full bg-[#E05A47]" />
-                          </div>
-
-                          <div className="w-9 h-9 rounded-xl bg-white border border-stone-200/80 flex items-center justify-center text-base shrink-0 shadow-2xs">
-                            {act.icon}
-                          </div>
-
-                          <div className="flex-1 bg-white p-4 rounded-2xl border border-stone-200/80 shadow-2xs">
-                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
-                              <div className="flex items-center gap-2">
-                                <span className="text-xs font-serif font-bold text-stone-900">
-                                  {act.title}
-                                </span>
-                                {act.type === 'experience' && (
-                                  <span className="px-2 py-0.5 rounded-full bg-rose-50 text-rose-800 text-[10px] font-medium border border-rose-200/80">
-                                    Curated
-                                  </span>
-                                )}
-                              </div>
-                              <span className="text-xs font-medium text-stone-500 flex items-center gap-1">
-                                <Clock className="w-3 h-3 text-stone-400" />
-                                {act.time}
-                              </span>
+                  {/* Day Activities Expansion */}
+                  {isExpanded && (
+                    <div className="px-6 pb-6 pt-2 border-t border-stone-100 bg-[#FCFBF9]">
+                      <div className="relative pl-6 space-y-6 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-px before:bg-stone-200">
+                        {day.activities.map((act, index) => (
+                          <div key={act.id || index} className="relative flex items-start gap-4">
+                            {/* Timeline Pin Dot */}
+                            <div className="absolute -left-6 top-1.5 w-3.5 h-3.5 rounded-full bg-white border-2 border-[#E05A47] flex items-center justify-center">
+                              <div className="w-1 h-1 rounded-full bg-[#E05A47]" />
                             </div>
 
-                            {act.location && (
-                              <div className="text-[11px] font-light text-stone-500 flex items-center gap-1 mb-1.5">
-                                <MapPin className="w-3 h-3 text-stone-400" />
-                                <span>{act.location}</span>
-                              </div>
-                            )}
+                            <div className="w-9 h-9 rounded-xl bg-white border border-stone-200/80 flex items-center justify-center text-base shrink-0 shadow-2xs">
+                              {act.icon}
+                            </div>
 
-                            {act.notes && (
-                              <p className="text-xs text-stone-600 font-light leading-relaxed">
-                                {act.notes}
-                              </p>
-                            )}
+                            <div className="flex-1 bg-white p-4 rounded-2xl border border-stone-200/80 shadow-2xs">
+                              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+                                <div className="flex items-center gap-2">
+                                  <span className="text-xs font-serif font-bold text-stone-900">
+                                    {act.title}
+                                  </span>
+                                  {act.type === 'experience' && (
+                                    <span className="px-2 py-0.5 rounded-full bg-rose-50 text-rose-800 text-[10px] font-medium border border-rose-200/80">
+                                      Curated
+                                    </span>
+                                  )}
+                                </div>
+                                <span className="text-xs font-medium text-stone-500 flex items-center gap-1">
+                                  <Clock className="w-3 h-3 text-stone-400" />
+                                  {act.time}
+                                </span>
+                              </div>
+
+                              {act.location && (
+                                <div className="text-[11px] font-light text-stone-500 flex items-center gap-1 mb-1.5">
+                                  <MapPin className="w-3 h-3 text-stone-400" />
+                                  <span>{act.location}</span>
+                                </div>
+                              )}
+
+                              {act.notes && (
+                                <p className="text-xs text-stone-600 font-light leading-relaxed">
+                                  {act.notes}
+                                </p>
+                              )}
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         )}
 
         {/* Bottom Booking CTA Banner */}
@@ -537,7 +560,8 @@ export const PersonalizedTripResult: React.FC<PersonalizedTripResultProps> = ({
               One unified checkout for your entire trip.
             </h3>
             <p className="text-xs sm:text-sm text-stone-400 mt-1 font-light">
-              Zero tab switching. Flights, verified villa, private transport & VIP tours locked together.
+              Zero tab switching. Flights, verified villa, private transport & VIP tours locked
+              together.
             </p>
           </div>
 
