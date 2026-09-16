@@ -2,7 +2,7 @@
 
 **Don't just book a trip. Design the experience.**
 
-**[Live demo →](https://wandr-tawny.vercel.app)**
+**[Live demo →](https://wandr-tawny.vercel.app)** &nbsp;·&nbsp; **[Pitch deck →](docs/deck/)**
 
 Planning a trip today means ten open tabs: destination research, flights, trains, buses,
 cabs, hotels, places to visit, activities, restaurants, and finally stitching it all into an
@@ -42,6 +42,12 @@ destination and duration, weather forecasts, and multi-currency conversion.
 
 **Shareable trips.** A whole plan serialises into a URL, with QR code, WhatsApp / Telegram /
 Twitter / email share targets, PDF voucher export and `.ics` calendar export.
+
+## Pitch deck
+
+Ten slides covering the problem, the product and the business model, as a
+self-contained HTML deck in [`docs/deck/`](docs/deck/). Open it in a browser and
+use the arrow keys, or print to PDF. See [the deck README](docs/deck/README.md).
 
 ## Tech stack
 
