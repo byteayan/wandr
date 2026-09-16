@@ -42,7 +42,7 @@ export const PersonalizedTripResult: React.FC<PersonalizedTripResultProps> = ({
   const [isAiModifying, setIsAiModifying] = useState<boolean>(false);
   const [showAddExperienceTray, setShowAddExperienceTray] = useState<boolean>(false);
 
-  // AI Prompt Modifiers quick triggers
+  // Prompt modifier quick triggers
   const handleApplyAiModifier = (promptType: string) => {
     setIsAiModifying(true);
     setTimeout(() => {
@@ -141,7 +141,7 @@ export const PersonalizedTripResult: React.FC<PersonalizedTripResultProps> = ({
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E05A47]/10 text-[#E05A47] text-[11px] font-semibold uppercase tracking-[0.18em] mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            AI Dynamic Synthesis Complete
+            Dynamic Synthesis Complete
           </div>
           <h2 className="text-3xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight mb-4">
             Your trip,{' '}
@@ -182,7 +182,7 @@ export const PersonalizedTripResult: React.FC<PersonalizedTripResultProps> = ({
           </div>
         </div>
 
-        {/* AI Itinerary Quick-Action Bar */}
+        {/* Itinerary quick-action bar */}
         <div className="bg-white rounded-3xl p-4 sm:p-6 border border-stone-200/90 mb-10 shadow-2xs">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
             {/* Quick Prompt Pill Buttons */}
@@ -215,7 +215,7 @@ export const PersonalizedTripResult: React.FC<PersonalizedTripResultProps> = ({
               </button>
             </div>
 
-            {/* Custom AI Prompt Input */}
+            {/* Custom prompt input */}
             <div className="flex items-center gap-2 max-w-md w-full">
               <div className="relative w-full">
                 <input

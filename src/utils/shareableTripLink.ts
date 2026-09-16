@@ -444,7 +444,7 @@ export function generateTripIcsCalendar(tripPlan: TripPlan): string {
   const icsContent = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Wandr//AI Travel Curator//EN',
+    'PRODID:-//Wandr//Trip Curator//EN',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
     `X-WR-CALNAME:Wandr Trip: ${tripPlan.destination.name} (${tripPlan.durationDays}D)`,

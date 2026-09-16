@@ -185,7 +185,7 @@ export const LiveTripMode: React.FC<LiveTripModeProps> = ({ tripPlan, onOpenFeed
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-xs uppercase font-bold text-amber-400 tracking-wider">
-                  AI WEATHER REROUTE ADVICE
+                  WEATHER REROUTE ADVICE
                 </span>
                 <span className="text-xs text-stone-400">Rain forecast: 03:45 PM – 05:15 PM</span>
               </div>
@@ -356,7 +356,7 @@ export const LiveTripMode: React.FC<LiveTripModeProps> = ({ tripPlan, onOpenFeed
                 Completed Your Journey?
               </h4>
               <p className="text-xs text-stone-400 font-light mt-1 mb-4">
-                Share your feedback on the AI itinerary & villa stays to earn{' '}
+                Share your feedback on your itinerary & villa stays to earn{' '}
                 <span className="text-amber-400 font-semibold">₹1,000 Travel Credit</span>.
               </p>
               <button
@@ -377,7 +377,7 @@ export const LiveTripMode: React.FC<LiveTripModeProps> = ({ tripPlan, onOpenFeed
                 className="w-full py-3 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-stone-950 font-bold text-xs shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer active:scale-98"
               >
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>Rate AI Journey & Unlock Credit</span>
+                <span>Rate Your Journey & Unlock Credit</span>
               </button>
             </div>
 

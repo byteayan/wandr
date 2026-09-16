@@ -29,7 +29,7 @@ interface HeroPlannerProps {
 }
 
 export const HeroPlanner: React.FC<HeroPlannerProps> = ({ onDesignTrip, onExploreClick }) => {
-  // State for AI Planner
+  // State for the trip planner
   const [selectedCompanion, setSelectedCompanion] = useState<CompanionType>('couple');
   const [selectedVibes, setSelectedVibes] = useState<VibeType[]>(['Romantic', 'Adventure']);
   const [selectedBudget, setSelectedBudget] = useState<BudgetTier>('100k');
@@ -123,7 +123,7 @@ export const HeroPlanner: React.FC<HeroPlannerProps> = ({ onDesignTrip, onExplor
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#181E24]/80 backdrop-blur-md border border-white/20 text-stone-200 text-[11px] font-medium uppercase tracking-[0.2em] mb-6 shadow-md">
             <WandrLogo size="xs" variant="icon-only" />
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF5722] animate-pulse"></span>
-            <span>wandr AI Travel Experience Platform</span>
+            <span>wandr Travel Experience Platform</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-normal tracking-tight text-white leading-[1.12] mb-6">
@@ -158,7 +158,7 @@ export const HeroPlanner: React.FC<HeroPlannerProps> = ({ onDesignTrip, onExplor
           </div>
         </div>
 
-        {/* Floating AI Trip Planner Card */}
+        {/* Floating trip planner card */}
         <div
           id="ai-planner-card"
           className="mt-4 bg-white/95 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-stone-200/90 shadow-[0_8px_32px_-8px_rgba(28,25,23,0.08)] transition-all"
@@ -215,7 +215,7 @@ export const HeroPlanner: React.FC<HeroPlannerProps> = ({ onDesignTrip, onExplor
             </div>
           </div>
 
-          {/* 4 Interactive AI Planner Steps Grid */}
+          {/* 4 interactive planner steps grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-6 border-b border-stone-200/70">
             {/* Step 1: Who are you travelling with? */}
             <div className="flex flex-col">
@@ -364,7 +364,7 @@ export const HeroPlanner: React.FC<HeroPlannerProps> = ({ onDesignTrip, onExplor
             </div>
           </div>
 
-          {/* AI Match Preview & Final CTA */}
+          {/* Match preview & final CTA */}
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3 w-full sm:w-auto">
               <div className="w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-stone-200/80">

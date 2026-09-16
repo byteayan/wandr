@@ -203,7 +203,7 @@ export const PreTripChecklist: React.FC<PreTripChecklistProps> = ({ tripPlan, cl
       });
     });
 
-    lines.push(`\nGenerated with Wandr AI Travel Assistant`);
+    lines.push(`\nGenerated with Wandr`);
 
     navigator.clipboard.writeText(lines.join('\n'));
     setCopiedToast(true);
@@ -423,7 +423,7 @@ export const PreTripChecklist: React.FC<PreTripChecklistProps> = ({ tripPlan, cl
               <div className="bg-white p-3.5 rounded-xl border border-stone-200/70 shadow-2xs">
                 <div className="flex items-center gap-1.5 font-semibold text-stone-900 mb-1">
                   <Sparkles className="w-4 h-4 text-emerald-600" />
-                  <span>AI Smart Packing Hacks</span>
+                  <span>Smart Packing Hacks</span>
                 </div>
                 <ul className="space-y-1 text-stone-600 font-light">
                   {checklistData.luggageAdvice.packingHacks.slice(0, 3).map((hack, idx) => (
