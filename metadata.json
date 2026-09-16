@@ -1,7 +1,0 @@
-{
-  "name": "Wandr - AI Travel Experience Platform",
-  "description": "Premium, modern, minimal travel-tech experience platform. Tell us your vibe, we'll design the journey.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
-
