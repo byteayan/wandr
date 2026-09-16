@@ -2,17 +2,10 @@ import React, { useState } from 'react';
 import {
   Sparkles,
   ArrowRight,
-  Heart,
-  User,
-  Users,
   MapPin,
   Clock,
   Compass,
   Check,
-  ChevronDown,
-  Coins,
-  Flame,
-  Sliders,
   Plane,
   Train,
   Bus,
@@ -45,7 +38,6 @@ export const HeroPlanner: React.FC<HeroPlannerProps> = ({ onDesignTrip, onExplor
   const [selectedOrigin, setSelectedOrigin] = useState<string>('Delhi (DEL)');
   const [selectedDestId, setSelectedDestId] = useState<string>('bali');
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
-  const [activeStep, setActiveStep] = useState<number>(1);
 
   const companions: { type: CompanionType; label: string; icon: string }[] = [
     { type: 'couple', label: 'Couple', icon: '❤️' },

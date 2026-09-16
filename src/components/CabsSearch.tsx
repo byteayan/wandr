@@ -1,18 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Car,
-  MapPin,
-  Calendar,
-  Clock,
-  ShieldCheck,
-  Star,
-  Users,
-  Luggage,
-  Sparkles,
-  Check,
-  Search,
-  Zap,
-} from 'lucide-react';
+import { Car, MapPin, Calendar, Star, Users, Luggage, Check, Search } from 'lucide-react';
 import { CabOption } from '../types/travel';
 import { CABS_DATA } from '../data/travelData';
 
@@ -25,7 +12,6 @@ export const CabsSearch: React.FC<CabsSearchProps> = ({ onSelectCab, selectedCab
   const [pickupLocation, setPickupLocation] = useState<string>('Delhi Airport (DEL) Terminal 3');
   const [destination, setDestination] = useState<string>('Jaipur City Center / Heritage Hotel');
   const [pickupDate, setPickupDate] = useState<string>('2026-10-14');
-  const [pickupTime, setPickupTime] = useState<string>('10:00 AM');
   const [cabType, setCabType] = useState<string>('ALL');
   const [isSearching, setIsSearching] = useState<boolean>(false);
 

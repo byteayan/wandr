@@ -6,16 +6,11 @@ import {
   Sparkles,
   Heart,
   MessageSquare,
-  ThumbsUp,
   Award,
   CheckCircle2,
-  MapPin,
   Calendar,
   Send,
-  Camera,
   Gift,
-  Smile,
-  ShieldCheck,
   Zap,
 } from 'lucide-react';
 import { TripFeedbackData, TripFeedbackSubmission } from '../types/travel';

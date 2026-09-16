@@ -11,12 +11,10 @@ import {
   Send,
   Download,
   Users,
-  Sparkles,
   ExternalLink,
   Smartphone,
   ShieldCheck,
   CheckCircle2,
-  Heart,
   Plane,
   Hotel,
 } from 'lucide-react';
@@ -55,7 +53,6 @@ export const ShareTripModal: React.FC<ShareTripModalProps> = ({
   const [companionNote, setCompanionNote] = useState<string>(
     'Hey! Check out this itinerary I designed on Wandr. Let me know what you think!'
   );
-  const [includeSplit, setIncludeSplit] = useState<boolean>(true);
 
   const curatorName = userProfile?.name || 'Ayan Alam';
   const shareUrl = generateShareableTripLink(tripPlan, curatorName, userProfile?.email);

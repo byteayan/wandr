@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import {
   Sun,
   CloudSun,
@@ -7,21 +6,13 @@ import {
   Wind,
   Droplets,
   Thermometer,
-  Compass,
   Sunrise,
   Sunset,
-  CheckCircle2,
   Sparkles,
-  ShieldCheck,
-  Calendar,
   Luggage,
   Clock,
   RefreshCw,
-  Info,
-  ChevronRight,
   Check,
-  Umbrella,
-  Eye,
   Shirt,
 } from 'lucide-react';
 import {
@@ -50,7 +41,6 @@ export const WeatherForecastCard: React.FC<WeatherForecastCardProps> = ({
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isRefreshing, setIsRefreshing] = useState<boolean>(false);
   const [packedItems, setPackedItems] = useState<string[]>([]);
-  const [showPackingModal, setShowPackingModal] = useState<boolean>(false);
 
   useEffect(() => {
     let isMounted = true;

@@ -3,16 +3,12 @@ import {
   Heart,
   Star,
   MapPin,
-  Wifi,
   Coffee,
   Waves,
   Sparkles,
-  SlidersHorizontal,
   ChevronLeft,
   ChevronRight,
   ShieldCheck,
-  Check,
-  Eye,
 } from 'lucide-react';
 import { StayItem } from '../types/travel';
 import { STAYS_DATA } from '../data/travelData';

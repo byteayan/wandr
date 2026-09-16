@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, ArrowRight, Compass, Clock, Heart } from 'lucide-react';
+import { ArrowRight, Compass, Clock } from 'lucide-react';
 import { Destination } from '../types/travel';
 import { DESTINATIONS } from '../data/travelData';
 

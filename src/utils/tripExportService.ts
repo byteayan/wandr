@@ -1,6 +1,5 @@
-import jsPDF from 'jspdf';
-import { UserProfile, TripPlan } from '../types/travel';
-import { DESTINATIONS, STAYS_DATA, ACTIVITIES_DATA, FLIGHTS_DATA } from '../data/travelData';
+import { UserProfile } from '../types/travel';
+import { DESTINATIONS, STAYS_DATA, FLIGHTS_DATA } from '../data/travelData';
 import { generateCustomTripPlan } from './tripPlannerEngine';
 
 export interface UpcomingTripItem {
@@ -48,7 +47,7 @@ export function generateUpcomingTripIcs(trip: UpcomingTripItem, userProfile?: Us
     'Delhi (DEL)'
   );
 
-  let icsContent = [
+  const icsContent = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
     'PRODID:-//Wandr//AI Travel Curator//EN',
@@ -128,7 +127,13 @@ export function downloadUpcomingTripIcs(trip: UpcomingTripItem, userProfile?: Us
 /**
  * Generates and downloads a clean, multi-page offline PDF Travel Voucher & Itinerary Document.
  */
-export function downloadUpcomingTripPdf(trip: UpcomingTripItem, userProfile?: UserProfile): void {
+export async function downloadUpcomingTripPdf(
+  trip: UpcomingTripItem,
+  userProfile?: UserProfile
+): Promise<void> {
+  // jsPDF (plus html2canvas) is ~250 kB; only pull it in when a voucher is actually exported.
+  const { default: jsPDF } = await import('jspdf');
+
   const doc = new jsPDF({
     orientation: 'portrait',
     unit: 'mm',
@@ -316,7 +321,7 @@ export function downloadUpcomingTripPdf(trip: UpcomingTripItem, userProfile?: Us
 
   y += 5;
 
-  plan.days.forEach((day, index) => {
+  plan.days.forEach((day) => {
     // Check if we need a new page
     if (y > pageHeight - 45) {
       // Add Footer on current page

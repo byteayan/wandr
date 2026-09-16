@@ -2,32 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   CheckCircle2,
-  Circle,
   Sparkles,
   Luggage,
   ShieldCheck,
   Plus,
   Trash2,
-  Filter,
   Printer,
-  Share2,
   RotateCcw,
   CheckCheck,
   AlertTriangle,
   Info,
   ChevronDown,
-  ChevronUp,
-  Sun,
-  Flame,
-  Droplets,
-  Plane,
   Compass,
   FileText,
   Shirt,
   Smartphone,
   HeartPulse,
   Tag,
-  Star,
   Check,
   Copy,
 } from 'lucide-react';
@@ -100,7 +91,7 @@ export const PreTripChecklist: React.FC<PreTripChecklistProps> = ({ tripPlan, cl
         });
         return;
       }
-    } catch (err) {
+    } catch {
       // Storage error fallback
     }
 
@@ -130,7 +121,7 @@ export const PreTripChecklist: React.FC<PreTripChecklistProps> = ({ tripPlan, cl
 
     try {
       localStorage.setItem(storageKey, JSON.stringify(updatedData));
-    } catch (e) {
+    } catch {
       // Ignore
     }
   };

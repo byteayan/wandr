@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Heart, Sparkles, ArrowRight, Compass, Calendar, Wallet, Star, Check } from 'lucide-react';
+import { Heart, Sparkles, ArrowRight } from 'lucide-react';
 import { Destination, VibeType } from '../types/travel';
 import { DESTINATIONS } from '../data/travelData';
 

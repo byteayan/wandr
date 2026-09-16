@@ -1,21 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Train,
-  Calendar,
-  Users,
-  Search,
-  Sparkles,
-  Clock,
-  ShieldCheck,
-  Check,
-  Leaf,
-  Filter,
-  ArrowRight,
-  Info,
-  Coffee,
-  Wifi,
-  Zap,
-} from 'lucide-react';
+import { Train, Calendar, Users, Search, Check, Filter } from 'lucide-react';
 import { TrainOption, TrainClassOption } from '../types/travel';
 import { TRAINS_DATA, POPULAR_TRAIN_STATIONS } from '../data/travelData';
 

@@ -238,6 +238,7 @@ export interface TripPlan {
 export interface UserProfile {
   name: string;
   email: string;
+  phone?: string;
   avatar: string;
   isPremium?: boolean;
   premiumTier?: 'Wanderlust Pro' | 'Wanderlust Black' | null;

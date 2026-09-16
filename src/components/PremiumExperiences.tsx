@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Heart, Plus, Check, ShieldCheck, Star, CheckCircle2 } from 'lucide-react';
+import { Sparkles, Plus, Check, CheckCircle2 } from 'lucide-react';
 import { PremiumExperience } from '../types/travel';
 import { PREMIUM_EXPERIENCES } from '../data/travelData';
 

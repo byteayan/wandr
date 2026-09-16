@@ -1,21 +1,9 @@
 import React, { useState, useRef } from 'react';
 import {
   X,
-  User,
-  Calendar,
-  Heart,
   Clock,
-  Compass,
-  ArrowRight,
-  ShieldCheck,
   Star,
-  Hotel,
-  Ticket,
-  MapPin,
-  LogOut,
-  Sliders,
   Sparkles,
-  Maximize2,
   CheckCircle2,
   Crown,
   Plane,
@@ -35,11 +23,9 @@ import {
   Trash2,
   PhoneCall,
   ExternalLink,
-  ShieldAlert,
 } from 'lucide-react';
 import { UserProfile, Destination, StayItem, TripFeedbackData } from '../types/travel';
 import { DESTINATIONS, STAYS_DATA, ACTIVITIES_DATA } from '../data/travelData';
-import { WandrLogo } from './WandrLogo';
 import { UserAvatar } from './UserAvatar';
 import { PRESET_AVATARS, DEFAULT_AVATAR_URL } from '../utils/avatarUtils';
 import {
@@ -106,10 +92,10 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
 
   if (!isOpen) return null;
 
-  const handleExportPdf = (trip: UpcomingTripItem) => {
+  const handleExportPdf = async (trip: UpcomingTripItem) => {
     setIsExporting({ tripId: trip.id, type: 'pdf' });
     try {
-      downloadUpcomingTripPdf(trip, userProfile);
+      await downloadUpcomingTripPdf(trip, userProfile);
       setExportNotice({ tripId: trip.id, text: 'PDF Voucher downloaded!' });
       setTimeout(() => setExportNotice(null), 3500);
     } catch (err) {

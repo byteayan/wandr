@@ -1,4 +1,4 @@
-import { TripPlan, Destination, ActivityItem, PremiumExperience } from '../types/travel';
+import { TripPlan } from '../types/travel';
 
 export type ChecklistCategory =
   'documents' | 'clothing' | 'activity_gear' | 'electronics' | 'health_toiletries' | 'custom';

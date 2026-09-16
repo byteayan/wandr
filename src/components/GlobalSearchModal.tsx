@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Search, X, MapPin, Hotel, Ticket, Plane, ArrowRight, Sparkles } from 'lucide-react';
-import { Destination, StayItem, ActivityItem } from '../types/travel';
-import { DESTINATIONS, STAYS_DATA, ACTIVITIES_DATA } from '../data/travelData';
+import { Search, X, ArrowRight } from 'lucide-react';
+import { Destination, StayItem } from '../types/travel';
+import { DESTINATIONS, STAYS_DATA } from '../data/travelData';
 
 interface GlobalSearchModalProps {
   isOpen: boolean;
@@ -50,14 +50,6 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
           s.location.toLowerCase().includes(query.toLowerCase())
       )
     : STAYS_DATA.slice(0, 2);
-
-  const filteredActs = query.trim()
-    ? ACTIVITIES_DATA.filter(
-        (a) =>
-          a.title.toLowerCase().includes(query.toLowerCase()) ||
-          a.category.toLowerCase().includes(query.toLowerCase())
-      )
-    : [];
 
   return (
     <div className="fixed inset-0 z-50 bg-stone-950/60 backdrop-blur-sm flex items-start justify-center pt-20 px-4">

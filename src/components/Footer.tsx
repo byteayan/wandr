@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, ArrowRight, Compass, Heart, Globe } from 'lucide-react';
+import { Sparkles, ArrowRight } from 'lucide-react';
 import { WandrLogo } from './WandrLogo';
 
 interface FooterProps {

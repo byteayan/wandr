@@ -14,16 +14,12 @@ import {
   Car,
   Hotel,
   Ticket,
-  CheckCircle2,
   TrendingDown,
-  Tag,
-  ShieldCheck,
   Check,
   Coins,
   ArrowLeftRight,
   RefreshCw,
   Globe2,
-  Info,
   Share2,
 } from 'lucide-react';
 import { TripPlan, UserProfile } from '../types/travel';
@@ -33,7 +29,6 @@ import {
   CurrencyConfig,
   DEFAULT_INR_RATES,
   getDestinationCurrency,
-  convertInrTo,
   formatWithCurrency,
   fetchLiveExchangeRates,
 } from '../utils/currencyConverter';
@@ -49,20 +44,18 @@ interface FloatingTripSummaryProps {
 
 export const FloatingTripSummary: React.FC<FloatingTripSummaryProps> = ({
   tripPlan,
-  userProfile,
   onViewItinerary,
   onProceedToBooking,
-  onCustomizeClick,
   onOpenShare,
 }) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
   const [isDismissed, setIsDismissed] = useState<boolean>(false);
-  const [hasScrolled, setHasScrolled] = useState<boolean>(false);
+  const [, setHasScrolled] = useState<boolean>(false);
 
   // Currency Conversion state
   const [selectedCurrencyCode, setSelectedCurrencyCode] = useState<string>('INR');
   const [liveRates, setLiveRates] = useState<Record<string, number>>(DEFAULT_INR_RATES);
-  const [lastRateUpdate, setLastRateUpdate] = useState<string>('Live Mid-Market');
+  const [, setLastRateUpdate] = useState<string>('Live Mid-Market');
   const [isFetchingRates, setIsFetchingRates] = useState<boolean>(false);
   const [showCurrencyDropdown, setShowCurrencyDropdown] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -91,7 +84,7 @@ export const FloatingTripSummary: React.FC<FloatingTripSummaryProps> = ({
           setLiveRates(data.rates);
           setLastRateUpdate(data.lastUpdated);
         }
-      } catch (err) {
+      } catch {
         // Fallback already set
       } finally {
         if (isMounted) setIsFetchingRates(false);

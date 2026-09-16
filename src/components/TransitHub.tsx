@@ -1,15 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Plane,
-  Train,
-  Bus,
-  Car,
-  Compass,
-  Sparkles,
-  ArrowRight,
-  ShieldCheck,
-  Check,
-} from 'lucide-react';
+import { Plane, Train, Bus, Car, Compass } from 'lucide-react';
 import { FlightSearch } from './FlightSearch';
 import { TrainSearch } from './TrainSearch';
 import { BusSearch } from './BusSearch';
@@ -46,7 +36,6 @@ export const TransitHub: React.FC<TransitHubProps> = ({
   selectedTrainId,
   selectedBusId,
   selectedCabId,
-  selectedTransitMode = 'flight',
 }) => {
   const [activeMode, setActiveMode] = useState<TravelMode>(initialMode);
 

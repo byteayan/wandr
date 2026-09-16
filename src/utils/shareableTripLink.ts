@@ -10,7 +10,6 @@ import {
   PREMIUM_EXPERIENCES,
 } from '../data/travelData';
 import { calculateTripTotal, generateCustomTripPlan } from './tripPlannerEngine';
-import QRCode from 'qrcode';
 
 export interface SerializedTripPayload {
   v: number; // schema version
@@ -140,7 +139,7 @@ export function deserializeTripPlan(encodedStr: string): SharedTripResolution | 
       DESTINATIONS[0];
 
     // 2. Resolve stay
-    let selectedStay =
+    const selectedStay =
       STAYS_DATA.find((s) => s.id === payload.stayId) ||
       STAYS_DATA.find((s) => s.destinationId === destination.id) ||
       STAYS_DATA[0];
@@ -258,6 +257,7 @@ export function generateShareableTripLink(
  */
 export async function generateTripQrCode(shareUrl: string): Promise<string> {
   try {
+    const { default: QRCode } = await import('qrcode');
     const dataUrl = await QRCode.toDataURL(shareUrl, {
       width: 400,
       margin: 2,
@@ -414,8 +414,8 @@ export async function triggerNativeShare(
         url: shareUrl,
       });
       return { success: true, method: 'native' };
-    } catch (err: any) {
-      if (err.name === 'AbortError') {
+    } catch (err) {
+      if (err instanceof Error && err.name === 'AbortError') {
         return { success: false, method: 'native' };
       }
     }
@@ -441,7 +441,7 @@ export function generateTripIcsCalendar(tripPlan: TripPlan): string {
   };
 
   const stamp = formatIcsDate(now);
-  let icsContent = [
+  const icsContent = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
     'PRODID:-//Wandr//AI Travel Curator//EN',

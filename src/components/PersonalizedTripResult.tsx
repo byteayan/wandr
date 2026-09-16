@@ -1,31 +1,18 @@
 import React, { useState } from 'react';
 import {
   Sparkles,
-  Calendar,
   Clock,
   MapPin,
-  Heart,
-  Edit3,
   Plus,
-  Trash2,
   ChevronDown,
   ChevronUp,
   ArrowUpRight,
-  ShieldCheck,
-  Zap,
   Hotel,
   Plane,
-  Camera,
-  Car,
-  Utensils,
-  CheckCircle2,
   Check,
-  Sliders,
-  Flame,
-  Coffee,
   Share2,
 } from 'lucide-react';
-import { TripPlan, ItineraryDay, StayItem, PremiumExperience, ActivityItem } from '../types/travel';
+import { TripPlan, PremiumExperience } from '../types/travel';
 import { STAYS_DATA, PREMIUM_EXPERIENCES, ACTIVITIES_DATA } from '../data/travelData';
 import { WeatherForecastCard } from './WeatherForecastCard';
 import { PreTripChecklist } from './PreTripChecklist';
@@ -54,16 +41,14 @@ export const PersonalizedTripResult: React.FC<PersonalizedTripResultProps> = ({
   const [aiPromptInput, setAiPromptInput] = useState<string>('');
   const [isAiModifying, setIsAiModifying] = useState<boolean>(false);
   const [showAddExperienceTray, setShowAddExperienceTray] = useState<boolean>(false);
-  const [showEditDayModal, setShowEditDayModal] = useState<number | null>(null);
-  const [customNote, setCustomNote] = useState<string>('');
 
   // AI Prompt Modifiers quick triggers
   const handleApplyAiModifier = (promptType: string) => {
     setIsAiModifying(true);
     setTimeout(() => {
-      let updatedVibes = [...tripPlan.vibes];
+      const updatedVibes = [...tripPlan.vibes];
       let updatedDays = [...tripPlan.days];
-      let updatedPrem = [...tripPlan.selectedPremium];
+      const updatedPrem = [...tripPlan.selectedPremium];
 
       if (promptType === 'romantic') {
         if (!updatedVibes.includes('Romantic')) updatedVibes.push('Romantic');

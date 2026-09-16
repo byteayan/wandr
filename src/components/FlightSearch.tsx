@@ -1,17 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Plane,
-  Calendar,
-  Users,
-  ArrowRight,
-  Sparkles,
-  Clock,
-  Luggage,
-  ShieldCheck,
-  Check,
-  Leaf,
-  ChevronDown,
-} from 'lucide-react';
+import { Plane, Calendar, Users, Sparkles, Clock, Luggage, Leaf } from 'lucide-react';
 import { FlightOption } from '../types/travel';
 import { FLIGHTS_DATA, POPULAR_ORIGINS } from '../data/travelData';
 
@@ -23,13 +11,8 @@ interface FlightSearchProps {
 export const FlightSearch: React.FC<FlightSearchProps> = ({ onSelectFlight, selectedFlightId }) => {
   const [fromCity, setFromCity] = useState<string>('Delhi (DEL)');
   const [toCity, setToCity] = useState<string>('Bali (DPS)');
-  const [departDate, setDepartDate] = useState<string>('2026-10-12');
-  const [returnDate, setReturnDate] = useState<string>('2026-10-18');
-  const [travellers, setTravellers] = useState<string>('2 Travellers');
-  const [cabinClass, setCabinClass] = useState<'Economy' | 'Premium Economy' | 'Business'>(
-    'Economy'
-  );
-  const [isSearching, setIsSearching] = useState<boolean>(false);
+  const [cabinClass] = useState<'Economy' | 'Premium Economy' | 'Business'>('Economy');
+  const [, setIsSearching] = useState<boolean>(false);
 
   const handleSearch = () => {
     setIsSearching(true);

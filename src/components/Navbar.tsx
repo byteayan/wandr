@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import {
   Search,
   Heart,
-  User,
   Radio,
   Sparkles,
   Menu,

@@ -2,7 +2,6 @@ import {
   CompanionType,
   VibeType,
   TripPlan,
-  Destination,
   StayItem,
   FlightOption,
   ActivityItem,

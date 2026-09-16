@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Sparkles, Star, Clock, MapPin, Check, Plus, Compass, ArrowRight } from 'lucide-react';
-import { ActivityItem, VibeType } from '../types/travel';
+import { Sparkles, Star, Clock, MapPin, Check, Plus } from 'lucide-react';
+import { ActivityItem } from '../types/travel';
 import { ACTIVITIES_DATA } from '../data/travelData';
 
 interface ActivitiesExplorerProps {

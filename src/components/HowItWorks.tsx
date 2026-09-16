@@ -1,16 +1,5 @@
 import React from 'react';
-import {
-  Sparkles,
-  ArrowRight,
-  UserCheck,
-  Flame,
-  Wallet,
-  MapPin,
-  CalendarDays,
-  SlidersHorizontal,
-  CreditCard,
-  Compass,
-} from 'lucide-react';
+import { Sparkles, ArrowRight } from 'lucide-react';
 
 export const HowItWorks: React.FC = () => {
   const steps = [

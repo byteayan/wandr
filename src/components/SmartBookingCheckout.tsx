@@ -3,26 +3,19 @@ import {
   ShieldCheck,
   CheckCircle2,
   Lock,
-  ArrowRight,
   Sparkles,
   Plane,
-  Train,
-  Bus,
   Hotel,
   Car,
   Ticket,
   Heart,
-  ChevronDown,
   Info,
   CreditCard,
   Smartphone,
   Users,
   Check,
   X,
-  AlertCircle,
-  Crown,
   Coins,
-  ArrowLeftRight,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { TripPlan, UserProfile } from '../types/travel';
@@ -72,8 +65,6 @@ export const SmartBookingCheckout: React.FC<SmartBookingCheckoutProps> = ({
       setLiveRates(res.rates);
     });
   }, []);
-
-  const isPremium = !!userProfile?.isPremium;
 
   const costs = calculateTripTotal(
     tripPlan.selectedFlight,

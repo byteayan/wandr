@@ -6,13 +6,8 @@ import {
   Heart,
   Check,
   ShieldCheck,
-  Coffee,
-  Waves,
-  Wifi,
-  Sparkles,
   ChevronLeft,
   ChevronRight,
-  Info,
 } from 'lucide-react';
 import { StayItem } from '../types/travel';
 

@@ -1,22 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Bus,
-  Calendar,
-  Users,
-  Search,
-  Sparkles,
-  Clock,
-  ShieldCheck,
-  Check,
-  Filter,
-  MapPin,
-  Star,
-  Zap,
-  Wifi,
-  Navigation,
-  ArrowRight,
-  ShieldAlert,
-} from 'lucide-react';
+import { Bus, Calendar, Users, Search, Clock, Filter, Star } from 'lucide-react';
 import { BusOption } from '../types/travel';
 import { BUSES_DATA, POPULAR_BUS_CITIES } from '../data/travelData';
 
@@ -200,7 +183,7 @@ export const BusSearch: React.FC<BusSearchProps> = ({ onSelectBus, selectedBusId
               <span className="text-stone-400 font-medium">Sort by:</span>
               <select
                 value={priceSort}
-                onChange={(e) => setPriceSort(e.target.value as any)}
+                onChange={(e) => setPriceSort(e.target.value as 'low' | 'high' | 'rating')}
                 className="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-700 text-xs font-medium focus:outline-none cursor-pointer border border-stone-200"
               >
                 <option value="rating">Top Operator Rating</option>

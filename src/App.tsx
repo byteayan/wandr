@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroPlanner } from './components/HeroPlanner';
@@ -27,7 +22,7 @@ import { FloatingTripSummary } from './components/FloatingTripSummary';
 import { TripFeedbackModal } from './components/TripFeedbackModal';
 import { ShareTripModal } from './components/ShareTripModal';
 import { deserializeTripPlan } from './utils/shareableTripLink';
-import { Share2, Sparkles, X, CheckCircle2 } from 'lucide-react';
+import { Share2, Sparkles, X } from 'lucide-react';
 
 import {
   TripPlan,
@@ -48,13 +43,7 @@ import {
   TripFeedbackData,
   TripFeedbackSubmission,
 } from './types/travel';
-import {
-  INITIAL_TRIP_PLAN,
-  DEFAULT_USER_PROFILE,
-  DESTINATIONS,
-  STAYS_DATA,
-  FLIGHTS_DATA,
-} from './data/travelData';
+import { INITIAL_TRIP_PLAN, DEFAULT_USER_PROFILE } from './data/travelData';
 import { generateCustomTripPlan, calculateTripTotal } from './utils/tripPlannerEngine';
 
 export default function App() {

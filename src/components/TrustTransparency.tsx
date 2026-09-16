@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  ShieldCheck,
-  Eye,
-  Headphones,
-  CheckCircle2,
-  Lock,
-  RefreshCw,
-  Sparkles,
-} from 'lucide-react';
+import { ShieldCheck, Eye, Headphones, CheckCircle2, RefreshCw } from 'lucide-react';
 
 export const TrustTransparency: React.FC = () => {
   const pillars = [

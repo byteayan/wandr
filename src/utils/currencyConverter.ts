@@ -293,7 +293,7 @@ export async function fetchLiveExchangeRates(): Promise<{
           : 'Live Rates',
       };
     }
-  } catch (err) {
+  } catch {
     // Graceful fallback to built-in updated baseline
   }
   return {
